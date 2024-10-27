@@ -1,0 +1,6 @@
+nvim
+kitty
+hypr
+dunst
+fuzzel
+waybar

@@ -1,0 +1,7 @@
+when opening { someway to quickly have the second moved two lines down and tab to corrent indentation
+
+quick way to adjust size of windows by small amount or percentage maybe?
+
+using configFile vars create a list for favorite themes, add, remove, and possibly default set to random faved theme
+
+min lines from top/bottom to a percent of the lines on screen, i.e. if 50 lines, make 20 from top and bottom so you'll always be near the middle of the buffer
