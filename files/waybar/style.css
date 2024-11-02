@@ -57,6 +57,7 @@ window#waybar {
 #battery,
 #disk,
 #custom-power,
+#custom-menu,
 #tray {
 	/* background: #1a1a1a; */
 	background: #121212;
@@ -128,6 +129,7 @@ window#waybar {
 #battery,
 #tray,
 #custom-power,
+#custom-menu,
 #disk {
 	padding: 0 12px;
 }

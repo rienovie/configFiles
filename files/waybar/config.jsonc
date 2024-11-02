@@ -11,6 +11,8 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/menu",
+        "custom/right-arrow-dark",
+        "custom/right-arrow-light",
         "hyprland/workspaces",
         "custom/right-arrow-dark"
     ],
@@ -232,8 +234,9 @@
         "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/menu": {
-        "format" : "Menu",
-        "on-click": "nwg-drawer"
+        "format" : " ░ ",
+        "tooltip-format": "Application Menu",
+        "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
     },
     "custom/power": {
         "format" : "⏻ ",
