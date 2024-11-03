@@ -1,6 +1,7 @@
 -- I'll put plugins that have little configuration in here
 
 return {
+	{ "amber-lang/amber-vim" },
 	{ "tpope/vim-sleuth" },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "psliwka/vim-smoothie" },
