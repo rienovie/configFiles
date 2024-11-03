@@ -495,7 +495,7 @@ vim.keymap.set({ "n", "i" }, "<C-4>", '<cmd>:lua require("Basher").runScript(4)<
 --haven't had a use for this except changing colorscheme so won't change this until I need to
 vim.keymap.set("n", "<C-F5>", "<cmd>@:<CR><Backspace><Esc>A")
 
-vim.keymap.set("n", "<F8>", '<cmd>:lua require("dapui").toggle()<CR>')
+vim.keymap.set("n", "<F8>", '<cmd>:lua require("dapui").toggle({ reset = true })<CR>')
 -- vim.keymap.set("n", "<F8>", '<cmd>:lua require("dap").toggle_breakpoint()<CR>')
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "[D]ap Toggle [B]reakpoint" })
 vim.keymap.set("n", "<leader>di", "<cmd>DapStepInto<CR>", { desc = "[D]ap Step [I]nto" })

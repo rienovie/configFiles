@@ -11,7 +11,14 @@ return {
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						statusline = {},
-						winbar = {},
+						winbar = {
+							"dap-repl",
+							"dapui_watches",
+							"dapui_stacks",
+							"dapui_breakpoints",
+							"dapui_scopes",
+							"dapui_console",
+						},
 					},
 					ignore_focus = {},
 					always_divide_middle = true,
