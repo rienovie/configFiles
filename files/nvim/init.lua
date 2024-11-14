@@ -456,33 +456,52 @@ end)
 vim.keymap.set("i", '"', function()
 	smoothDoubleQuotes('"')
 end)
+vim.keymap.set("i", "<A-S-'>", '"')
+
 vim.keymap.set("i", "'", function()
 	smoothDoubleQuotes("'")
 end)
+vim.keymap.set("i", "<A-'>", "'")
+
 vim.keymap.set("i", "(", function()
 	smoothDoubleQuotes("(")
 end)
+vim.keymap.set("i", "<A-S-9>", "(")
+
 vim.keymap.set("i", ")", function()
 	smoothDoubleQuotes(")")
 end)
+vim.keymap.set("i", "<A-S-0>", ")")
+
 vim.keymap.set("i", "[", function()
 	smoothDoubleQuotes("[")
 end)
+vim.keymap.set("i", "<A-[>", "[")
+
 vim.keymap.set("i", "]", function()
 	smoothDoubleQuotes("]")
 end)
+vim.keymap.set("i", "<A-]>", "]")
+
 vim.keymap.set("i", "{", function()
 	smoothDoubleQuotes("{")
 end)
+vim.keymap.set("i", "<A-S-[>", "{")
+
 vim.keymap.set("i", "}", function()
 	smoothDoubleQuotes("}")
 end)
+vim.keymap.set("i", "<A-S-]>", "}")
+
 vim.keymap.set("i", "<", function()
 	smoothDoubleQuotes("<")
 end)
+vim.keymap.set("i", "<A-S-,>", "<")
+
 vim.keymap.set("i", ">", function()
 	smoothDoubleQuotes(">")
 end)
+vim.keymap.set("i", "<A-S-.>", ">")
 
 vim.keymap.set({ "n", "i" }, "<F3>", '<cmd>:lua require("Basher").toggleMainWin()<CR>')
 vim.keymap.set({ "n", "i" }, "<C-1>", '<cmd>:lua require("Basher").runScript(1)<CR>')
