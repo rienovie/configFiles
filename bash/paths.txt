@@ -4,3 +4,4 @@ hypr
 dunst
 fuzzel
 waybar
+rofi
