@@ -13,6 +13,7 @@ confirmPrompt() {
 	echo $'\nDirectories to link:'
 	cat paths.txt
 	echo $'\nThis will DELETE EVERYTHING from the above directories in '"$(realpath "../files")/{LISTED DIRECTORIES} then link all files in /home/$USER/.config/{LISTED DIRECTORIES} to $(realpath "../files")"
+	echo $'\nThis will also DELETE EVERYTHING from '"$(realpath "../scripts") then link all files in /home/$USER/Scripts to $(realpath "../scripts")"
 	echo $'\nsystem config files >>> git repo files.\n'
 	read -p "Are you sure you want to continue? [y/N] : " confirmation
 	
@@ -58,4 +59,20 @@ while read -r line; do
 	fi
 done < "$file"
 
-echo "Script finished."
+if [ -d "$homePath/Scripts" ]; then
+	echo $'\n'"Directory $homePath/Scripts was found."
+	if [ ! -d "scripts" ]; then
+		echo "Directory scripts does not exist, creating..."
+		mkdir "scripts"
+	fi
+	echo "Clearing scripts"
+	rm -rf scripts/*
+	echo "Linking all from $homePath/Scripts to scripts"
+	cp -alv $homePath/Scripts/* scripts
+	echo "scripts linking finished."
+else
+	echo "Directory $homePath/Scripts was not found."
+	echo "Skipping $homePath/Scripts."
+fi
+
+echo "Full Script has finished."
