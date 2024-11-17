@@ -237,7 +237,8 @@
     "custom/menu": {
         "format" : " ░ ",
         "tooltip-format": "Application Menu",
-        "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+        // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+        "on-click": "jgmenu_run"
     },
     "custom/power": {
         "format" : "⏻ ",

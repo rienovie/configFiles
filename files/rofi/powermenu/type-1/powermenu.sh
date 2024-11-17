@@ -42,16 +42,19 @@ rofi_cmd() {
 		-me-accept-entry "MousePrimary"
 }
 
+#Confirmation Variable
+CONFIRM_TYPE="UNSPECIFIED"
+
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
+	rofi -theme-str 'window {location: northeast; anchor: northeast; fullscreen: false; width: 700px; y-offset: 120px;}' \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {horizontal-align: 0.5;}' \
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
+		-mesg "Are you sure you wish to $CONFIRM_TYPE?" \
 		-theme ${dir}/${theme}.rasi \
 		-hover-select \
 		-me-select-entry "" \
@@ -102,9 +105,11 @@ run_cmd() {
 chosen="$(run_rofi)"
 case ${chosen} in
     $shutdown)
+		CONFIRM_TYPE="Shutdown"
 		run_cmd --shutdown
         ;;
     $reboot)
+		CONFIRM_TYPE="Reboot"
 		run_cmd --reboot
         ;;
     $lock)
@@ -120,9 +125,11 @@ case ${chosen} in
 
         ;;
     $suspend)
+		CONFIRM_TYPE="Suspend"
 		run_cmd --suspend
         ;;
     $logout)
+		CONFIRM_TYPE="Logout"
 		run_cmd --logout
         ;;
 esac
