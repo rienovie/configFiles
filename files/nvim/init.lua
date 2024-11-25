@@ -260,10 +260,11 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 
 local curTheme
 local startTheme
+local favThemes = {}
 
 local function loadTheme()
 	for line in io.lines(vim.fn.stdpath("config") .. "/vars") do
-		if string.find(line, "theme") then
+		if string.find(line, "theme=") then
 			local sTheme = string.sub(line, 7)
 			vim.cmd("colorscheme " .. sTheme)
 			curTheme = sTheme
@@ -343,6 +344,73 @@ local function resetTheme()
 	setTheme(startTheme)
 end
 
+local function populateFavThemes()
+	if #favThemes ~= nil then
+		local count = #favThemes
+		for i = 0, count do
+			favThemes[i] = nil
+		end
+	end
+	for line in io.lines(vim.fn.stdpath("config") .. "/vars") do
+		if string.find(line, "favTheme=") then
+			table.insert(favThemes, string.sub(line, 10))
+		end
+	end
+end
+
+local function saveFavThemesToFile()
+	local output = ""
+	if #favThemes == nil then
+		vim.print("There are no favorite themes.")
+		return
+	end
+	for line in io.lines(vim.fn.stdpath("config") .. "/vars") do
+		if not string.find(line, "favTheme=") then
+			output = output .. line .. "\n"
+		end
+	end
+	for _, value in pairs(favThemes) do
+		output = output .. "favTheme=" .. value .. "\n"
+	end
+	local file = io.output(vim.fn.stdpath("config") .. "/vars")
+	if file == nil then
+		vim.print("Var file not found")
+		return
+	end
+	io.write(output)
+	io.close(file)
+end
+
+local function toggleThemeFavorite()
+	for index, value in ipairs(favThemes) do
+		if value == curTheme then
+			table.remove(favThemes, index)
+			saveFavThemesToFile()
+			vim.print("Removed " .. curTheme .. " from favorites.")
+			return
+		end
+	end
+
+	table.insert(favThemes, curTheme)
+	saveFavThemesToFile()
+	vim.print("Added " .. curTheme .. " to favorites.")
+end
+
+local function randFavTheme()
+	setTheme(favThemes[math.random(#favThemes)])
+end
+
+local function openFavThemeMenu()
+	vim.ui.select(favThemes, { prompt = "Favorite Themes" }, function(choice)
+		vim.print(choice)
+		if choice == nil then
+			return
+		else
+			setTheme(choice)
+		end
+	end)
+end
+
 -- TODO: need to set to use either tab or spaces based on which the file uses
 local function indentCurrentSelection()
 	if vim.fn.mode() == "v" then
@@ -379,6 +447,11 @@ end
 
 --riekey      \/keybinds\/      /\functions/\
 
+vim.keymap.set("n", "<C-b>", "<cmd>DapToggleBreakpoint<CR>", { noremap = true })
+
+vim.keymap.set("n", "<C-t>", openFavThemeMenu, { noremap = true })
+vim.keymap.set("n", "<C-y>", randFavTheme, { noremap = true })
+
 vim.keymap.set({ "n", "v" }, "<leader>il", indentCurrentSelection, { noremap = true, desc = "[I]ndent [L]ine(s)." })
 vim.keymap.set(
 	{ "n", "v" },
@@ -386,6 +459,8 @@ vim.keymap.set(
 	deindentCurrentSelection,
 	{ noremap = true, desc = "[D]e-Indent [L]ine(s)." }
 )
+
+vim.keymap.set("n", "<C-9>", toggleThemeFavorite, { noremap = true })
 
 vim.keymap.set("n", "<C-]>", nextTheme, { noremap = true })
 vim.keymap.set("n", "<C-[>", prevTheme, { noremap = true })
@@ -572,14 +647,13 @@ require("lazy").setup({
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 			-- vim.cmd.colorscheme("tokyonight")
-			loadTheme()
+			populateFavThemes()
+			-- loadTheme()
 
 			-- You can configure highlights by doing something like:
 			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
-
-	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
 
@@ -617,6 +691,8 @@ require("lazy").setup({
 		},
 	},
 })
+
+randFavTheme()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -26,7 +26,7 @@ host=`hostname`
 shutdown=' Shutdown'
 reboot=' Reboot'
 lock=' Waybar'
-suspend=' Suspend'
+suspend=' Kill App'
 logout=' Logout'
 yes=' Yes'
 no=' No'
@@ -125,8 +125,9 @@ case ${chosen} in
 
         ;;
     $suspend)
-		CONFIRM_TYPE="Suspend"
-		run_cmd --suspend
+		# run_cmd --suspend
+		
+		hyprctl kill
         ;;
     $logout)
 		CONFIRM_TYPE="Logout"
