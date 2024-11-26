@@ -5,3 +5,4 @@ dunst
 fuzzel
 waybar
 rofi
+yazi
