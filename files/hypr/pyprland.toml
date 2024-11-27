@@ -1,0 +1,18 @@
+[pyprland]
+plugins = [
+ # "expose",
+ # "fetch_client_menu",
+ # "lost_windows",
+ # "magnify",
+ "scratchpads",
+ # "shift_monitors",
+ "toggle_special",
+ # "workspaces_follow_focus",
+]
+
+[scratchpads.yazi]
+animation = "fromBottom"
+command = "kitty --class main-dropterm -e yazi"
+class = "main-dropterm"
+size = "50% 25%"
+max_size = "1920px 100%"

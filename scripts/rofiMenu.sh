@@ -16,7 +16,6 @@ else
 	THEMES[10]="75"
 	THEMES[11]="77"
 	THEMES[12]="79"
-	THEMES[13]="710"
 
 	CHOSEN=$(echo ${THEMES[RANDOM % 13]})
 	TYPE=${CHOSEN:0:1}

@@ -7,7 +7,7 @@
 # : Flavor {{{
 
 [flavor]
-use = ""
+use = "ayu-dark"
 
 # : }}}
 
@@ -50,7 +50,7 @@ syntect_theme = ""
 # : }}}
 
 
-# : Status {{{
+# : Status {{{{{{
 
 [status]
 separator_open  = ""
@@ -74,7 +74,7 @@ permissions_w = { fg = "red" }
 permissions_x = { fg = "cyan" }
 permissions_s = { fg = "darkgray" }
 
-# : }}}
+# : }}}}}}
 
 
 # : Select {{{
