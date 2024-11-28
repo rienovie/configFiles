@@ -1,0 +1,30 @@
+{
+    "label" : "waybar",
+    "action" : "bash /home/vince/Scripts/waybarReset.sh",
+    "text" : "Waybar Reset",
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+}
+{
+    "label" : "kill",
+    "action" : "hyprctl kill",
+    "text" : "Kill App",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+}
+{
+    "label" : "cancel",
+    "action" : "",
+    "text" : "Cancel",
+}
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit",
+    "text" : "Logout",
+}

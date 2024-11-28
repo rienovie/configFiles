@@ -37,6 +37,9 @@ confirmPrompt
 
 file=$(realpath "paths.txt")
 homePath="/home/$USER"
+declare -i erCount=0
+declare -a erMessages[0]="Error message list:"
+erMessage="No error."
 
 cd ..
 
@@ -45,7 +48,10 @@ while read -r line; do
 	if [ -d "$lineFullPath" ]; then
 		echo $'\n'"Directory $lineFullPath was found."
 		if [ ! -d "files/$line" ]; then
-			echo "files/$line does not exist, creating..."
+			((erCount++))
+			erMessage="files/$line does not exist, creating..."
+			erMessages[$erCount]=$erMessage
+			echo $erMessage
 			mkdir "files/$line"
 		fi
 		echo "Clearing files/$line"
@@ -54,15 +60,20 @@ while read -r line; do
 		cp -alv $lineFullPath/* files/$line
 		echo "$line linking finished."
 	else
-		echo "Directory $lineFullPath was not found."
-		echo "Skipping $lineFullPath."
+		((erCount++))
+		erMessage="Directory $lineFullPath was not found. Skipping."
+		erMessages[$erCount]=$erMessage
+		echo $erMessage
 	fi
 done < "$file"
 
 if [ -d "$homePath/Scripts" ]; then
 	echo $'\n'"Directory $homePath/Scripts was found."
 	if [ ! -d "scripts" ]; then
-		echo "Directory scripts does not exist, creating..."
+		((erCount++))
+		erMessage="Directory scripts does not exist, creating..."
+		erMessages[$erCount]=$erMessage
+		echo $erMessage
 		mkdir "scripts"
 	fi
 	echo "Clearing scripts"
@@ -71,8 +82,15 @@ if [ -d "$homePath/Scripts" ]; then
 	cp -alv $homePath/Scripts/* scripts
 	echo "scripts linking finished."
 else
-	echo "Directory $homePath/Scripts was not found."
-	echo "Skipping $homePath/Scripts."
+	((erCount++))
+	erMessage="Directory $homePath/Scripts was not found. Skipping."
+	erMessages[$erCount]=$erMessage
+	echo $erMessage
 fi
 
-echo "Full Script has finished."
+echo "
+Full Script has finished with $erCount errors."
+
+if [ "${#erMessages[*]}" != "1" ]; then
+	echo $erMessages
+fi

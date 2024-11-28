@@ -242,7 +242,8 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-        "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
+        // "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
+        "on-click": "wlogout"
 	// "tooltip": false,
 	// "menu": "on-click",
 	// "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder

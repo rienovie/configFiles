@@ -6,3 +6,4 @@ fuzzel
 waybar
 rofi
 yazi
+wlogout
