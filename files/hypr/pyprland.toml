@@ -20,4 +20,4 @@ max_size = "1920px 100%"
 [scratchpads.calc]
 animation = "fromLeft"
 size = "15% 40%"
-command = "gnome-calculator"
+command = "kcalc"

@@ -2,11 +2,14 @@
 
 while [ 0 == 0 ]; do
     dunstify "" -a "Checking for updates" -i /usr/share/icons/Papirus-Dark/22x22@2x/panel/mintupdate-checking.svg -u low
-    pamac-checkupdates -a
-    if [ $? -ne 0 ]; then
+    checkupdates
+
+    # not sure why but returns 2 when nothing is there
+    # will test again when there is actually updates
+    if [ $? -ne 2 ]; then
         ACTION=$(dunstify -u critical "" -a "Updates are available" -i /usr/share/icons/Papirus-Dark/22x22@2x/panel/mintupdate-updates-available.svg --action="open,open")
         if [ $ACTION == "open" ]; then
-            pamac-manager --updates
+            kitty --hold -e eos-update
         fi
         sleep 1800
         continue
