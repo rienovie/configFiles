@@ -2,8 +2,8 @@
 
 while [ 0 == 0 ]; do
     dunstify "" -a "Checking for updates" -i /usr/share/icons/Papirus-Dark/22x22@2x/panel/mintupdate-checking.svg -u low
-    checkupdates
 
+    checkupdates
     # not sure why but returns 2 when nothing is there
     # will test again when there is actually updates
     if [ $? -ne 2 ]; then
