@@ -21,3 +21,8 @@ max_size = "1920px 100%"
 animation = "fromLeft"
 size = "15% 40%"
 command = "kcalc"
+
+[scratchpads.draw]
+animation = "fromTop"
+size = "75% 75%"
+command = "xournalpp"

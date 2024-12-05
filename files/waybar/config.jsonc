@@ -25,6 +25,7 @@
     "modules-right": [
         "custom/left-arrow-dark",
         "tray",
+        "backlight",
         "custom/left-arrow-light",
         "custom/left-arrow-dark",
         "pulseaudio",
@@ -161,7 +162,7 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
+        "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },

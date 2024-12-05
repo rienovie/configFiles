@@ -9,7 +9,7 @@ while [ 0 == 0 ]; do
     if [ $? -ne 2 ]; then
         ACTION=$(dunstify -u critical "" -a "Updates are available" -i /usr/share/icons/Papirus-Dark/22x22@2x/panel/mintupdate-updates-available.svg --action="open,open")
         if [ $ACTION == "open" ]; then
-            kitty --hold -e eos-update
+            kitty -e eos-update
         fi
         sleep 1800
         continue
