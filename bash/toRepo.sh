@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#!/usr/bin/bash
 
 # Made with Basher
 # Cats blame everything on Neovim?
