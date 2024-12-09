@@ -137,8 +137,8 @@
         }
     },
     "tray": {
-        "icon-size": 20,
-        "spacing": 10
+        "icon-size": 24,
+        "spacing": 15
     },
     "clock": {
         "format": "{:%I:%M %p - %a, %b %e, %Y}",
@@ -147,11 +147,11 @@
     "cpu": {
         "format": "  Cpu {usage}%",
         "tooltip": false,
-        "on-click": "gnome-system-monitor"
+        "on-click": "qps"
     },
     "memory": {
         "format": "  Mem {}%",
-        "on-click": "gnome-system-monitor"
+        "on-click": "qps"
     },
     "temperature": {
         // "thermal-zone": 2,
