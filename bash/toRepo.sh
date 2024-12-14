@@ -8,14 +8,17 @@ if [ ! -f "paths.txt" ]; then
 	exit 1
 fi
 
+if [ $# -gt 0 ] && [ $1 == "-v" ]; then
+	echo "Verbose On"
+	cpArgs="-alvr"
+else
+	echo "Verbose Off"
+	cpArgs="-alr"
+fi
+
 confirmPrompt() {
-	echo "Attempting to link all files to the corresponding directories in .config"
-	echo $'\nDirectories to link:'
-	cat paths.txt
-	echo $'\nThis will DELETE EVERYTHING from the above directories in '"$(realpath "../files")/{LISTED DIRECTORIES} then link all files in /home/$USER/.config/{LISTED DIRECTORIES} to $(realpath "../files")"
-	echo $'\nThis will also DELETE EVERYTHING from '"$(realpath "../scripts") then link all files in /home/$USER/Scripts to $(realpath "../scripts")"
-	echo $'\nsystem config files >>> git repo files.\n'
-	read -p "Are you sure you want to continue? [y/N] : " confirmation
+	echo $'\n\n        system >>> repo\n\n'
+	read -p "Continue? [y/N] : " confirmation
 	
 	case "$confirmation" in
 		[yY][eE][sS]|[yY])
@@ -57,7 +60,7 @@ while read -r line; do
 		echo "Clearing files/$line"
 		rm -rf files/$line/*
 		echo "Linking all from $lineFullPath to files/$line"
-		cp -alv $lineFullPath/* files/$line
+		cp $cpArgs $lineFullPath/* files/$line
 		echo "$line linking finished."
 	else
 		((erCount++))
@@ -79,11 +82,32 @@ if [ -d "$homePath/Scripts" ]; then
 	echo "Clearing scripts"
 	rm -rf scripts/*
 	echo "Linking all from $homePath/Scripts to scripts"
-	cp -alv $homePath/Scripts/* scripts
+	cp $cpArgs $homePath/Scripts/* scripts
 	echo "scripts linking finished."
 else
 	((erCount++))
 	erMessage="Directory $homePath/Scripts was not found. Skipping."
+	erMessages[$erCount]=$erMessage
+	echo $erMessage
+fi
+
+if [ -d "$homePath/Music/sounds" ]; then
+	echo $'\n'"Directory $homePath/Music/sounds was found."
+	if [ ! -d "sounds" ]; then
+		((erCount++))
+		erMessage="Directory sounds does not exist, creating..."
+		erMessages[$erCount]=$erMessage
+		echo $erMessage
+		mkdir "sounds"
+	fi
+	echo "Clearing sounds"
+	rm -rf sounds/*
+	echo "Linking all from $homePath/Music/sounds to sounds"
+	cp $cpArgs $homePath/Music/sounds/* sounds
+	echo "sounds linking finished."
+else
+	((erCount++))
+	erMessage="Directory $homePath/sounds was not found. Skipping."
 	erMessages[$erCount]=$erMessage
 	echo $erMessage
 fi

@@ -8,7 +8,7 @@ while [ 0 == 0 ]; do
     if [ $? -ne 2 ]; then
         ACTION=$(dunstify -u critical "" -a "Updates are available" -i /usr/share/icons/breeze-dark/status/24/update-low.svg --action="open,open")
         if [ $ACTION == "open" ]; then
-            kitty -e eos-update
+            kitty sh -c "eos-update && echo 'Updates have finished.' && read"
         fi
         sleep 1800
         continue
