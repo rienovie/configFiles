@@ -8,3 +8,6 @@ rofi
 yazi
 wlogout
 jgmenu
+kando
+nwg-drawer
+sqlitebrowser

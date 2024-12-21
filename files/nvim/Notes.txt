@@ -13,3 +13,5 @@ get alternating colors for parenthesis
 have util qPrint bool translate to true false instead of 0 1
 
 in basher have option to set directory where script is created
+
+make a script that lists all the applications I use on arch and installs them, I can use this for a fresh install if needed and makes sure I have everything I need

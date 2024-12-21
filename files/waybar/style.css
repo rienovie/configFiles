@@ -4,8 +4,8 @@
 /* } */
 
 * {
-	padding-top: 1px;
-	padding-bottom: 1px;
+	/* padding-top: 1px; */
+	/* padding-bottom: 1px; */
 	font-size: 20px;
 	/* font-family: monospace; */
 	font-family: Source Code Pro, Bold Italic;
@@ -13,9 +13,11 @@
 }
 
 window#waybar {
-	background-color: rgba(0, 0, 0, .6);
+	background-color: rgba(20,20,40, 0);
 	color: #fdf6e3;
-	border-bottom: 3px solid #050505;
+	/* border-bottom: 24px ridge rgba(255,255,255,.5); */
+	/* border-bottom: 24px; */
+	background-image: linear-gradient(to bottom, rgba(20,20,40,1) 0%, rgba(0,0,0,0) 100%);
 	transition-property: background-color;
 	transition-duration: 0.5s;
 }
@@ -54,14 +56,15 @@ window#waybar {
 #memory,
 #cpu,
 #clock,
-#custom-playerctl,
+/* #custom-playerctl, */
 #battery,
 #disk,
 #custom-power,
 #custom-menu,
 #tray {
 	/* background: #1a1a1a; */
-	background: #151525;
+	/* background: #151525; */
+	background: transparent;
 }
 
 #custom-menu {
@@ -114,6 +117,10 @@ window#waybar {
 
 #custom-playerctl {
 	color: #1a7d98;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	background-color: rgba(40,40,60,0.5);
+	border: 2px double rgba(40,40,60,0.5);
 }
 
 #custom-playerctl:hover {
@@ -137,7 +144,7 @@ window#waybar {
 #custom-power,
 #custom-menu,
 #disk {
-	padding: 0 12px;
+	padding: 0 4px;
 }
 
 /* rgba(15, 50, 75, 0.8); */

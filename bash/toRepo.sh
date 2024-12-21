@@ -116,5 +116,5 @@ echo "
 Full Script has finished with $erCount errors."
 
 if [ "${#erMessages[*]}" != "1" ]; then
-	echo $erMessages
+	echo "${erMessages[*]}"
 fi
