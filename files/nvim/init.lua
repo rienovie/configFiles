@@ -447,6 +447,8 @@ end
 
 --riekey      \/keybinds\/      /\functions/\
 
+vim.keymap.set({ "n", "i", "t" }, "<F6>", '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true })
+
 vim.keymap.set("n", "<C-b>", "<cmd>DapToggleBreakpoint<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-t>", openFavThemeMenu, { noremap = true })
@@ -513,7 +515,7 @@ vim.keymap.set({ "n", "i" }, "<F12>", smartQuit, { desc = "Smart Quit" })
 vim.keymap.set("n", "<C-f>", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
 vim.keymap.set("n", "<F7>", "<cmd>:lua require('harpoon.mark').toggle_file()<CR>")
 vim.keymap.set("n", "<C-x>", "<cmd>BufferClose<CR>")
-vim.keymap.set("n", "<F6>", "<cmd>BufferPick<CR>")
+--vim.keymap.set("n", "<F6>", "<cmd>BufferPick<CR>")
 
 vim.keymap.set("n", "<C-n>", "<cmd>BufferNext<CR>")
 vim.keymap.set("n", "<C-p>", "<cmd>BufferPrevious<CR>")

@@ -30,7 +30,7 @@
     height = (0,250)
 
     # Position the notification in the top right corner
-    origin = bottom-left
+    origin = bottom-right
 
     # Offset from the origin
     offset = 50x50
@@ -335,14 +335,14 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#0e0e19"
-    foreground = "#444444"
+    foreground = "#aaaaaa"
     timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#151525"
-    foreground = "#aaaaaa"
+    background = "#404060"
+    foreground = "#000000"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable

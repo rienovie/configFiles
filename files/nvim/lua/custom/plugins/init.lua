@@ -10,6 +10,7 @@ return {
 	{ "nvim-treesitter/nvim-treesitter-context", opts = {} },
 	{ "ThePrimeagen/harpoon", opts = {} },
 	{ "mfussenegger/nvim-dap" },
+	{ "numToStr/FTerm.nvim" },
 
 	{
 		"folke/todo-comments.nvim",

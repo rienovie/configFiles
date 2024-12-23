@@ -1,20 +1,22 @@
 window {
-    background-color: rgba(36, 47, 79, 0.95);
+    background-color: rgba(15, 15, 25, 0.96);
     color: #eeeeee
 }
 
 /* search entry */
 entry {
-    background-color: rgba (0, 0, 0, 0.2)
+    background-color: rgba (40, 40, 60, 0.75)
 }
 
-button, image {
+button,
+image {
     background: none;
     border: none
 }
 
-button:hover {
-    background-color: rgba (255, 255, 255, 0.1)
+button:hover,
+button:focus {
+    background-color: rgba (70, 70, 115, 0.25)
 }
 
 /* in case you wanted to give category buttons a different look */
@@ -24,7 +26,7 @@ button:hover {
 
 #pinned-box {
     padding-bottom: 5px;
-    border-bottom: 1px dotted gray
+    border-bottom: 3px dashed rgba(70, 70, 115, 0.25)
 }
 
 #files-box {
