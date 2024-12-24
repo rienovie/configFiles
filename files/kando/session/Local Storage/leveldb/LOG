@@ -1,3 +1,3 @@
-2024/12/22-17:55:20.055 4b6 Reusing MANIFEST /home/vince/.config/kando/session/Local Storage/leveldb/MANIFEST-000001
-2024/12/22-17:55:20.065 4b6 Recovering log #3
-2024/12/22-17:55:20.065 4b6 Reusing old log /home/vince/.config/kando/session/Local Storage/leveldb/000003.log 
+2024/12/23-22:45:45.846 4c6 Reusing MANIFEST /home/vince/.config/kando/session/Local Storage/leveldb/MANIFEST-000001
+2024/12/23-22:45:45.856 4c6 Recovering log #3
+2024/12/23-22:45:45.856 4c6 Reusing old log /home/vince/.config/kando/session/Local Storage/leveldb/000003.log 
