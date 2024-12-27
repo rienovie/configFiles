@@ -2,15 +2,9 @@ when opening { someway to quickly have the second moved two lines down and tab t
 
 quick way to adjust size of windows by small amount or percentage maybe?
 
-min lines from top/bottom to a percent of the lines on screen, i.e. if 50 lines, make 20 from top and bottom so you'll always be near the middle of the buffer
-
 handle indent lines for spaces
 
 in basher handle spaces in file names
-
-get alternating colors for parenthesis
-
-have util qPrint bool translate to true false instead of 0 1
 
 in basher have option to set directory where script is created
 

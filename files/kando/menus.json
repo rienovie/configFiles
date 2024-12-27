@@ -358,33 +358,76 @@
         "iconTheme": "simple-icons",
         "children": [
           {
-            "type": "command",
-            "data": {
-              "command": "hyprctl dispatch exec nwg-drawer",
-              "delayed": false
-            },
-            "name": "All Applications",
-            "icon": "view_apps",
-            "iconTheme": "material-symbols-rounded",
-            "angle": 60
-          },
-          {
-            "type": "command",
-            "data": {
-              "command": "firefox",
-              "delayed": false
-            },
-            "name": "Firefox",
-            "icon": "firefoxbrowser",
-            "iconTheme": "simple-icons"
-          },
-          {
             "type": "submenu",
             "data": {},
             "name": "Power / Logout",
             "icon": "settings_power",
             "iconTheme": "material-symbols-rounded",
             "children": [
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Shutdown",
+                "icon": "power_settings_new",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "systemctl poweroff",
+                      "delayed": false
+                    },
+                    "name": "Shutdown",
+                    "icon": "power_settings_new",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 90
+                  },
+                  {
+                    "type": "hotkey",
+                    "data": {
+                      "hotkey": "Backspace",
+                      "delayed": false
+                    },
+                    "name": "Cancel",
+                    "icon": "cancel",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 180
+                  }
+                ],
+                "angle": 0
+              },
+              {
+                "type": "submenu",
+                "data": {},
+                "name": "Logout",
+                "icon": "logout",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "hyprctl dispatch exit",
+                      "delayed": false
+                    },
+                    "name": "Logout",
+                    "icon": "logout",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 45
+                  },
+                  {
+                    "type": "hotkey",
+                    "data": {
+                      "hotkey": "Backspace",
+                      "delayed": false
+                    },
+                    "name": "Cancel",
+                    "icon": "cancel",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 135
+                  }
+                ],
+                "angle": 45
+              },
               {
                 "type": "command",
                 "data": {
@@ -394,42 +437,116 @@
                 "name": "Kill App",
                 "icon": "skull",
                 "iconTheme": "material-symbols-rounded",
-                "angle": 30
+                "angle": 135
               },
               {
-                "type": "command",
-                "data": {
-                  "command": "hyprctl dispatch exit",
-                  "delayed": true
-                },
-                "name": "Logout",
-                "icon": "logout",
-                "iconTheme": "material-symbols-rounded",
-                "angle": 105
-              },
-              {
-                "type": "command",
-                "data": {
-                  "command": "systemctl reboot",
-                  "delayed": false
-                },
+                "type": "submenu",
+                "data": {},
                 "name": "Restart",
                 "icon": "restart_alt",
+                "iconTheme": "material-symbols-rounded",
+                "children": [
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "systemctl reboot",
+                      "delayed": false
+                    },
+                    "name": "Restart",
+                    "icon": "restart_alt",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 135
+                  },
+                  {
+                    "type": "hotkey",
+                    "data": {
+                      "hotkey": "Backspace",
+                      "delayed": false
+                    },
+                    "name": "Cancel",
+                    "icon": "cancel",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 225
+                  }
+                ],
+                "angle": 315
+              }
+            ],
+            "angle": 0
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Nvim",
+            "icon": "view_comfy",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "kitty -d ~/.config sh -c \"nvim\"",
+                  "delayed": false
+                },
+                "name": ".Config",
+                "icon": "settings_applications",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 0
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "kitty -d ~/Repos/BullScript sh -c \"nvim\"",
+                  "delayed": false
+                },
+                "name": "BullScript",
+                "icon": "description",
                 "iconTheme": "material-symbols-rounded"
               },
               {
                 "type": "command",
                 "data": {
-                  "command": "systemctl poweroff",
+                  "command": "kitty -d ~/Scripts sh -c \"nvim\"",
                   "delayed": false
                 },
-                "name": "Shutdown",
-                "icon": "power_off",
+                "name": "Scripts",
+                "icon": "integration_instructions",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "kitty -d ~/Repos/CppUtil sh -c \"nvim\"",
+                  "delayed": false
+                },
+                "name": "C++ Util",
+                "icon": "build",
                 "iconTheme": "material-symbols-rounded",
                 "angle": 180
               }
             ],
-            "angle": 180
+            "angle": 90
+          },
+          {
+            "type": "command",
+            "data": {
+              "command": "hyprctl dispatch exec nwg-drawer",
+              "delayed": false
+            },
+            "name": "All Applications",
+            "icon": "view_apps",
+            "iconTheme": "material-symbols-rounded",
+            "angle": 150
+          },
+          {
+            "type": "command",
+            "data": {
+              "command": "firefox",
+              "delayed": false
+            },
+            "name": "Firefox",
+            "icon": "firefoxbrowser",
+            "iconTheme": "simple-icons",
+            "angle": 210
           }
         ]
       },
@@ -440,5 +557,26 @@
       "anchored": true
     }
   ],
-  "templates": []
+  "templates": [
+    {
+      "type": "hotkey",
+      "data": {
+        "hotkey": "Backspace",
+        "delayed": false
+      },
+      "name": "Cancel",
+      "icon": "cancel",
+      "iconTheme": "material-symbols-rounded"
+    },
+    {
+      "type": "command",
+      "data": {
+        "command": "kitty -d ~DIRECTORY~ sh -c \"nvim\"",
+        "delayed": false
+      },
+      "name": "Nvim From",
+      "icon": "terminal",
+      "iconTheme": "material-symbols-rounded"
+    }
+  ]
 }
