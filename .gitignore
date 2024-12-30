@@ -1,2 +1,6 @@
 
 files/nvim/lazy-lock.json
+files/kando/session
+files/kando/SingletonCookie
+files/kando/SingletonLock
+files/kando/SingletonSocket

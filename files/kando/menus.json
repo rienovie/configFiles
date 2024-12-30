@@ -372,17 +372,6 @@
                 "iconTheme": "material-symbols-rounded",
                 "children": [
                   {
-                    "type": "command",
-                    "data": {
-                      "command": "systemctl poweroff",
-                      "delayed": false
-                    },
-                    "name": "Shutdown",
-                    "icon": "power_settings_new",
-                    "iconTheme": "material-symbols-rounded",
-                    "angle": 90
-                  },
-                  {
                     "type": "hotkey",
                     "data": {
                       "hotkey": "Backspace",
@@ -391,7 +380,18 @@
                     "name": "Cancel",
                     "icon": "cancel",
                     "iconTheme": "material-symbols-rounded",
-                    "angle": 180
+                    "angle": 0
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "systemctl poweroff",
+                      "delayed": true
+                    },
+                    "name": "Shutdown",
+                    "icon": "power_settings_new",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 90
                   }
                 ],
                 "angle": 0
@@ -404,17 +404,6 @@
                 "iconTheme": "material-symbols-rounded",
                 "children": [
                   {
-                    "type": "command",
-                    "data": {
-                      "command": "hyprctl dispatch exit",
-                      "delayed": false
-                    },
-                    "name": "Logout",
-                    "icon": "logout",
-                    "iconTheme": "material-symbols-rounded",
-                    "angle": 45
-                  },
-                  {
                     "type": "hotkey",
                     "data": {
                       "hotkey": "Backspace",
@@ -422,6 +411,17 @@
                     },
                     "name": "Cancel",
                     "icon": "cancel",
+                    "iconTheme": "material-symbols-rounded",
+                    "angle": 45
+                  },
+                  {
+                    "type": "command",
+                    "data": {
+                      "command": "hyprctl dispatch exit",
+                      "delayed": true
+                    },
+                    "name": "Logout",
+                    "icon": "logout",
                     "iconTheme": "material-symbols-rounded",
                     "angle": 135
                   }
@@ -455,7 +455,7 @@
                     "name": "Restart",
                     "icon": "restart_alt",
                     "iconTheme": "material-symbols-rounded",
-                    "angle": 135
+                    "angle": 45
                   },
                   {
                     "type": "hotkey",
@@ -466,7 +466,7 @@
                     "name": "Cancel",
                     "icon": "cancel",
                     "iconTheme": "material-symbols-rounded",
-                    "angle": 225
+                    "angle": 315
                   }
                 ],
                 "angle": 315
