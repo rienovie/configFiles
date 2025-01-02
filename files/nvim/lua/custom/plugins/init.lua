@@ -11,6 +11,7 @@ return {
 	{ "ThePrimeagen/harpoon", opts = {} },
 	{ "mfussenegger/nvim-dap" },
 	{ "numToStr/FTerm.nvim" },
+	{ "mfussenegger/nvim-jdtls" },
 
 	{
 		"folke/todo-comments.nvim",

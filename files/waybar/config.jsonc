@@ -39,10 +39,10 @@
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "clock",
+            "clock"
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "custom/power"
+            // "custom/power"
         ],
         // Modules configuration
         "custom/left-arrow-dark": {
@@ -143,7 +143,7 @@
         },
         "clock": {
             // "format": "| {:%I:%M %p - %a, %b %e, %Y} |",
-            "format": "|{:%a %D - %I:%M %p}|",
+            "format": " {:%a %D - %I:%M %p} ",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
         },
         "cpu": {

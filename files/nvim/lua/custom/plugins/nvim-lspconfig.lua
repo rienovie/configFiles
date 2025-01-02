@@ -191,6 +191,7 @@ return {
 				clangd = {},
 				-- gopls = {},
 				pyright = {},
+				jdtls = {},
 				cmake = {},
 				pylsp = {},
 				gdscript = require("lspconfig").gdscript.setup({}),
