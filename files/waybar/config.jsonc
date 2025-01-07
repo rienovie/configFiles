@@ -263,15 +263,15 @@
         },
         "custom/menu": {
             // "format" : " ░ ",
-            // "format" : " Ξ ",
-            "format": "  𓃑 ",
-            // "format" : "  ☰ ",
+            "format": " Ξ ",
+            // "format": "  𓃑 ",
+            // "format": "  ☰ ",
             // "format" : "  〄 ",
             // "format" : "  ☵ ",
             "tooltip-format": "Application Menu",
-            // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+            "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
             // "on-click": "jgmenu_run"
-            "on-click": "kando -m example-menu"
+            // "on-click": "kando -m example-menu"
         },
         "custom/power": {
             "format": "⏻  ",

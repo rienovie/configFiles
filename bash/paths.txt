@@ -11,3 +11,5 @@ jgmenu
 kando
 nwg-drawer
 sqlitebrowser
+sway
+nwg-panel
