@@ -18,6 +18,7 @@ hyprlock
 hyprpaper
 hyprutils
 hyprwayland-scanner
+lxqt-policykit
 jgmenu
 kcalc
 kcolorchooser
@@ -28,6 +29,8 @@ nasm
 neovim
 npm
 nwg-icon-picker
+nwg-menu
+nwg-panel
 openssh
 pantheon-terminal
 pavu-control
@@ -41,3 +44,5 @@ waybar
 wlogout
 xournalpp
 yazi
+fastfetch
+steam

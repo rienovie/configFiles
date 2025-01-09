@@ -1,6 +1,20 @@
 // -*- mode: jsonc -*-
 [
     {
+        "layer": "top",
+        "position": "bottom",
+        "height": "20",
+        "output": "DP-2",
+        "modules-center": [
+            "hyprland/window"
+        ],
+        "hyprland/window": {
+            "seperate-outputs": true,
+            "format": " {title} ",
+            "icon": true
+        }
+    },
+    {
         "layer": "top", // Waybar at top layer
         "position": "top", // Waybar position (top|bottom|left|right)
         "height": 20, // Waybar height (to be removed for auto height)
@@ -27,6 +41,7 @@
             "backlight",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
+            "clock",
             "pulseaudio",
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
@@ -35,11 +50,10 @@
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "memory",
+            "memory"
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "clock"
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
             // "custom/power"
@@ -263,15 +277,15 @@
         },
         "custom/menu": {
             // "format" : " ░ ",
-            "format": " Ξ ",
-            // "format": "  𓃑 ",
+            // "format": " Ξ ",
+            "format": "  𓃑 ",
             // "format": "  ☰ ",
             // "format" : "  〄 ",
-            // "format" : "  ☵ ",
+            // "format": "  ☵ ",
             "tooltip-format": "Application Menu",
-            "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+            // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
             // "on-click": "jgmenu_run"
-            // "on-click": "kando -m example-menu"
+            "on-click": "kando -m example-menu"
         },
         "custom/power": {
             "format": "⏻  ",

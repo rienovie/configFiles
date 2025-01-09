@@ -35,14 +35,21 @@ exec sleep 2 && blueman-applet
 exec nwg-drawer -r
 exec waybar
 
+# For animations
+set $animate_fps 75
+set $animate_duration 300
+
 ### Appearance
+
+layer_effects * blur enable
+
 # window corner radius in px
 corner_radius 20
 
 # Window background blur
-blur on
-blur_xray on
-blur_passes 0
+blur enable
+blur_xray enable
+blur_passes 2
 blur_radius 5
 
 shadows on
@@ -176,6 +183,7 @@ input "type:keyboard" {
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2

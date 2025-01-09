@@ -16,7 +16,7 @@
     "icons": "light",
     "css-name": "panel-bottom",
     "modules-left": [
-      "sway-taskbar"
+      "hyprland-taskbar"
     ],
     "modules-center": [],
     "modules-right": [
@@ -140,7 +140,21 @@
     "openweather": {},
     "brightness-slider": {},
     "dwl-tags": {},
-    "hyprland-taskbar": {},
+    "hyprland-taskbar": {
+      "name-max-len": 24,
+      "icon-size": 16,
+      "workspaces-spacing": 0,
+      "client-padding": 0,
+      "show-app-icon": true,
+      "show-app-name": true,
+      "show-app-name-special": false,
+      "show-layout": true,
+      "all-outputs": true,
+      "mark-xwayland": true,
+      "angle": 0.0,
+      "image-size": 16,
+      "task-padding": 0
+    },
     "hyprland-workspaces": {},
     "hyprland-submap": {},
     "keyboard-layout": {},

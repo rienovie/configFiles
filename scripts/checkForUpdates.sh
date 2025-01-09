@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 while [ 0 == 0 ]; do
+    notify-send "" -a "Checking for updates..." -i /usr/share/icons/breeze-dark/status/24/update-none.svg -u low
     dunstify "" -a "Checking for updates..." -i /usr/share/icons/breeze-dark/status/24/update-none.svg -u low
 
     checkupdates
@@ -16,4 +17,3 @@ while [ 0 == 0 ]; do
     dunstify "" -a "System is up-to-date" -i /usr/share/icons/breeze-dark/emblems/16/package-installed-updated.svg
     sleep 1800
 done
-
