@@ -30,9 +30,12 @@ if [ ! -d "$HOME/Apps" ]; then
 fi
 
 echo "GitHub SSH key..."
-read -p 'Enter email: ' -r email
 
-confirm "'$email' is correct?"
+while :; do
+    read -p 'Enter email: ' -r email
+
+    confirm "'$email' is correct?" && break
+done
 
 ssh-keygen -t ed25519 -C "$email"
 
@@ -46,6 +49,16 @@ echo "Copy following for ssh key:"
 cat "$HOME/.ssh/id_ed25519.pub"
 
 read -p "Hit enter to continue..." -r
+
+git config --global user.email "$email"
+
+while :; do
+    read -p "Enter git username: " -r guName
+
+    confirm "'$guName' is correct?" && break
+done
+
+git config --global user.name "$guName"
 
 if [ ! -d "$HOME/Repos" ]; then
     mkdir "$HOME/Repos"

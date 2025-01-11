@@ -13,7 +13,7 @@ echo $'\n\n Please enter Exec:'
 read inputExec
 
 if [ ! -d /home/$USER/.local/share/applications ]; then
-    echo "~/.local/share/applications dir not found. Creating..."
+    echo "$HOME/.local/share/applications dir not found. Creating..."
     mkdir /home/$USER/.local/share/applications
 fi
 

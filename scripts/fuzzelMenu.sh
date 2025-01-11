@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#!/usr/bin/bash
 
 # Made with Basher
 # Goblins question Linux?

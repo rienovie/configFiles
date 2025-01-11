@@ -26,3 +26,4 @@ gnome-browser-connector
 gnome-tweaks
 lua51
 steam
+bluez

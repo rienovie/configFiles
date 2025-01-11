@@ -2,8 +2,9 @@
 
 # input is prompt
 # auto appends [y/N]
-# will exit if No
-# TODO: make it return a bool or something
+# Defaults No, use affirm for default Yes
+# returns 0 for yes 1 for no
+# so you can just type: if confirm; then
 confirm() {
 
     confirmInput="$1"
@@ -18,11 +19,10 @@ confirm() {
 
     case "$confirmSelection" in
     [yY] | [yY][eE][sS])
-        echo "Continuing..."
+        return 0
         ;;
     "" | [nN] | [nN][oO])
-        echo "Canceling..."
-        exit 1
+        return 1
         ;;
     *)
         echo "$confirmSelection is not a valid option."
@@ -30,3 +30,42 @@ confirm() {
         ;;
     esac
 }
+
+# input is prompt
+# auto appends [Y/n]
+# Defaults Yes, use confirm for default No
+# returns 0 for yes 1 for no
+# so you can just type: if affirm; then
+affirm() {
+
+    confirmInput="$1"
+
+    if [ $# -gt 0 ]; then
+        confirmPrompt="$confirmInput [Y/n]:"
+    else
+        confirmPrompt="Continue? [Y/n]:"
+    fi
+
+    read -p "$confirmPrompt" -r confirmSelection
+
+    case "$confirmSelection" in
+    "" | [yY] | [yY][eE][sS])
+        return 0
+        ;;
+    [nN] | [nN][oO])
+        return 1
+        ;;
+    *)
+        echo "$confirmSelection is not a valid option."
+        confirm "$confirmInput"
+        ;;
+    esac
+}
+
+# # do while example
+# while :; do
+#     read -p 'Enter email: ' -r email
+#
+#     confirm "'$email' is correct?" && break
+# done
+
