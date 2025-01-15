@@ -13,3 +13,4 @@ nwg-drawer
 sqlitebrowser
 sway
 nwg-panel
+fastfetch
