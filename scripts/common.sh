@@ -69,3 +69,9 @@ affirm() {
 #     confirm "'$email' is correct?" && break
 # done
 
+runExtern() {
+
+    "$@" </dev/null &>/dev/null &
+
+}
+

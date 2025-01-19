@@ -8,6 +8,8 @@ in basher handle spaces in file names
 
 in basher have option to set directory where script is created
 
-make a script that lists all the applications I use on arch and installs them, I can use this for a fresh install if needed and makes sure I have everything I need
-
 make or possibly modify basher to be able to quickly add files via cmake or have global scripts that can be used for the same thing, could add input types and allow users to do much more with basher
+
+fix when hitting modify on empty entry in basher
+
+update util functions to not need cpp 20 (map .contains function keeps giving issues)

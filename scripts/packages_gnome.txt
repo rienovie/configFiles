@@ -27,3 +27,4 @@ gnome-tweaks
 lua51
 steam
 bluez
+bear

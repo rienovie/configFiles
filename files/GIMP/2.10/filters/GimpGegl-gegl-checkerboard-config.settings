@@ -1,0 +1,12 @@
+# settings
+
+(GimpGegl-gegl-checkerboard-config "2025-01-18 20:51:27"
+    (time 1737251487)
+    (x 1)
+    (y 1)
+    (x-offset 0)
+    (y-offset 0)
+    (color1 (color-rgba 0.0051741134375333786 0.51764958381652837 0.31963017582893372 1))
+    (color2 (color-rgba 0 0 0 1)))
+
+# end of settings

@@ -46,3 +46,4 @@ xournalpp
 yazi
 fastfetch
 steam
+bear
