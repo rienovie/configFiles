@@ -1180,7 +1180,7 @@
   <resource identifier="${gimp_data_dir}/gradients/Yellow_Orange.ggr" checksum="428584726006e23e260baa2a7d79f295">
   </resource>
 
-  <resource identifier="gimp-palette-color-history" checksum="(null)">
+  <resource identifier="gimp-palette-color-history" checksum="1714967b663d876988a13ff78e97f9ad">
   </resource>
 
   <resource identifier="${gimp_data_dir}/palettes/Bears.gpl" checksum="e82e818c20ac12bdd21049924ea2d1e7">
@@ -1433,6 +1433,291 @@
   </resource>
 
   <resource identifier="DejaVu Serif Semi-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Mono" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Mono Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Mono Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Bold Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Bold Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Heavy Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Heavy Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Light Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Light Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Medium Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Medium Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Semi-Bold Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Semi-Bold Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Semi-Light Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Semi-Light Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Thin Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Bold Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Bold Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Light Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Light Italic Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Light Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Compressed Ultra-Light Ultra-Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Bold Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Bold Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Heavy Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Heavy Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Light Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Light Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Medium Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Medium Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Semi-Bold Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Semi-Bold Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Semi-Light Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Semi-Light Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Thin Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Bold Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Bold Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Light Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Light Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Light Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Condensed, Ultra-Light Italic Condensed" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Heavy Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Light Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Medium Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Semi-Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Semi-Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Semi-Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Semi-Light Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Thin Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Light Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans Ultra-Light Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans weight=950" checksum="(null)">
+  </resource>
+
+  <resource identifier="Fira Sans weight=950 Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Liberation Mono" checksum="(null)">
@@ -8185,9 +8470,6 @@
   <resource identifier="Open Sans" checksum="(null)">
   </resource>
 
-  <resource identifier="Open Sans" checksum="(null)">
-  </resource>
-
   <resource identifier="Open Sans Bold" checksum="(null)">
   </resource>
 
@@ -8201,9 +8483,6 @@
   </resource>
 
   <resource identifier="Open Sans Condensed" checksum="(null)">
-  </resource>
-
-  <resource identifier="Open Sans Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Open Sans Italic" checksum="(null)">

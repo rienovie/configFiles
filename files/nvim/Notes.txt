@@ -12,4 +12,6 @@ make or possibly modify basher to be able to quickly add files via cmake or have
 
 fix when hitting modify on empty entry in basher
 
-update util functions to not need cpp 20 (map .contains function keeps giving issues)
+possibly add a util function that clears values instead of having multiple lines of x.clear();
+
+on sway nwg-panel make executor for system updates

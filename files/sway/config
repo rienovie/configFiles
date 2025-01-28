@@ -19,12 +19,14 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $menu /home/vince/Scripts/rofiMenu.sh
+set $menu nwg-drawer
 set $browser firefox
-set $files pcmanfm-qt
+# set $files pcmanfm-qt
+set $files nautilus
 
 exec nwg-panel
-exec lxqt-policykit-agent
+# exec lxqt-policykit-agent
+exec systemctl --user start plasma-polkit-agent
 exec dunst
 exec steam -silent
 exec discord --start-minimized
@@ -33,7 +35,7 @@ exec pcmanfm-qt -d
 exec systemctl start bluetooth.service
 exec sleep 2 && blueman-applet
 exec nwg-drawer -r
-exec waybar
+# exec waybar
 
 # For animations
 set $animate_fps 75
@@ -41,36 +43,36 @@ set $animate_duration 300
 
 ### Appearance
 
-layer_effects * blur enable
-
-# window corner radius in px
-corner_radius 20
-
-# Window background blur
-blur enable
-blur_xray enable
-blur_passes 2
-blur_radius 5
-
-shadows on
-shadows_on_csd off
-shadow_blur_radius 20
-shadow_color #0000007F
-
-# inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
-default_dim_inactive 0.25
-dim_inactive_colors.unfocused #000000FF
-dim_inactive_colors.urgent #900000FF
-
-# Move minimized windows into Scratchpad (enable|disable)
-scratchpad_minimize disable
+# layer_effects * blur enable
+#
+# # window corner radius in px
+# corner_radius 20
+#
+# # Window background blur
+# blur enable
+# blur_xray enable
+# blur_passes 2
+# blur_radius 5
+#
+# shadows on
+# shadows_on_csd off
+# shadow_blur_radius 20
+# shadow_color #0000007F
+#
+# # inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
+# default_dim_inactive 0.25
+# dim_inactive_colors.unfocused #000000FF
+# dim_inactive_colors.urgent #900000FF
+#
+# # Move minimized windows into Scratchpad (enable|disable)
+# scratchpad_minimize disable
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /home/vince/Repos/configFiles/wallpapers/HexBatWallpaperMk2.png fill
-output DP-2 mode 2560x1440@75hz bg /home/vince/Repos/configFiles/wallpapers/HexBatWallpaperMk2.png fill
-output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill
+output DP-2 mode 2560x1440@75hz bg /usr/share/backgrounds/nwg-shell/nwg-chain.jpg fill position 0,0
+output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill position 2560,-150
 #
 # Example configuration:
 #
@@ -122,6 +124,7 @@ input "type:keyboard" {
     xkb_numlock enabled
 }
 
+#
 ### Key bindings
 #
     bindsym $mod+t exec $term
@@ -203,8 +206,8 @@ input "type:keyboard" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+m splith
-    bindsym $mod+n splitv
+    # bindsym $mod+m splith
+    # bindsym $mod+n splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+y layout stacking

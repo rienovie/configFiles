@@ -21,9 +21,10 @@
     (show-hsv yes)
     (display-module "CdisplayLcms"))
 (import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
-(monitor-xresolution 59)
-(monitor-yresolution 148)
+(monitor-xresolution 93)
+(monitor-yresolution 94)
 (toolbox-groups no)
+(selection-border-radius 2)
 (fill-options
     (style solid)
     (antialias yes)
