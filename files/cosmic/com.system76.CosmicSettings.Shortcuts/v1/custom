@@ -3,56 +3,19 @@
         modifiers: [
             Super,
         ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "i",
-    ): System(WebBrowser),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "s",
-    ): Focus(Down),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "l",
-    ): Disable,
-    (
-        modifiers: [
-            Ctrl,
-            Alt,
-        ],
-        key: "Right",
-    ): NextWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "v",
-    ): ToggleWindowFloating,
+        key: "a",
+    ): Focus(Left),
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "Right",
+        key: "Up",
     ): Disable,
     (
         modifiers: [
             Super,
             Shift,
-        ],
-        key: "s",
-    ): Move(Down),
-    (
-        modifiers: [
-            Super,
         ],
         key: "Down",
     ): Disable,
@@ -66,47 +29,52 @@
         modifiers: [
             Super,
         ],
-        key: "g",
+        key: "s",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "i",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Right",
     ): Disable,
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "Down",
+        key: "Left",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "d",
-    ): Focus(Right),
+        key: "x",
+    ): Close,
     (
         modifiers: [
             Super,
         ],
-        key: "a",
-    ): Focus(Left),
+        key: "k",
+    ): Disable,
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "a",
-    ): Move(Left),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "d",
-    ): Move(Right),
+        key: "y",
+    ): Disable,
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "h",
+        key: "k",
     ): Disable,
     (
         modifiers: [
@@ -119,13 +87,7 @@
         modifiers: [
             Super,
         ],
-        key: "w",
-    ): Focus(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "h",
+        key: "g",
     ): Disable,
     (
         modifiers: [
@@ -137,9 +99,45 @@
     (
         modifiers: [
             Super,
-            Shift,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
         ],
         key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): System(AppLibrary),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "w",
+    ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Escape",
     ): Disable,
     (
         modifiers: [
@@ -152,7 +150,40 @@
         modifiers: [
             Super,
         ],
-        key: "o",
+        key: "d",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "s",
+    ): Move(Down),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "d",
+    ): Move(Right),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Up",
     ): Disable,
     (
         modifiers: [
@@ -163,40 +194,14 @@
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "j",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Up",
+        key: "o",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "x",
-    ): Close,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "y",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "k",
+        key: "Right",
     ): Disable,
     (
         modifiers: [
@@ -207,6 +212,13 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "a",
+    ): Move(Left),
+    (
+        modifiers: [
+            Super,
         ],
         key: "t",
     ): Spawn("sh /home/vince/Scripts/kitty_launch.sh"),
@@ -214,13 +226,13 @@
         modifiers: [
             Super,
         ],
-        key: "b",
-    ): Disable,
+        key: "v",
+    ): ToggleWindowFloating,
     (
         modifiers: [
-            Super,
-            Shift,
+            Ctrl,
+            Alt,
         ],
-        key: "k",
-    ): Disable,
+        key: "Right",
+    ): NextWorkspace,
 }

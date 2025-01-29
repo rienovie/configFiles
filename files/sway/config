@@ -14,7 +14,7 @@ set $down s
 set $up w
 set $right d
 # Your preferred terminal emulator
-set $term kitty
+set $term sh /home/vince/Scripts/kitty_launch.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -27,11 +27,12 @@ set $files nautilus
 exec nwg-panel
 # exec lxqt-policykit-agent
 exec systemctl --user start plasma-polkit-agent
-exec dunst
+# exec dunst
+exec swaync
 exec steam -silent
 exec discord --start-minimized
-exec bash /home/vince/Scripts/checkForUpdates.sh
-exec pcmanfm-qt -d
+# exec bash /home/vince/Scripts/checkForUpdates.sh
+# exec pcmanfm-qt -d
 exec systemctl start bluetooth.service
 exec sleep 2 && blueman-applet
 exec nwg-drawer -r
@@ -71,7 +72,7 @@ set $animate_duration 300
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /home/vince/Repos/configFiles/wallpapers/HexBatWallpaperMk2.png fill
-output DP-2 mode 2560x1440@75hz bg /usr/share/backgrounds/nwg-shell/nwg-chain.jpg fill position 0,0
+output DP-2 mode 2560x1440@75hz bg /usr/share/backgrounds/nwg-shell/nwg-hole.jpg fill position 0,0
 output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill position 2560,-150
 #
 # Example configuration:

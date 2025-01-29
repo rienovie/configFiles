@@ -25,6 +25,7 @@
     "modules-center": [],
     "modules-right": [
       "playerctl",
+      "executor-update_check",
       "tray",
       "executor-weather",
       "clock"
@@ -41,7 +42,7 @@
       "show-volume": true,
       "show-battery": false,
       "interval": 1,
-      "icon-size": 20,
+      "icon-size": 24,
       "hover-opens": false,
       "leave-closes": false,
       "click-closes": true,
@@ -54,6 +55,11 @@
           "name": "Panel settings",
           "icon": "nwg-panel",
           "cmd": "nwg-panel-config"
+        },
+        {
+          "name": "Power Menu",
+          "icon": "/usr/share/icons/hicolor/scalable/apps/com.system76.CosmicAppletPower-symbolic.svg",
+          "cmd": "nwg-bar"
         }
       ],
       "menu": {
@@ -161,7 +167,7 @@
       "angle": 0.0
     },
     "clock": {
-      "format": " %I:%M %P %A %x ",
+      "format": " | %x | %a %I:%M %P | ",
       "tooltip-text": "",
       "tooltip-date-format": false,
       "on-left-click": "",
@@ -334,6 +340,40 @@
       "tooltip": "",
       "css-name": "",
       "icon-size": 20
+    },
+    "executor-updater": {
+      "script": "checkupdates",
+      "tooltip-text": "",
+      "on-left-click": "kitty sh -c \"eos-update && read\"",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "css-name": "",
+      "icon-placement": "left",
+      "icon-size": 16,
+      "interval": 900,
+      "angle": 0.0,
+      "sigrt": 34,
+      "use-sigrt": false
+    },
+    "executor-update_check": {
+      "script": "lua /home/vince/Scripts/nwg_update.lua",
+      "tooltip-text": "Update",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "kitty sh -c \"eos-update && read\"",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "css-name": "",
+      "icon-placement": "right",
+      "icon-size": 16,
+      "interval": 1800,
+      "angle": 0.0,
+      "sigrt": 34,
+      "use-sigrt": false
     }
   }
 ]
