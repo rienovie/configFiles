@@ -31,6 +31,7 @@ exec systemctl --user start plasma-polkit-agent
 exec swaync
 exec steam -silent
 exec discord --start-minimized
+exec lua /home/vince/Scripts/nwg_executor/nwg_executor_update.lua --const
 # exec bash /home/vince/Scripts/checkForUpdates.sh
 # exec pcmanfm-qt -d
 exec systemctl start bluetooth.service

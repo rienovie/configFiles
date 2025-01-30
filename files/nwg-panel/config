@@ -24,10 +24,9 @@
     ],
     "modules-center": [],
     "modules-right": [
-      "playerctl",
       "executor-update_check",
+      "playerctl",
       "tray",
-      "executor-weather",
       "clock"
     ],
     "controls-settings": {
@@ -359,21 +358,35 @@
       "use-sigrt": false
     },
     "executor-update_check": {
-      "script": "lua /home/vince/Scripts/nwg_update.lua",
-      "tooltip-text": "Update",
-      "on-left-click": "",
+      "script": "cat /home/vince/Scripts/nwg_executor/nwg_executor_value",
+      "tooltip-text": "System Updates",
+      "on-left-click": "lua /home/vince/Scripts/nwg_executor/nwg_executor_click.lua",
       "on-middle-click": "",
-      "on-right-click": "kitty sh -c \"eos-update && read\"",
+      "on-right-click": "",
       "on-scroll-up": "",
       "on-scroll-down": "",
       "root-css-name": "",
       "css-name": "",
       "icon-placement": "right",
-      "icon-size": 16,
-      "interval": 1800,
+      "icon-size": 24,
+      "interval": 1,
       "angle": 0.0,
       "sigrt": 34,
       "use-sigrt": false
+    },
+    "swaync": {
+      "tooltip-text": "Notifications",
+      "on-left-click": "swaync-client -t",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "root-executor",
+      "css-name": "executor",
+      "icon-placement": "left",
+      "icon-size": 18,
+      "interval": 1,
+      "always-show-icon": false
     }
   }
 ]
