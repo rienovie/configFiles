@@ -16,7 +16,7 @@
     "padding-vertical": 0,
     "spacing": 0,
     "icons": "light",
-    "css-name": "panel-bottom",
+    "css-name": "panel-top",
     "modules-left": [
       "button-drawer",
       "sway-workspaces",
@@ -24,10 +24,10 @@
     ],
     "modules-center": [],
     "modules-right": [
-      "executor-update_check",
       "playerctl",
       "tray",
-      "clock"
+      "clock",
+      "executor-update_check"
     ],
     "controls-settings": {
       "components": [
@@ -54,6 +54,11 @@
           "name": "Panel settings",
           "icon": "nwg-panel",
           "cmd": "nwg-panel-config"
+        },
+        {
+          "name": "Reset Bar",
+          "icon": "",
+          "cmd": "killall nwg-panel && nwg-panel"
         },
         {
           "name": "Power Menu",
@@ -108,16 +113,16 @@
         "8"
       ],
       "name-max-len": 20,
-      "image-size": 16,
+      "image-size": 24,
       "workspaces-spacing": 0,
       "task-padding": 0,
       "show-app-icon": true,
       "show-app-name": true,
       "show-layout": false,
-      "workspace-buttons": true,
+      "workspace-buttons": false,
       "all-workspaces": true,
       "mark-autotiling": true,
-      "mark-xwayland": true,
+      "mark-xwayland": false,
       "all-outputs": true,
       "angle": 0.0
     },
@@ -141,13 +146,13 @@
         "4"
       ],
       "show-icon": false,
-      "image-size": 16,
+      "image-size": 24,
       "show-name": false,
       "name-length": 40,
-      "mark-autotiling": true,
+      "mark-autotiling": false,
       "mark-content": true,
       "hide-empty": false,
-      "show-layout": true,
+      "show-layout": false,
       "custom-labels": [],
       "focused-labels": [],
       "angle": 0.0
@@ -189,8 +194,8 @@
     },
     "playerctl": {
       "buttons-position": "right",
-      "icon-size": 12,
-      "chars": 45,
+      "icon-size": 20,
+      "chars": 30,
       "scroll": true,
       "button-css-name": "",
       "label-css-name": "",
@@ -279,7 +284,7 @@
       "root-css-name": "tray",
       "inner-css-name": "inner-tray",
       "smooth-scrolling-threshold": 0,
-      "new-left": false
+      "new-left": true
     },
     "random-wallpaper": {},
     "executor-weather": {
@@ -366,9 +371,9 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
       "root-css-name": "",
-      "css-name": "",
-      "icon-placement": "right",
-      "icon-size": 24,
+      "css-name": "update-check",
+      "icon-placement": "left",
+      "icon-size": 26,
       "interval": 1,
       "angle": 0.0,
       "sigrt": 34,
@@ -384,9 +389,9 @@
       "root-css-name": "root-executor",
       "css-name": "executor",
       "icon-placement": "left",
-      "icon-size": 18,
+      "icon-size": 24,
       "interval": 1,
-      "always-show-icon": false
+      "always-show-icon": true
     }
   }
 ]

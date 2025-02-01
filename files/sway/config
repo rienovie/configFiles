@@ -20,7 +20,7 @@ set $term sh /home/vince/Scripts/kitty_launch.sh
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $menu nwg-drawer
-set $browser firefox
+set $browser flatpak run app.zen_browser.zen
 # set $files pcmanfm-qt
 set $files nautilus
 
@@ -31,7 +31,7 @@ exec systemctl --user start plasma-polkit-agent
 exec swaync
 exec steam -silent
 exec discord --start-minimized
-exec lua /home/vince/Scripts/nwg_executor/nwg_executor_update.lua --const
+exec sleep 2 && lua /home/vince/Scripts/nwg_executor/nwg_executor_update.lua --const
 # exec bash /home/vince/Scripts/checkForUpdates.sh
 # exec pcmanfm-qt -d
 exec systemctl start bluetooth.service
@@ -73,7 +73,7 @@ set $animate_duration 300
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /home/vince/Repos/configFiles/wallpapers/HexBatWallpaperMk2.png fill
-output DP-2 mode 2560x1440@75hz bg /usr/share/backgrounds/nwg-shell/nwg-hole.jpg fill position 0,0
+output DP-2 mode 2560x1440@75hz bg /home/vince/Pictures/cyanDark.jxl fill position 0,0
 output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill position 2560,-150
 #
 # Example configuration:

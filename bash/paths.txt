@@ -16,3 +16,4 @@ nwg-panel
 fastfetch
 cosmic
 GIMP
+swaync

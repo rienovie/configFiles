@@ -29,7 +29,8 @@ button {
 
 /* Top panel in sample config uses this name */
 #panel-top {
-	background: #101010;
+	background: rgba(0, 0, 0, 0.25);
+	/* background: #101010; */
 	color: #eeeeee
 }
 
@@ -41,8 +42,9 @@ button {
 
 /* Controls window in sample config uses this name */
 #controls-window {
-	border-radius: 15px;
-	background: #36364f;
+	border-radius: 4px;
+	/* background: #36364f; */
+	background: rgba(0, 0, 0, 0.9);
 	color: #eeeeee
 }
 
@@ -110,4 +112,11 @@ button {
 #dwl-tag-selected {
 	border: solid 2px;
 	border-color: #81a1c1
+}
+
+#update-check {
+	/* padding-left: 25px; */
+	/* padding-right: 25px; */
+	margin-left: 25px;
+	margin-right: 25px;
 }
