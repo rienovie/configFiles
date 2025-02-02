@@ -9,8 +9,8 @@ while :; do
     checkupdates
     # not sure why but returns 2 when nothing is there
     if [ $? -ne 2 ]; then
-        play /home/vince/Music/sounds/boot.ogg
-        ACTION=$(dunstify -u critical "" -a "Updates are available" -i /usr/share/icons/breeze-dark/status/24/update-low.svg --action="open,open")
+        play /home/vince/Music/sounds/boot.ogg &
+        ACTION=$(dunstify -u critical "Updates are available" -a "Updates are available" -i /usr/share/icons/Cosmic/scalable/status/software-update-available-symbolic.svg --action="open,open")
         if [ "$ACTION" == "open" ]; then
             kitty sh -c "eos-update && echo 'Updates have finished.' && read"
         fi

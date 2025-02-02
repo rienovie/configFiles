@@ -17,3 +17,5 @@ fastfetch
 cosmic
 GIMP
 swaync
+nwg-dock-hyprland
+nwg-bar

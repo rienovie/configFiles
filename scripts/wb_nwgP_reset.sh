@@ -2,6 +2,6 @@
 
 # This is kinda buggy, but works so meh
 
-killall waybar nwg-panel
+killall waybar nwg-dock-hyprland
 
-nwg-panel && waybar
+nwg-dock-hyprland -p left -x -f && waybar
