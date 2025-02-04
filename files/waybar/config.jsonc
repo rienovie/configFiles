@@ -31,33 +31,33 @@
         // ],
         "modules-center": [
             // "custom/left-arrow-dark",
-            "custom/playerctl"
+            "tray",
+            "memory",
+            "cpu",
+            "pulseaudio",
+            "custom/playerctl",
+            "clock",
+            "hyprland/workspaces",
+            "custom/swaync",
+            "custom/power"
             // "custom/right-arrow-dark",
         ],
         "modules-right": [
             // "custom/left-arrow-dark",
-            "tray",
-            "backlight",
+            "backlight"
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "clock",
-            "pulseaudio",
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "cpu",
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "memory",
             // "custom/right-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
             // "custom/left-arrow-light",
             // "custom/left-arrow-dark",
-            "hyprland/workspaces",
-            "custom/swaync",
-            "custom/power"
         ],
         // Modules configuration
         "custom/left-arrow-dark": {

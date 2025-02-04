@@ -101,7 +101,7 @@
 .notification-row .notification-background .notification .notification-default-action .notification-content .image {
   /* Notification Primary Image */
   -gtk-icon-effect: none;
-  border-radius: 100px;
+  border-radius: 5px;
   /* Size in px */
   margin: 4px;
 }

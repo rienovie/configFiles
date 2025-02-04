@@ -4,4 +4,4 @@
 
 killall waybar nwg-dock-hyprland
 
-nwg-dock-hyprland -p left -x -f && waybar
+nwg-dock-hyprland -p bottom -x -f && waybar
