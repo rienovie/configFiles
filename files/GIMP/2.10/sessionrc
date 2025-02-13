@@ -11,13 +11,13 @@
     (size 640 480))
 (session-info "toplevel"
     (factory-entry "gimp-single-image-window")
-    (position 2 59)
-    (size 2556 1379)
+    (position 1285 61)
+    (size 1266 1304)
     (open-on-exit)
     (aux-info
         (left-docks-width "188")
         (right-docks-width "272")
-        (maximized "yes"))
+        (maximized "no"))
     (gimp-toolbox
         (side left)
         (book
@@ -88,7 +88,7 @@
     (position 1823 551))
 (session-info "toplevel"
     (factory-entry "gimp-file-export-dialog")
-    (position 716 316)
+    (position 881 293)
     (size 1128 840))
 (session-info "toplevel"
     (factory-entry "gimp-brightness-contrast-tool-dialog")
