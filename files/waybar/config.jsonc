@@ -293,7 +293,8 @@
             "format": "   ⏻   ",
             // "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
             // "on-click": "wlogout"
-            "on-click": "nwg-bar"
+            "on-click": "wlogout -b 5"
+            // "on-click": "nwg-bar"
             // "tooltip": false,
             // "menu": "on-click",
             // "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder

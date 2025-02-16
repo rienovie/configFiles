@@ -123,10 +123,12 @@ window#waybar.bottom {
 
 #custom-playerctl {
 	color: #1a7d98;
-	border-bottom-left-radius: 50px;
-	border-bottom-right-radius: 50px;
+	/* border-bottom-left-radius: 50px; */
+	/* border-bottom-right-radius: 50px; */
+	border-radius: 8px;
 	background-color: rgba(40, 40, 60, 0.5);
-	border: 2px double rgba(40, 40, 60, 0.5);
+	border: 3px solid rgba(40, 40, 60, 0.5);
+	margin-left: 5px;
 }
 
 #custom-playerctl:hover {
@@ -155,6 +157,7 @@ window#waybar.bottom {
 
 #tray {
 	padding-right: 12px;
+	-webkit-text-stroke: 12px;
 	padding-top: 6px;
 }
 

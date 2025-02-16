@@ -1,17 +1,7 @@
 {
-    "label" : "waybar",
-    "action" : "bash /home/vince/Scripts/waybarReset.sh",
-    "text" : "Waybar Reset",
-}
-{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown",
-}
-{
-    "label" : "kill",
-    "action" : "hyprctl kill",
-    "text" : "Kill App",
 }
 {
     "label" : "reboot",
@@ -19,12 +9,17 @@
     "text" : "Reboot",
 }
 {
-    "label" : "cancel",
-    "action" : "",
-    "text" : "Cancel",
-}
-{
     "label" : "logout",
     "action" : "hyprctl dispatch exit",
     "text" : "Logout",
+}
+{
+    "label" : "kill",
+    "action" : "hyprctl kill",
+    "text" : "Kill App",
+}
+{
+    "label" : "cancel",
+    "action" : "",
+    "text" : "Cancel",
 }
