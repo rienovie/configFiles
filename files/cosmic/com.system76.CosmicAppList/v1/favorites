@@ -1,8 +1,8 @@
 [
-    "firefox",
+    "app.zen_browser.zen",
     "kitty",
     "steam",
-    "com.system76.CosmicFiles",
+    "chromium",
     "com.system76.CosmicSettings",
     "discord",
     "Godot",

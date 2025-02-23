@@ -24,7 +24,9 @@
 (monitor-xresolution 93)
 (monitor-yresolution 94)
 (toolbox-groups no)
-(selection-border-radius 2)
+(selection-shrink-radius 16)
+(selection-border-radius 4)
+(selection-border-style hard)
 (fill-options
     (style solid)
     (antialias yes)
