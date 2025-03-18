@@ -19,8 +19,7 @@
     "css-name": "panel-top",
     "modules-left": [
       "button-drawer",
-      "sway-workspaces",
-      "sway-taskbar"
+      "hyprland-taskbar"
     ],
     "modules-center": [],
     "modules-right": [
@@ -57,13 +56,13 @@
         },
         {
           "name": "Reset Bar",
-          "icon": "",
+          "icon": "/usr/share/icons/Cosmic/scalable/actions/view-refresh.svg",
           "cmd": "killall nwg-panel && nwg-panel"
         },
         {
           "name": "Power Menu",
-          "icon": "/usr/share/icons/hicolor/scalable/apps/com.system76.CosmicAppletPower-symbolic.svg",
-          "cmd": "nwg-bar"
+          "icon": "/usr/share/icons/Cosmic/scalable/actions/system-shutdown.svg",
+          "cmd": "wlogout -b 5"
         }
       ],
       "menu": {
@@ -133,10 +132,13 @@
       "client-padding": 0,
       "show-app-icon": true,
       "show-app-name": true,
-      "show-layout": true,
-      "all-outputs": false,
-      "mark-xwayland": true,
-      "angle": 0.0
+      "show-layout": false,
+      "all-outputs": true,
+      "mark-xwayland": false,
+      "angle": 0.0,
+      "show-app-name-special": true,
+      "image-size": 16,
+      "task-padding": 0
     },
     "sway-workspaces": {
       "numbers": [
@@ -197,8 +199,8 @@
       "icon-size": 20,
       "chars": 30,
       "scroll": true,
-      "button-css-name": "",
-      "label-css-name": "",
+      "button-css-name": "player-btn",
+      "label-css-name": "player-lbl",
       "interval": 1,
       "show-cover": true,
       "cover-size": 24,
@@ -336,15 +338,6 @@
       "sigrt": 34,
       "use-sigrt": false
     },
-    "button-drawer": {
-      "command": "nwg-drawer",
-      "icon": "/usr/share/icons/Pop/scalable/actions/view-app-grid-symbolic.svg",
-      "label": " Apps",
-      "label-position": "right",
-      "tooltip": "",
-      "css-name": "",
-      "icon-size": 20
-    },
     "executor-updater": {
       "script": "checkupdates",
       "tooltip-text": "",
@@ -392,6 +385,15 @@
       "icon-size": 24,
       "interval": 1,
       "always-show-icon": true
+    },
+    "button-drawer": {
+      "command": "nwg-drawer",
+      "icon": "/usr/share/icons/Pop/scalable/actions/view-app-grid-symbolic.svg",
+      "label": "",
+      "label-position": "right",
+      "tooltip": "",
+      "css-name": "",
+      "icon-size": 32
     }
   }
 ]
