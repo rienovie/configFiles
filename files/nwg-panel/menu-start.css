@@ -1,6 +1,7 @@
 window {
 	/* background-color: rgba (36, 47, 79, 0.92); */
-	background-color: rgba (0, 0, 0, 0.92);
+	/* background-color: rgba (0, 0, 0, 0.92); */
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.98) 95%, rgba(0, 0, 0, 0) 125%);
 	color: #eeeeee
 }
 
@@ -10,7 +11,11 @@ list {
 }
 
 entry {
-	background-color: rgba (0, 0, 0, 0.2)
+	background-color: rgba (0, 0, 0, 1)
+}
+
+entry:hover {
+	background-color: rgba(255, 255, 255, 1);
 }
 
 button {

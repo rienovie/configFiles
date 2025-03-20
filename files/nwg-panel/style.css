@@ -2,7 +2,7 @@
 
 /* Recommended if panel "height" unset or smaller then your theme default button height */
 button {
-	margin: 2px;
+	margin: 3px;
 	background: linear-gradient(to top, rgba(20, 22, 34, 0.8) 25%, rgba(20, 22, 34, 0) 100%);
 	border: 0;
 }
@@ -36,7 +36,10 @@ button:hover {
 
 /* Top panel in sample config uses this name */
 #panel-top {
-	background: linear-gradient(to bottom, rgba(20, 22, 34, 0.8) 25%, rgba(20, 22, 34, 0) 100%);
+	/* background: linear-gradient(to bottom, rgba(20, 22, 34, 0.8) 25%, rgba(20, 22, 34, 0) 100%); */
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0.8) 95%, rgba(0, 0, 0, 0) 125%);
+	padding-top: 30px;
+	padding-bottom: 30px;
 	/* background: #101010; */
 	color: #eeeeee
 }

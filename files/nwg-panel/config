@@ -7,7 +7,7 @@
     "layer": "overlay",
     "position": "top",
     "controls": "right",
-    "menu-start": "off",
+    "menu-start": "left",
     "width": "auto",
     "height": 0,
     "margin-top": 0,
@@ -82,23 +82,25 @@
       "angle": 0.0
     },
     "menu-start-settings": {
-      "cmd-lock": "swaylock -f -c 000000",
-      "cmd-logout": "swaymsg exit",
+      "cmd-lock": ";",
+      "cmd-logout": ";",
       "cmd-restart": "systemctl reboot",
       "cmd-shutdown": "systemctl -i poweroff",
       "autohide": true,
-      "file-manager": "thunar",
+      "file-manager": "io.elementary.files",
       "height": 0,
       "icon-size-large": 32,
       "icon-size-small": 16,
-      "icon-size-button": 16,
+      "icon-size-button": 32,
       "margin-bottom": 0,
       "margin-left": 0,
       "margin-right": 0,
       "margin-top": 0,
-      "padding": 2,
-      "terminal": "foot",
-      "width": 0
+      "padding": 4,
+      "terminal": "kitty",
+      "width": 0,
+      "run-through-compositor": true,
+      "hover-opens-submenu": true
     },
     "sway-taskbar": {
       "workspace-menu": [
@@ -195,7 +197,7 @@
       "calendar-on": true
     },
     "playerctl": {
-      "buttons-position": "right",
+      "buttons-position": "left",
       "icon-size": 20,
       "chars": 30,
       "scroll": true,
@@ -259,7 +261,7 @@
       "angle": 0.0,
       "icon-placement": "start",
       "backlight-device": "",
-      "backlight-controller": "brightnessctl",
+      "backlight-controller": "ddcutil",
       "slider-orientation": "horizontal",
       "slider-inverted": false,
       "popup-icon-placement": "start",
@@ -269,7 +271,10 @@
       "popup-height": 64,
       "popup-horizontal-margin": 0,
       "popup-vertical-margin": 0,
-      "step-size": 1
+      "step-size": 1,
+      "show-brightness": false,
+      "show-volume": false,
+      "show-battery": true
     },
     "monitor": "",
     "width-as-percentage": false,
@@ -388,7 +393,7 @@
     },
     "button-drawer": {
       "command": "nwg-drawer",
-      "icon": "/usr/share/icons/Pop/scalable/actions/view-app-grid-symbolic.svg",
+      "icon": "/usr/share/icons/hicolor/scalable/categories/xapp-prefs-toolbar-symbolic.svg",
       "label": "",
       "label-position": "right",
       "tooltip": "",
