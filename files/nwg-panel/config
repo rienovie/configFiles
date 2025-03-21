@@ -197,7 +197,7 @@
       "calendar-on": true
     },
     "playerctl": {
-      "buttons-position": "left",
+      "buttons-position": "right",
       "icon-size": 20,
       "chars": 30,
       "scroll": true,
@@ -394,11 +394,11 @@
     "button-drawer": {
       "command": "nwg-drawer",
       "icon": "/usr/share/icons/hicolor/scalable/categories/xapp-prefs-toolbar-symbolic.svg",
-      "label": "",
+      "label": " Apps",
       "label-position": "right",
       "tooltip": "",
-      "css-name": "",
-      "icon-size": 32
+      "css-name": "btn_drawer",
+      "icon-size": 30
     }
   }
 ]

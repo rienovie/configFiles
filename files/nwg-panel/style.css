@@ -131,3 +131,7 @@ button:hover {
 	margin-left: 5px;
 	margin-right: 10px;
 }
+
+#btn_drawer {
+	color: rgba(255, 255, 255, 1);
+}
