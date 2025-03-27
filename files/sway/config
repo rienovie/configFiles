@@ -22,7 +22,7 @@ set $term sh /home/vince/Scripts/kitty_launch.sh
 set $menu nwg-drawer
 set $browser flatpak run app.zen_browser.zen
 # set $files pcmanfm-qt
-set $files nautilus
+set $files io.elementary.files
 
 exec nwg-panel
 # exec lxqt-policykit-agent

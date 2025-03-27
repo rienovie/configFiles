@@ -19,11 +19,13 @@
     "css-name": "panel-top",
     "modules-left": [
       "button-drawer",
-      "hyprland-taskbar"
+      "hyprland-taskbar",
+      "sway-taskbar"
     ],
     "modules-center": [],
     "modules-right": [
       "playerctl",
+      "sway-workspaces",
       "tray",
       "clock",
       "executor-update_check"
