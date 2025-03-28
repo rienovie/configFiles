@@ -616,6 +616,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- godot editing stuff
+
+if vim.uv.fs_stat(vim.fn.getcwd() .. "project.godot") and not vim.uv.fs_stat("/tmp/gdnv.pipe") then
+	vim.print("Starting Godot NeoVim Pipe Server")
+	vim.fn.serverstart("/tmp/gdnv.pipe")
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more inf
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
