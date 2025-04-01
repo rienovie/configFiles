@@ -10,12 +10,12 @@
 }
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit",
+    "action" : "sh /home/vince/Scripts/wlogout_exit.sh",
     "text" : "Logout",
 }
 {
     "label" : "kill",
-    "action" : "hyprctl kill",
+    "action" : "sh /home/vince/Scripts/wlogout_kill.sh",
     "text" : "Kill App",
 }
 {

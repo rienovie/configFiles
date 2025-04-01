@@ -36,7 +36,8 @@ exec sleep 2 && lua /home/vince/Scripts/nwg_executor/nwg_executor_update.lua --c
 # exec pcmanfm-qt -d
 exec systemctl start bluetooth.service
 exec sleep 2 && blueman-applet
-exec nwg-drawer -r
+exec nwg-drawer -r -nofs
+exec autotiling-rs
 # exec waybar
 
 # For animations
@@ -74,7 +75,7 @@ set $animate_duration 300
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /home/vince/Repos/configFiles/wallpapers/HexBatWallpaperMk2.png fill
 output DP-2 mode 2560x1440@75hz bg /home/vince/Pictures/cyanDark.jxl fill position 0,0
-output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill position 2560,-150
+output HDMI-A-1 mode 1920x1080@60hz bg /home/vince/Repos/configFiles/wallpapers/RightWall.png fill position 2560,400
 #
 # Example configuration:
 #
@@ -113,12 +114,12 @@ output HDMI-A-1 mode 1920x1200@60hz transform 270 bg /home/vince/Repos/configFil
 # NOTE: if I have just one it's too fast but -1.0 is the max you can set
 input "type:mouse" {
     accel_profile flat
-    pointer_accel -1.0
+    pointer_accel -1
 }
 
 input "5426:131:Razer_Razer_Basilisk_X_HyperSpeed_Keyboard" {
     accel_profile flat
-    pointer_accel -1.0
+    pointer_accel -1
 }
 
 input "type:keyboard" {
@@ -134,9 +135,23 @@ input "type:keyboard" {
     bindsym $mod+f exec $files
 
     bindsym $mod+x kill
-    bindsym $mod+b exec sh /home/vince/Scripts/wb_nwgP_reset.sh
+    bindsym $mod+b exec sh /home/vince/Scripts/nwg_panel_reset.sh
 
     bindsym $mod+space exec $menu
+
+#
+# Special Keys
+#
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86Search exec bemenu-run
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -282,5 +297,28 @@ bindsym $mod+r mode "resize"
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
+
+#
+# Theme Stuffs
+#
+# Color shemes for windows 
+set $bgcolor    #000000cc
+set $in-bgcolor #00000088
+set $text       #ffffff
+set $u-bgcolor  #ff0000
+set $indicator  #00000044
+set $in-text    #969696
+#                       border          background      text            indicator (a line which shows where the next window will be placed)     
+client.focused          $bgcolor        $bgcolor        $text           $indicator
+client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
+client.background       $bgcolor
+
+gaps inner 15
+gaps outer 5
+default_border normal 4
+title_align center
+
 
 include /etc/sway/config.d/*
