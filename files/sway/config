@@ -40,36 +40,6 @@ exec nwg-drawer -r -nofs
 exec autotiling-rs
 # exec waybar
 
-# For animations
-set $animate_fps 75
-set $animate_duration 300
-
-### Appearance
-
-# layer_effects * blur enable
-#
-# # window corner radius in px
-# corner_radius 20
-#
-# # Window background blur
-# blur enable
-# blur_xray enable
-# blur_passes 2
-# blur_radius 5
-#
-# shadows on
-# shadows_on_csd off
-# shadow_blur_radius 20
-# shadow_color #0000007F
-#
-# # inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
-# default_dim_inactive 0.25
-# dim_inactive_colors.unfocused #000000FF
-# dim_inactive_colors.urgent #900000FF
-#
-# # Move minimized windows into Scratchpad (enable|disable)
-# scratchpad_minimize disable
-
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -110,6 +80,7 @@ output HDMI-A-1 mode 1920x1080@60hz bg /home/vince/Repos/configFiles/wallpapers/
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+for_window [app_id="Godot"] floating enable
 
 # NOTE: if I have just one it's too fast but -1.0 is the max you can set
 input "type:mouse" {
@@ -281,24 +252,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position bottom
-#
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-
-#
 # Theme Stuffs
 #
 # Color shemes for windows 
@@ -320,5 +273,28 @@ gaps outer 5
 default_border normal 4
 title_align center
 
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# bar {
+#     position bottom
+#     height 32
+#
+#     separator_symbol |
+#     status_edge_padding 8
+#
+#     tray_padding 4
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#
+#     colors {
+#         statusline $text
+#         background $bgcolor
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
 include /etc/sway/config.d/*

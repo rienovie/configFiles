@@ -18,7 +18,7 @@ else
 fi
 
 confirmPrompt() {
-	echo $'\n\nsystem <<< repo\n\n'
+	echo $'\n\nsystem <--- repo\n\n'
 	read -p "Continue? [y/N] : " confirmation
 	
 	case "$confirmation" in

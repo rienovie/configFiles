@@ -19,3 +19,5 @@ GIMP
 swaync
 nwg-dock-hyprland
 nwg-bar
+niri
+godot

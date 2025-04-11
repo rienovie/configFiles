@@ -20,7 +20,8 @@
     "modules-left": [
       "button-drawer",
       "hyprland-taskbar",
-      "sway-taskbar"
+      "sway-taskbar",
+      "niri-taskbar"
     ],
     "modules-center": [],
     "modules-right": [
@@ -403,6 +404,19 @@
       "tooltip": "",
       "css-name": "btn_drawer",
       "icon-size": 30
+    },
+    "niri-taskbar": {
+      "name-max-len": 24,
+      "icon-size": 16,
+      "workspaces-spacing": 0,
+      "client-padding": 0,
+      "show-app-icon": true,
+      "show-app-name": true,
+      "show-layout": true,
+      "all-outputs": true,
+      "angle": 0.0,
+      "image-size": 16,
+      "task-padding": 0
     }
   }
 ]
