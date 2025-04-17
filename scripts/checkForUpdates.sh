@@ -12,7 +12,7 @@ while :; do
         play /home/vince/Music/sounds/boot.ogg &
         ACTION=$(dunstify -u critical "Updates are available" -a "Updates are available" -i /usr/share/pixmaps/nwg-update-available.svg --action="open,open")
         if [ "$ACTION" == "open" ]; then
-            kitty --class updater sh -c "eos-update && echo 'Updates have finished.' && read"
+            kitty --class updater sh -c "eos-update && read -p 'Updates have finished...'"
         fi
         sleep 1800
         continue
