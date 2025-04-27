@@ -1,6 +1,6 @@
 (
     output: "all",
-    source: Path("/home/vince/Pictures/cyanLight.jxl"),
+    source: Path("/home/vince/Pictures/cyanDark.jxl"),
     filter_by_theme: true,
     rotation_frequency: 3600,
     filter_method: Lanczos,
