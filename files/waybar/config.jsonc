@@ -31,34 +31,36 @@
         // ],
         "modules-center": [
             // "custom/left-arrow-dark",
+            // "custom/menu",
             "tray",
             "memory",
             "cpu",
             "pulseaudio",
             "custom/playerctl",
+            "custom/swaync",
+            "custom/updates",
             "clock",
             "hyprland/workspaces",
-            "custom/swaync",
             "custom/power"
             // "custom/right-arrow-dark",
         ],
-        "modules-right": [
-            // "custom/left-arrow-dark",
-            "backlight"
-            // "custom/left-arrow-light",
-            // "custom/left-arrow-dark",
-            // "custom/right-arrow-dark",
-            // "custom/left-arrow-light",
-            // "custom/left-arrow-dark",
-            // "custom/right-arrow-dark",
-            // "custom/left-arrow-light",
-            // "custom/left-arrow-dark",
-            // "custom/right-arrow-dark",
-            // "custom/left-arrow-light",
-            // "custom/left-arrow-dark",
-            // "custom/left-arrow-light",
-            // "custom/left-arrow-dark",
-        ],
+        // "modules-right": [
+        //     // "custom/left-arrow-dark",
+        //     "backlight"
+        //     // "custom/left-arrow-light",
+        //     // "custom/left-arrow-dark",
+        //     // "custom/right-arrow-dark",
+        //     // "custom/left-arrow-light",
+        //     // "custom/left-arrow-dark",
+        //     // "custom/right-arrow-dark",
+        //     // "custom/left-arrow-light",
+        //     // "custom/left-arrow-dark",
+        //     // "custom/right-arrow-dark",
+        //     // "custom/left-arrow-light",
+        //     // "custom/left-arrow-dark",
+        //     // "custom/left-arrow-light",
+        //     // "custom/left-arrow-dark",
+        // ],
         // Modules configuration
         "custom/left-arrow-dark": {
             "format": "",
@@ -279,18 +281,18 @@
         "custom/menu": {
             // "format" : " ░ ",
             // "format": " Ξ ",
-            // "format": "  𓃑 ",
+            "format": "  𓃑 ",
             // "format": "  ☰ ",
             // "format" : "  〄 ",
-            "format": "  ☵ Applications",
+            // "format": "  ☵ Applications",
             "tooltip-format": "Application Menu",
             // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
-            // "on-click": "nwg-drawer",
-            "on-click": "jgmenu_run"
+            "on-click": "nwg-drawer"
+            // "on-click": "jgmenu_run"
             // "on-click": "kando -m example-menu"
         },
         "custom/power": {
-            "format": "   ⏻   ",
+            "format": "  ",
             // "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
             // "on-click": "wlogout"
             "on-click": "wlogout -b 5"
@@ -315,8 +317,46 @@
             "on-click-right": "playerctl next"
         },
         "custom/swaync": {
-            "format": "   ≕  ",
+            "format": "    󰚢    ",
             "on-click": "swaync-client -t"
+        },
+        "custom/updates": {
+            "format": "{}",
+            "exec": "cat ~/Scripts/waybar_updates/updateValue",
+            "tooltip-format": "System Updates",
+            "on-click": "~/Scripts/waybar_updates/clicked.sh",
+            "interval": 1
+        }
+    },
+    {
+        "layer": "top",
+        "position": "bottom",
+        "height": 32,
+        "output": "DP-2",
+        "modules-left": [],
+        "modules-center": [
+            "custom/menu",
+            "custom/windowList"
+        ],
+        "modules-right": [],
+        "custom/windowList": {
+            "format": "{}",
+            "exec": "niri msg -j windows | jq -r '.[].title' | paste -sd'\t' | sed $'s/\t/ | /g'",
+            "interval": 1
+        },
+        "custom/menu": {
+            // "format": " ░ | ",
+            // "format": " Ξ ",
+            // "format": "  𓃑  | ",
+            // "format": "  ☰ ",
+            // "format": "  〄 ",
+            // "format": "  ☵ Application Drawer | ",
+            "format": "  〄 Apps || ",
+            "tooltip-format": "Application Menu",
+            // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+            "on-click": "nwg-drawer"
+            // "on-click": "jgmenu_run"
+            // "on-click": "kando -m example-menu"
         }
     },
     {

@@ -24,9 +24,9 @@ window#waybar {
 	transition-duration: 0.5s;
 }
 
-window#waybar.bottom {
-	background-image: linear-gradient(to top, rgba(20, 20, 40, 1) 0%, rgba(0, 0, 0, 0) 100%);
-}
+/* window#waybar.bottom { */
+/* 	background-image: linear-gradient(to top, rgba(20, 20, 40, 1) 0%, rgba(0, 0, 0, 0) 100%); */
+/* } */
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
