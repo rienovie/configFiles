@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+# HACK:
+# not sure why it runs the update script multiple times, but this is a stopgap for now
+if [ "$XDG_SESSION_DESKTOP" == "niri" ]; then
+    exit 0
+fi
+
 # initial sleep mosstly because of cosmic alpha
 sleep 5
 
