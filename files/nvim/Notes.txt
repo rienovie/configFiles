@@ -12,8 +12,6 @@ make or possibly modify basher to be able to quickly add files via cmake or have
 
 fix when hitting modify on empty entry in basher
 
-Learn how to jump from find to next/prev
-
 add jump to next/prev function
 
 goto def is deprecated

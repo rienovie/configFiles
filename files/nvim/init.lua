@@ -517,8 +517,8 @@ vim.keymap.set("n", "<F7>", "<cmd>:lua require('harpoon.mark').toggle_file()<CR>
 vim.keymap.set("n", "<C-x>", "<cmd>BufferClose<CR>")
 --vim.keymap.set("n", "<F6>", "<cmd>BufferPick<CR>")
 
-vim.keymap.set("n", "<C-n>", "<cmd>BufferNext<CR>")
-vim.keymap.set("n", "<C-p>", "<cmd>BufferPrevious<CR>")
+vim.keymap.set("n", "<C-S-n>", "<cmd>BufferNext<CR>")
+vim.keymap.set("n", "<C-S-p>", "<cmd>BufferPrevious<CR>")
 
 vim.keymap.set({ "n", "i" }, "<A-d>", "<Esc><cmd>:wincmd l<CR>")
 vim.keymap.set({ "n", "i" }, "<A-a>", "<Esc><cmd>:wincmd h<CR>")
