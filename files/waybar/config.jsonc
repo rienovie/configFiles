@@ -328,37 +328,37 @@
             "interval": 1
         }
     },
-    {
-        "layer": "top",
-        "position": "bottom",
-        "height": 32,
-        "output": "DP-2",
-        "modules-left": [],
-        "modules-center": [
-            "custom/menu",
-            "custom/windowList"
-        ],
-        "modules-right": [],
-        "custom/windowList": {
-            "format": "{}",
-            "exec": "niri msg -j windows | jq -r '.[].title' | paste -sd'\t' | sed $'s/\t/ | /g'",
-            "interval": 1
-        },
-        "custom/menu": {
-            // "format": " ░ | ",
-            // "format": " Ξ ",
-            // "format": "  𓃑  | ",
-            // "format": "  ☰ ",
-            // "format": "  〄 ",
-            // "format": "  ☵ Application Drawer | ",
-            "format": "  〄 Apps || ",
-            "tooltip-format": "Application Menu",
-            // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
-            "on-click": "nwg-drawer"
-            // "on-click": "jgmenu_run"
-            // "on-click": "kando -m example-menu"
-        }
-    },
+    // {
+    //     "layer": "top",
+    //     "position": "bottom",
+    //     "height": 32,
+    //     "output": "DP-2",
+    //     "modules-left": [],
+    //     "modules-center": [
+    //         "custom/menu",
+    //         "custom/windowList"
+    //     ],
+    //     "modules-right": [],
+    //     "custom/windowList": {
+    //         "format": "{}",
+    //         "exec": "niri msg -j windows | jq -r '.[].title' | paste -sd'\t' | sed $'s/\t/ | /g'",
+    //         "interval": 1
+    //     },
+    //     "custom/menu": {
+    //         // "format": " ░ | ",
+    //         // "format": " Ξ ",
+    //         // "format": "  𓃑  | ",
+    //         // "format": "  ☰ ",
+    //         // "format": "  〄 ",
+    //         // "format": "  ☵ Application Drawer | ",
+    //         "format": "  〄 Apps || ",
+    //         "tooltip-format": "Application Menu",
+    //         // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
+    //         "on-click": "nwg-drawer"
+    //         // "on-click": "jgmenu_run"
+    //         // "on-click": "kando -m example-menu"
+    //     }
+    // },
     {
         "layer": "top",
         "position": "top",

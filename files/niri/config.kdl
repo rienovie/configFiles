@@ -121,16 +121,16 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "always"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
+        proportion 0.45
+        proportion 0.75
+        proportion 0.95
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -140,7 +140,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.75; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -161,7 +161,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 3
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -308,6 +308,7 @@ window-rule {
     match app-id=r#".godot."#
     match app-id="Dream Escape"
     match app-id="updater"
+    match app-id="crystal-dock"
     exclude app-id=r#".godot.Editor"#
 
     open-floating true
@@ -323,6 +324,14 @@ window-rule {
     match is-focused=false
     opacity 0.85
     draw-border-with-background false
+}
+
+window-rule {
+    match app-id="updater"
+
+    default-column-width { fixed 2000; }
+    default-window-height { fixed 1200; }
+    opacity 1.0
 }
 
 // Example: block out two password managers from screen capture.
@@ -378,6 +387,7 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
+    Mod+Tab repeat=false { toggle-overview; }
     Mod+X { close-window; }
 
     Mod+W    { focus-window-up; }
@@ -393,10 +403,10 @@ binds {
     Mod+Shift+3 { move-window-to-workspace 3; }
     Mod+Shift+4 { move-window-to-workspace 4; }
 
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    // Mod+H     { focus-column-left; }
+    // Mod+J     { focus-window-down; }
+    // Mod+K     { focus-window-up; }
+    // Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
@@ -419,10 +429,10 @@ binds {
     Mod+Shift+Down  { focus-monitor-down; }
     Mod+Shift+Up    { focus-monitor-up; }
     Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H     { focus-monitor-left; }
+    Mod+H     { focus-monitor-left; }
     Mod+Shift+J     { focus-monitor-down; }
     Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
+    Mod+L     { focus-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
@@ -603,9 +613,12 @@ environment {
     DISPLAY ":0"
 }
 
-spawn-at-startup "xwayland-satellite"
+// replaced with autostart script
+// spawn-at-startup "xwayland-satellite"
+
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
+spawn-at-startup "crystal-dock"
 spawn-at-startup "swaybg" "-i" "/usr/share/endeavouros/backgrounds/eos_wallpapers_community/Endy_vector_satelliet.png" "-m" "fill"
 spawn-at-startup "swaync"
 
@@ -615,6 +628,8 @@ spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 // spawn-at-startup "sleep" "2" "&&" "lua" "/home/vince/Scripts/nwg_executor/nwg_executor_update.lua" "--const"
 spawn-at-startup "~/Scripts/waybar_updates/systemStartup.sh"
 
-spawn-at-startup "sleep" "2" "&&" "steam" "-silent"
-spawn-at-startup "sleep" "2" "&&" "discord" "--start-minimized"
+// replaced with autostart script
+// spawn-at-startup "sleep" "8" "&&" "steam" "-silent"
+// spawn-at-startup "sleep" "8" "&&" "discord" "--start-minimized"
+spawn-at-startup "~/Scripts/autostart_niri.sh"
 
