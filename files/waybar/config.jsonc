@@ -37,9 +37,9 @@
             "cpu",
             "pulseaudio",
             "custom/playerctl",
-            "custom/swaync",
-            "custom/updates",
             "clock",
+            "custom/updates",
+            "custom/swaync",
             "hyprland/workspaces",
             "custom/power"
             // "custom/right-arrow-dark",
