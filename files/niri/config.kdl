@@ -375,11 +375,16 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "sh" "/home/vince/Scripts/kitty_launch.sh"; }
-    Mod+Space { spawn "nwg-drawer" "-nofs"; }
+    // Mod+Space { spawn "nwg-drawer" "-nofs"; }
+    // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
+    Mod+Space { spawn "walker"; }
+    // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/rofiMenu.zsh"; }
+    // Mod+Space { spawn "tofi-run"; }
     Mod+F { spawn "io.elementary.files"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+B { spawn "sh" "/home/vince/Scripts/waybarReset.sh"; }
     // Super+Alt+L { spawn "swaylock"; }
+    // Mod { spawn "wofi" "--show" "run"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -623,7 +628,7 @@ environment {
 
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
-spawn-at-startup "crystal-dock"
+spawn-at-startup "bash" "-c" "crystal-dock"
 spawn-at-startup "swaybg" "-i" "/usr/share/endeavouros/backgrounds/eos_wallpapers_community/Endy_vector_satelliet.png" "-m" "fill"
 spawn-at-startup "swaync"
 

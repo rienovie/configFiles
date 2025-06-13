@@ -1,0 +1,377 @@
+/* Aurora Borealis Theme */
+
+@define-color foreground #E0F0F8;
+/* Light icy blue */
+@define-color background_dark #000F1A;
+/* Very dark almost black-blue */
+@define-color background_light #001C36;
+/* Dark navy */
+@define-color accent_green #33CC33;
+/* Bright green for aurora effect */
+@define-color accent_blue #3399FF;
+/* Bright blue for aurora effect */
+@define-color accent_purple #6633FF;
+/* Bright purple for aurora effect */
+@define-color highlight_color #ADD8E6;
+/* Light Blue */
+@define-color error_color rgba(255, 69, 0, 0.7);
+/* Orange-red */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1.3em;
+  border-radius: 8px;
+  color: @foreground;
+  box-shadow: 0 0 10px @error_color;
+  border: 2px solid @error_color;
+  /* Error shimmer */
+  -gtk-animation-name: shimmer;
+  -gtk-animation-duration: 1.5s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes shimmer {
+  0% {
+    box-shadow: 0 0 5px @error_color;
+  }
+
+  100% {
+    box-shadow: 0 0 20px @error_color;
+  }
+}
+
+#window {
+  color: @foreground;
+  /* Aurora background animation */
+  background: linear-gradient(135deg,
+      @background_dark 0%,
+      @accent_blue 30%,
+      @accent_green 60%,
+      @background_dark 100%);
+  background-size: 200% 200%;
+  -gtk-animation-name: aurora-flow;
+  -gtk-animation-duration: 20s;
+  /* Very long, smooth animation */
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+#box {
+  border-radius: 20px;
+  /* Very rounded, soft */
+  background: alpha(@background_light, 0.85);
+  /* Slightly transparent */
+  padding: 50px;
+  border: 1px solid alpha(@highlight_color, 0.3);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 15px 30px rgba(0, 0, 0, 0.3);
+  -gtk-backdrop-filter: blur(12px);
+  /* Strong frosted glass */
+  -gtk-transition: all 0.4s ease-out;
+  overflow: hidden;
+}
+
+#box:hover {
+  background: alpha(@background_light, 0.95);
+  border: 1px solid @accent_blue;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px @accent_green;
+  /* Green glow on hover */
+  transform: translateY(-8px);
+  /* Noticeable float up */
+}
+
+#search {
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  background: alpha(@background_dark, 0.8);
+  padding: 12px;
+  border-radius: 12px;
+  /* Very rounded search bar */
+  border: 1px solid alpha(@highlight_color, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+#search:focus-within {
+  border: 1px solid @highlight_color;
+  background: @background_dark;
+  box-shadow: 0 0 12px @highlight_color;
+}
+
+#prompt {
+  margin-left: 8px;
+  margin-right: 18px;
+  color: @accent_blue;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+#prompt:hover {
+  color: @accent_green;
+  opacity: 1;
+  transform: scale(1.1);
+  /* Gentle pop */
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+#clear:hover {
+  color: @accent_blue;
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 10px;
+  font-size: 1.2em;
+  padding: 7px;
+  color: @foreground;
+  background: alpha(@background_light, 0.7);
+  border: 1px solid alpha(@highlight_color, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+#input:focus {
+  background: @background_light;
+  border: 1px solid @highlight_color;
+  box-shadow: 0 0 10px @highlight_color;
+}
+
+#password {
+  background: alpha(@highlight_color, 0.2);
+}
+
+#spinner {
+  padding: 12px;
+  color: @accent_green;
+  /* Smooth color shifting pulse-spin */
+  -gtk-animation-name: color-pulse-spin;
+  -gtk-animation-duration: 2s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes color-pulse-spin {
+  0% {
+    -gtk-transform: rotate(0deg);
+    color: @accent_green;
+  }
+
+  50% {
+    -gtk-transform: rotate(180deg);
+    color: @accent_blue;
+  }
+
+  100% {
+    -gtk-transform: rotate(360deg);
+    color: @accent_green;
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.7;
+}
+
+#input placeholder {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.7);
+}
+
+#list {
+  margin-top: 15px;
+}
+
+child {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: all 0.5s ease-out;
+  border: 1px solid transparent;
+  background: alpha(@background_light, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+child:selected,
+child:hover {
+  background: alpha(@accent_green, 0.1);
+  border: 1px solid @accent_blue;
+  box-shadow: 0 0 18px alpha(@accent_green, 0.6);
+  transform: translateX(10px) scale(1.005);
+  /* Gentle slide and subtle zoom */
+  /* Flowing highlight */
+  -gtk-animation-name: flowing-highlight;
+  -gtk-animation-duration: 1.8s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes flowing-highlight {
+  0% {
+    background-color: alpha(@accent_green, 0.1);
+  }
+
+  50% {
+    background-color: alpha(@accent_blue, 0.15);
+  }
+
+  100% {
+    background-color: alpha(@accent_green, 0.1);
+  }
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 12px;
+  color: @accent_green;
+  opacity: 0.9;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 600;
+  color: @highlight_color;
+  text-shadow: 0 0 3px @highlight_color;
+}
+
+#sub {
+  opacity: 0.5;
+  font-size: 0.9em;
+  color: alpha(@foreground, 0.8);
+}
+
+#activationlabel {
+  color: @accent_blue;
+  transition: all 0.3s ease-in-out;
+}
+
+#activationlabel:hover {
+  color: @accent_green;
+}
+
+#bar {
+  margin-top: 20px;
+  background: alpha(@background_dark, 0.7);
+  border-radius: 12px;
+  padding: 8px;
+  border: 1px solid alpha(@highlight_color, 0.3);
+}
+
+.barentry {
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_blue, 0.15);
+  border: 1px solid @accent_green;
+  box-shadow: 0 0 12px @accent_blue;
+  transform: translateY(-4px);
+  /* Gentle lift */
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.4);
+  filter: saturate(0.5) brightness(0.6);
+}
+
+.aiItem {
+  padding: 20px;
+  border-radius: 15px;
+  color: @foreground;
+  background: alpha(@background_light, 0.8);
+  margin-bottom: 12px;
+  border: 1px solid alpha(@highlight_color, 0.4);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.aiItem:hover {
+  background: alpha(@background_light, 0.9);
+  box-shadow: 0 0 20px @accent_blue;
+  transform: scale(1.005);
+}
+
+.aiItem.user {
+  background: alpha(@background_dark, 0.8);
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 5px solid @accent_blue;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.aiItem.assistant {
+  background: alpha(@background_light, 0.8);
+  border-left: none;
+  border-right: 5px solid @accent_green;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

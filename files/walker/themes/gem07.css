@@ -1,0 +1,333 @@
+/* Hyperflux Theme */
+
+@define-color foreground #d2d5ff;
+
+@define-color background #282850EE;
+
+@define-color background_light #3c3c78;
+
+@define-color accent_color #4a4a94;
+
+@define-color secondary_accent #0f0f1ecc;
+
+@define-color highlight_color #7f7fff;
+/* Cyan */
+@define-color error_color rgba(255, 69, 0, 0.8);
+/* Orange-Red */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  color: @foreground;
+  box-shadow: 0 0 15px @error_color;
+  border: 2px solid @error_color;
+  /* Aggressive blink for errors */
+  -gtk-animation-name: aggressive-blink;
+  -gtk-animation-duration: 0.3s;
+  -gtk-animation-timing-function: steps(1);
+  -gtk-animation-iteration-count: 6;
+  /* Blink 6 times quickly */
+}
+
+@-gtk-keyframes aggressive-blink {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  margin: 25px;
+  border-radius: 8px;
+  background: @background;
+  padding: 25px;
+  border: 2px solid @secondary_accent;
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.6),
+    0 30px 40px rgba(0, 0, 0, 0.5);
+  -gtk-transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Quick elastic ease */
+}
+
+/* #box:hover { */
+/*   background: @background_light; */
+/*   border: 3px solid @accent_color; */
+/*   box-shadow: */
+/*     0 40px 80px rgba(0, 0, 0, 0.7), */
+/*     0 35px 50px rgba(0, 0, 0, 0.6), */
+/*     0 0 25px @accent_color; */
+/*   transform: scale(1.005); */
+/*   /* Very slight, quick zoom */
+/* } */
+
+#search {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 3px 6px rgba(0, 0, 0, 0.35);
+  background: @background_light;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid alpha(@secondary_accent, 0.9);
+  transition: all 0.15s ease-in-out;
+  /* Very fast transition */
+}
+
+#search:focus-within {
+  border: 2px solid @highlight_color;
+  box-shadow: 0 0 15px @highlight_color;
+  background: lighten(@background_light, 5%);
+}
+
+#prompt {
+  margin-left: 10px;
+  margin-right: 20px;
+  color: @accent_color;
+  opacity: 0.6;
+  transition: all 0.1s linear;
+  /* Instant-like transition */
+}
+
+#prompt:hover {
+  color: @highlight_color;
+  opacity: 1;
+  transform: rotate(5deg) scale(1.1);
+  /* Quick rotate and scale */
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.9;
+  transition: all 0.1s linear;
+}
+
+#clear:hover {
+  color: @accent_color;
+  opacity: 1;
+  transform: rotate(-5deg) scale(1.1);
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 7px;
+  font-size: 1.3em;
+  padding: 8px;
+  color: @foreground;
+  background: alpha(@secondary_accent, 0.3);
+  border: 1px solid alpha(@secondary_accent, 0.7);
+  transition: all 0.1s linear;
+  /* Fast response */
+}
+
+#input:focus {
+  background: @background_light;
+  border: 2px solid @highlight_color;
+  box-shadow: 0 0 8px @highlight_color;
+}
+
+#password {
+  background: alpha(@secondary_accent, 0.4);
+}
+
+#spinner {
+  padding: 15px;
+  color: @accent_color;
+  /* Hyper spin */
+  -gtk-animation-name: hyper-spin;
+  -gtk-animation-duration: 0.3s;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-timing-function: steps(12);
+  /* Very choppy and fast */
+}
+
+@-gtk-keyframes hyper-spin {
+  from {
+    -gtk-transform: rotate(0deg);
+  }
+
+  to {
+    -gtk-transform: rotate(360deg);
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.7;
+}
+
+#input placeholder {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.7);
+}
+
+#list {
+  margin-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 14px;
+}
+
+child {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.15s ease-out;
+  /* Fast snappy animation */
+  border: 1px solid transparent;
+  background: alpha(@background_light, 0.3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+child:selected,
+child:hover {
+  background: alpha(@highlight_color, 0.2);
+  border: 2px solid @accent_color;
+  box-shadow: 0 0 12px @accent_color;
+  transform: translateX(10px) scale(1.01);
+  /* Noticeable quick shift and zoom */
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 15px;
+  color: @accent_color;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 800;
+  /* Extra bold */
+  color: @highlight_color;
+  text-shadow: 0 0 5px alpha(@highlight_color, 0.9);
+}
+
+#sub {
+  opacity: 0.7;
+  font-size: 0.95em;
+  color: alpha(@foreground, 0.85);
+}
+
+#activationlabel {
+  color: @accent_color;
+  transition: all 0.1s linear;
+}
+
+#activationlabel:hover {
+  color: @highlight_color;
+}
+
+#bar {
+  margin-top: 25px;
+  background: alpha(@background_light, 0.4);
+  border-radius: 10px;
+  padding: 8px;
+  border: 1px solid alpha(@secondary_accent, 0.5);
+}
+
+.barentry {
+  padding: 12px;
+  border-radius: 6px;
+  transition: all 0.1s linear;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_color, 0.15);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 10px @accent_color;
+  transform: translateY(-3px) skewX(2deg);
+  /* Lift and slight skew */
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.4);
+  filter: saturate(0.2) brightness(0.7);
+  /* Heavily desaturate and dim */
+}
+
+.aiItem {
+  padding: 20px;
+  border-radius: 10px;
+  color: @foreground;
+  background: @background_light;
+  margin-bottom: 12px;
+  border: 1px solid alpha(@secondary_accent, 0.7);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-out;
+}
+
+.aiItem:hover {
+  box-shadow: 0 0 15px @highlight_color;
+  transform: translateY(-3px);
+  /* Quick lift */
+}
+
+.aiItem.user {
+  background: @background;
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 6px solid @accent_color;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.aiItem.assistant {
+  background: @background_light;
+  border-left: none;
+  border-right: 6px solid @highlight_color;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

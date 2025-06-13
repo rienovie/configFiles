@@ -21,3 +21,4 @@ nwg-dock-hyprland
 nwg-bar
 niri
 godot
+walker

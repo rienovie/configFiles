@@ -1,0 +1,231 @@
+/* Serene Nebula Theme */
+
+@define-color foreground #E0E0FF;
+/* Soft white/light blue for text */
+@define-color background #1A0D33;
+/* Deep, dark indigo for background */
+@define-color background_light #2C1A4A;
+/* Slightly lighter indigo for accents */
+@define-color accent_color #8A2BE2;
+/* Violet/Blue Violet for primary accents */
+@define-color secondary_accent #4B0082;
+/* Darker Indigo for secondary accents */
+@define-color highlight_color #9932CC;
+/* Dark Orchid for highlights */
+@define-color error_color rgba(255, 69, 0, 0.6);
+/* Orange-red for errors */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 1.3em;
+  border-radius: 4px;
+  color: @foreground;
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  border-radius: 8px;
+  background: @background;
+  padding: 40px;
+  border: 1px solid @secondary_accent;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 20px 20px rgba(0, 0, 0, 0.3);
+  -gtk-transition: all 0.3s ease-in-out;
+}
+
+#box:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 25px 25px rgba(0, 0, 0, 0.4),
+    0 0 15px @accent_color;
+}
+
+#search {
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  background: @background_light;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid alpha(@secondary_accent, 0.6);
+}
+
+#prompt {
+  margin-left: 6px;
+  margin-right: 15px;
+  color: @accent_color;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#prompt:hover {
+  opacity: 1;
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#clear:hover {
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 4px;
+  font-size: 1.1em;
+  padding: 4px;
+}
+
+#input {
+  background: none;
+  color: @foreground;
+}
+
+#password {
+  background: alpha(@secondary_accent, 0.3);
+}
+
+#spinner {
+  padding: 10px;
+  color: @accent_color;
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.7;
+}
+
+#input placeholder {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.7);
+}
+
+#list {
+  margin-top: 10px;
+}
+
+child {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+child:selected,
+child:hover {
+  background: alpha(@highlight_color, 0.4);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 8px alpha(@accent_color, 0.6);
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 10px;
+  color: @accent_color;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 600;
+  color: @highlight_color;
+}
+
+#sub {
+  opacity: 0.6;
+  font-size: 0.85em;
+  color: alpha(@foreground, 0.8);
+}
+
+#activationlabel {
+  color: @accent_color;
+}
+
+#bar {
+  margin-top: 15px;
+}
+
+.barentry {
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease-in-out;
+}
+
+.barentry:hover {
+  background: alpha(@background_light, 0.6);
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.6;
+  color: alpha(@foreground, 0.6);
+}
+
+.aiItem {
+  padding: 15px;
+  border-radius: 6px;
+  color: @foreground;
+  background: @background_light;
+  margin-bottom: 8px;
+  border: 1px solid alpha(@secondary_accent, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.aiItem.user {
+  background: @background;
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 4px solid @accent_color;
+  border-right: none;
+}
+
+.aiItem.assistant {
+  background: @background_light;
+  border-left: none;
+  border-right: 4px solid @highlight_color;
+}

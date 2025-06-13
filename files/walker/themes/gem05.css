@@ -1,0 +1,310 @@
+/* Cyber Pulse Theme */
+
+@define-color foreground #00FFCC;
+/* Bright Aqua/Cyan */
+@define-color background #0A0A0A;
+/* Near black */
+@define-color background_light #1C1C1C;
+/* Dark gray for subtle accents */
+@define-color accent_color #00CCFF;
+/* Electric Blue */
+@define-color secondary_accent #0099FF;
+/* Slightly darker blue */
+@define-color highlight_color #00FF66;
+/* Neon Green for highlights */
+@define-color error_color rgba(255, 0, 102, 0.7);
+/* Neon Pink for errors */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 30px;
+  padding: 12px;
+  font-size: 1.4em;
+  border-radius: 6px;
+  color: @foreground;
+  box-shadow: 0 0 10px @error_color;
+  /* Error glow */
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  border-radius: 10px;
+  background: @background;
+  padding: 45px;
+  border: 2px solid @secondary_accent;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 25px 25px rgba(0, 0, 0, 0.4);
+  -gtk-transition:
+    background 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out,
+    border 0.5s ease-in-out;
+}
+
+#box:hover {
+  background: @background_light;
+  border: 2px solid @accent_color;
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.6),
+    0 30px 30px rgba(0, 0, 0, 0.5),
+    0 0 20px @accent_color;
+  /* Stronger glow on hover */
+}
+
+#search {
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    0 2px 5px rgba(0, 0, 0, 0.25);
+  background: @background_light;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid alpha(@secondary_accent, 0.8);
+  -gtk-transition:
+    background 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+#search:focus-within {
+  border: 1px solid @highlight_color;
+  /* Glow border on focus */
+  box-shadow: 0 0 10px @highlight_color;
+}
+
+#prompt {
+  margin-left: 8px;
+  margin-right: 18px;
+  color: @accent_color;
+  opacity: 0.5;
+  transition:
+    color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+#prompt:hover {
+  color: @highlight_color;
+  opacity: 1;
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.8;
+  transition:
+    color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+#clear:hover {
+  color: @accent_color;
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 6px;
+  color: @foreground;
+  transition: all 0.3s ease-in-out;
+}
+
+#input {
+  background: none;
+}
+
+#input:focus {
+  background: alpha(@background_light, 0.5);
+  /* Background on focus */
+  border: 1px solid @highlight_color;
+  box-shadow: 0 0 5px @highlight_color;
+}
+
+#password {
+  background: alpha(@secondary_accent, 0.2);
+}
+
+#spinner {
+  padding: 12px;
+  color: @accent_color;
+  /* Simple spin animation */
+  -gtk-animation-name: spin;
+  -gtk-animation-duration: 1s;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-timing-function: linear;
+}
+
+@-gtk-keyframes spin {
+  from {
+    -gtk-transform: rotate(0deg);
+  }
+
+  to {
+    -gtk-transform: rotate(360deg);
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.6;
+}
+
+#input placeholder {
+  opacity: 0.3;
+  color: alpha(@foreground, 0.6);
+}
+
+#list {
+  margin-top: 15px;
+}
+
+child {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  background: alpha(@background_light, 0.2);
+}
+
+child:selected,
+child:hover {
+  background: alpha(@highlight_color, 0.2);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 10px @accent_color;
+  /* Stronger glow on hover/select */
+  transform: translateX(5px);
+  /* Slight shift animation */
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 12px;
+  color: @accent_color;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 700;
+  /* Bolder label */
+  color: @highlight_color;
+  text-shadow: 0 0 3px alpha(@highlight_color, 0.8);
+  /* Subtle text glow */
+}
+
+#sub {
+  opacity: 0.6;
+  font-size: 0.9em;
+  color: alpha(@foreground, 0.7);
+}
+
+#activationlabel {
+  color: @accent_color;
+  transition: color 0.2s ease-in-out;
+}
+
+#activationlabel:hover {
+  color: @highlight_color;
+}
+
+#bar {
+  margin-top: 20px;
+  background: alpha(@background_light, 0.3);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.barentry {
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_color, 0.1);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 8px @accent_color;
+  transform: translateY(-2px);
+  /* Lift effect */
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+  color: alpha(@foreground, 0.5);
+  filter: blur(0.5px);
+  /* Subtle blur on activated/faded elements */
+}
+
+.aiItem {
+  padding: 18px;
+  border-radius: 8px;
+  color: @foreground;
+  background: @background_light;
+  margin-bottom: 10px;
+  border: 1px solid alpha(@secondary_accent, 0.6);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.aiItem:hover {
+  box-shadow: 0 0 12px @highlight_color;
+  /* Glow on hover */
+}
+
+.aiItem.user {
+  background: @background;
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 5px solid @accent_color;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.aiItem.assistant {
+  background: @background_light;
+  border-left: none;
+  border-right: 5px solid @highlight_color;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

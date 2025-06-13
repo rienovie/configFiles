@@ -1,0 +1,402 @@
+/* Digital Rain Theme */
+
+@define-color foreground #00FF00;
+/* Neon Green */
+@define-color background_main #000000;
+/* Absolute Black */
+@define-color background_light #001100;
+/* Very dark green */
+@define-color accent_green #39FF14;
+/* Brighter Neon Green */
+@define-color accent_code #008800;
+/* Darker matrix green */
+@define-color highlight_green #7CFC00;
+/* Lawn Green for highlights */
+@define-color error_color rgba(255, 0, 0, 0.8);
+/* Pure Red, stark */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+  font-family: "monospace", "Code New Roman", monospace;
+  /* Suggest code-like font */
+  font-size: 1.1em;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 0;
+  /* Sharp */
+  color: @foreground;
+  box-shadow: 0 0 10px @error_color;
+  border: 1px solid @foreground;
+  /* Rapid glitchy flash for error */
+  -gtk-animation-name: glitch-flash;
+  -gtk-animation-duration: 0.1s;
+  -gtk-animation-timing-function: steps(1);
+  -gtk-animation-iteration-count: 10;
+}
+
+@-gtk-keyframes glitch-flash {
+  0% {
+    opacity: 1;
+    filter: brightness(1.2) hue-rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.7;
+    filter: brightness(0.8) hue-rotate(15deg);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(1.2) hue-rotate(0deg);
+  }
+}
+
+#window {
+  color: @foreground;
+  background: @background_main;
+  /* Digital Rain simulation (complex for pure CSS, simulate with flicker/color shift) */
+  -gtk-animation-name: rain-flicker;
+  -gtk-animation-duration: 0.5s;
+  -gtk-animation-timing-function: steps(1);
+  -gtk-animation-iteration-count: infinite;
+}
+
+@-gtk-keyframes rain-flicker {
+  0% {
+    box-shadow: inset 0 0 5px alpha(@accent_green, 0.1);
+  }
+
+  50% {
+    box-shadow: inset 0 0 10px alpha(@accent_green, 0.2);
+  }
+
+  100% {
+    box-shadow: inset 0 0 5px alpha(@accent_green, 0.1);
+  }
+}
+
+#box {
+  border-radius: 0;
+  background: @background_light;
+  padding: 35px;
+  border: 1px solid @accent_code;
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.6),
+    0 8px 15px rgba(0, 0, 0, 0.5);
+  -gtk-backdrop-filter: brightness(0.8) saturate(1.2);
+  /* Enhance greens */
+  -gtk-transition: all 0.1s steps(1);
+  /* Choppy, immediate feel */
+}
+
+#box:hover {
+  background: lighten(@background_light, 3%);
+  border: 1px solid @accent_green;
+  box-shadow: 0 0 15px @accent_green;
+  -gtk-animation-name: box-scanline;
+  -gtk-animation-duration: 0.05s;
+  -gtk-animation-timing-function: linear;
+  -gtk-animation-iteration-count: 2;
+  /* Quick "scan" */
+}
+
+@-gtk-keyframes box-scanline {
+  0% {
+    background-image: linear-gradient(to bottom,
+        alpha(white, 0.05) 0%,
+        transparent 1%);
+    background-size: 100% 50%;
+  }
+
+  100% {
+    background-image: linear-gradient(to bottom,
+        alpha(white, 0.05) 99%,
+        transparent 100%);
+    background-size: 100% 50%;
+  }
+}
+
+#search {
+  box-shadow: none;
+  background: @background_light;
+  padding: 10px;
+  border-radius: 0;
+  border: 1px solid @accent_code;
+  transition: all 0.05s steps(1);
+}
+
+#search:focus-within {
+  border: 1px solid @highlight_green;
+  background: lighten(@background_light, 2%);
+  box-shadow: 0 0 8px @highlight_green;
+}
+
+#prompt {
+  margin-left: 6px;
+  margin-right: 15px;
+  color: @accent_green;
+  opacity: 0.9;
+  transition: all 0.05s steps(1);
+  text-shadow: 0 0 2px @accent_green;
+}
+
+#prompt:hover {
+  color: @highlight_green;
+  opacity: 1;
+  text-shadow: 0 0 5px @highlight_green;
+  transform: translateX(1px);
+  /* Very subtle shift */
+}
+
+#clear {
+  color: @highlight_green;
+  opacity: 0.9;
+  transition: all 0.05s steps(1);
+}
+
+#clear:hover {
+  color: @accent_green;
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 0;
+  font-size: 1em;
+  padding: 5px;
+  color: @foreground;
+  background: @background_light;
+  border: 1px solid @accent_code;
+  transition: all 0.05s steps(1);
+}
+
+#input:focus {
+  background: @background_light;
+  border: 1px solid @highlight_green;
+  box-shadow: 0 0 5px @highlight_green;
+}
+
+#password {
+  background: lighten(@background_light, 1%);
+}
+
+#spinner {
+  padding: 10px;
+  color: @accent_green;
+  /* Random jitter and color shift */
+  -gtk-animation-name: digital-jitter;
+  -gtk-animation-duration: 0.2s;
+  -gtk-animation-timing-function: steps(1);
+  -gtk-animation-iteration-count: infinite;
+}
+
+@-gtk-keyframes digital-jitter {
+  0% {
+    -gtk-transform: translateX(0px) translateY(0px);
+    color: @accent_green;
+  }
+
+  25% {
+    -gtk-transform: translateX(2px) translateY(-1px);
+    color: @highlight_green;
+  }
+
+  50% {
+    -gtk-transform: translateX(-2px) translateY(1px);
+    color: @accent_green;
+  }
+
+  75% {
+    -gtk-transform: translateX(1px) translateY(2px);
+    color: @highlight_green;
+  }
+
+  100% {
+    -gtk-transform: translateX(0px) translateY(0px);
+    color: @accent_green;
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.9;
+  text-shadow: 0 0 1px @foreground;
+}
+
+#input placeholder {
+  opacity: 0.7;
+  color: alpha(@foreground, 0.8);
+}
+
+#list {
+  margin-top: 10px;
+}
+
+child {
+  padding: 10px;
+  border-radius: 0;
+  margin-bottom: 4px;
+  transition: all 0.08s steps(1);
+  border: 1px solid transparent;
+  background: @background_main;
+  box-shadow: none;
+}
+
+child:selected,
+child:hover {
+  background: alpha(@accent_code, 0.5);
+  border: 1px solid @accent_green;
+  box-shadow: 0 0 8px @accent_green;
+  /* Rapid text scramble/flicker */
+  -gtk-animation-name: text-scramble;
+  -gtk-animation-duration: 0.1s;
+  -gtk-animation-timing-function: steps(1);
+  -gtk-animation-iteration-count: 2;
+}
+
+@-gtk-keyframes text-scramble {
+  0% {
+    color: @foreground;
+    text-shadow: 0 0 2px @foreground;
+  }
+
+  50% {
+    color: @highlight_green;
+    text-shadow: 0 0 5px @highlight_green;
+    filter: brightness(1.5) hue-rotate(5deg);
+  }
+
+  100% {
+    color: @foreground;
+    text-shadow: 0 0 2px @foreground;
+  }
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 10px;
+  color: @accent_green;
+  text-shadow: 0 0 2px @accent_green;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 700;
+  color: @highlight_green;
+  text-shadow: 0 0 3px @highlight_green;
+}
+
+#sub {
+  opacity: 0.8;
+  font-size: 0.85em;
+  color: alpha(@foreground, 0.85);
+}
+
+#activationlabel {
+  color: @accent_green;
+  transition: all 0.05s steps(1);
+}
+
+#activationlabel:hover {
+  color: @highlight_green;
+}
+
+#bar {
+  margin-top: 15px;
+  background: @background_light;
+  border-radius: 0;
+  padding: 6px;
+  border: 1px solid @accent_code;
+}
+
+.barentry {
+  padding: 10px;
+  border-radius: 0;
+  transition: all 0.08s steps(1);
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_code, 0.3);
+  border: 1px solid @accent_green;
+  box-shadow: 0 0 8px @accent_green;
+  transform: translateY(-1px);
+  /* Slight lift */
+}
+
+.activation #activationlabel {
+  color: @highlight_green;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.3;
+  color: alpha(@foreground, 0.3);
+  filter: brightness(0.5);
+  /* Dim significantly */
+}
+
+.aiItem {
+  padding: 15px;
+  border-radius: 0;
+  color: @foreground;
+  background: @background_light;
+  margin-bottom: 8px;
+  border: 1px solid @accent_code;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s steps(1);
+}
+
+.aiItem:hover {
+  background: lighten(@background_light, 3%);
+  box-shadow: 0 0 12px @highlight_green;
+  transform: translateY(-1px);
+}
+
+.aiItem.user {
+  background: @background_main;
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 4px solid @accent_green;
+  border-right: none;
+}
+
+.aiItem.assistant {
+  background: @background_light;
+  border-left: none;
+  border-right: 4px solid @highlight_green;
+}
