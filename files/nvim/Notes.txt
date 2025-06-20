@@ -15,3 +15,5 @@ fix when hitting modify on empty entry in basher
 add jump to next/prev function
 
 goto def is deprecated
+
+update next/prev buffer to work in insert mode

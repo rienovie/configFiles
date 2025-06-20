@@ -628,7 +628,7 @@ environment {
 
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
-spawn-at-startup "bash" "-c" "crystal-dock"
+// spawn-at-startup "bash" "-c" "crystal-dock"
 spawn-at-startup "swaybg" "-i" "/usr/share/endeavouros/backgrounds/eos_wallpapers_community/Endy_vector_satelliet.png" "-m" "fill"
 spawn-at-startup "swaync"
 

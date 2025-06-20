@@ -7,7 +7,7 @@
 # Preferences dialog.
 
 (prev-language "American English")
-(config-version "3.0.2")
+(config-version "3.0.4")
 (color-management
     (mode display)
     (display-profile-from-gdk no)
@@ -24,7 +24,7 @@
     (show-hsv yes))
 (import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
 (monitor-xresolution 93)
-(monitor-yresolution 93)
+(monitor-yresolution 94)
 (toolbox-groups no)
 (selection-shrink-radius 16)
 (selection-border-radius 4)

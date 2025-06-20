@@ -4,6 +4,8 @@ if [ "$XDG_SESSION_DESKTOP" != "niri" ]; then
     exit
 fi
 
+/home/vince/Apps/crystal-dock/build/crystal-dock &
+
 xwayland-satellite >/dev/null 3>&1 &
 
 # sleep is required because xwayland-satellite needs to startup prior
