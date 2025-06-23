@@ -17,3 +17,5 @@ add jump to next/prev function
 goto def is deprecated
 
 update next/prev buffer to work in insert mode
+
+add to common.sh a way to run without locking current thread
