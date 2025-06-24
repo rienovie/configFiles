@@ -3,7 +3,6 @@ cmake
 discord
 gcc
 gdb
-gimp
 git
 lazygit
 kcolorchooser
@@ -19,12 +18,14 @@ pkgconf
 pyright
 rust
 sqlitebrowser
+gimp
 fastfetch
 curl
 go
-gnome-browser-connector
-gnome-tweaks
 lua51
 steam
+blueman
 bluez
+nwg-icon-picker
 bear
+sox

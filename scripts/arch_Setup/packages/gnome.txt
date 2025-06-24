@@ -1,0 +1,2 @@
+gnome-browser-connector
+gnome-tweaks

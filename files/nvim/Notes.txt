@@ -18,4 +18,8 @@ goto def is deprecated
 
 update next/prev buffer to work in insert mode
 
-add to common.sh a way to run without locking current thread
+add to common.sh a way to run without locking current thread (maybe already added just need to check)
+
+organize scripts folder
+
+change update script to check for flatpak and other updates as well

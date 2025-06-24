@@ -263,8 +263,10 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
+spawn-at-startup "~/Apps/crystal-dock/build/crystal-dock"
 spawn-at-startup "sh" "-c" "lxqt-session && niri msg action quit -s"
 spawn-at-startup "~/Scripts/autostart_lxqt_wl.sh"
+spawn-at-startup "pcmanfm-qt" "--daemon-mode"
 spawn-at-startup "~/Scripts/waybar_updates/systemStartup.sh"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -394,10 +396,10 @@ binds {
     // F12 hotkey-overlay-title="Dropdown QTerminal" { spawn "qterminal" "-d"; }
     // Mod+Space hotkey-overlay-title="lxqt-runner" { spawn "lxqt-runner"; }
     Mod+Space { spawn "walker"; }
-    // Mod+P hotkey-overlay-title="Filemanager" { spawn "pcmanfm-qt"; }
+    Mod+F hotkey-overlay-title="Filemanager" { spawn "pcmanfm-qt"; }
     // Super+Alt+L hotkey-overlay-title="Exit Options" { spawn "lxqt-leave"; }
     // Super+Shift+Escape hotkey-overlay-title="Lock Screen" { spawn "lxqt-leave" "--lockscreen"; }
-    Mod+F { spawn "io.elementary.files"; }
+    // Mod+F { spawn "io.elementary.files"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+B { spawn "sh" "/home/vince/Scripts/waybarReset.sh"; }
 
@@ -462,6 +464,8 @@ binds {
     Mod+Shift+J     { focus-monitor-down; }
     Mod+Shift+K     { focus-monitor-up; }
     Mod+L     { focus-monitor-right; }
+    Mod+Shift+H { move-window-to-monitor-left; }
+    Mod+Shift+L { move-window-to-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }

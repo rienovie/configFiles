@@ -17,9 +17,12 @@ while :; do
     sleep 2
     if checkupdates; then
         echo "$iconUpdate" > ~/Scripts/waybar_updates/updateValue
-        play /home/vince/Music/sounds/boot.ogg
+        play /home/vince/Music/sounds/updatesAvailable.wav
     else
         echo "$iconUpToDate" > ~/Scripts/waybar_updates/updateValue
+        if $runOnce; then
+            play /home/vince/Music/sounds/upToDate.wav
+        fi
     fi
 
     if $runOnce; then
