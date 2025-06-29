@@ -8,8 +8,8 @@ fi
 echo $runOnce
 
 iconUpToDate=$"󰕥"
-iconChecking=$"󱆢 Checking for updates..."
-iconUpdate=$"󰻌 Updates are available!"
+iconChecking=$"Checking for updates... 󱆢 "
+iconUpdate=$"Updates are available! 󰻌 "
 
 while :; do
     echo "$iconChecking" > ~/Scripts/waybar_updates/updateValue

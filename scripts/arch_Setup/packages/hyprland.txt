@@ -1,5 +1,4 @@
 aquamarine
-dunst
 hyprcursor
 hyprgraphics
 hypridle

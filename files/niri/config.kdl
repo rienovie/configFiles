@@ -641,5 +641,5 @@ spawn-at-startup "~/Scripts/waybar_updates/systemStartup.sh"
 // replaced with autostart script
 // spawn-at-startup "sleep" "8" "&&" "steam" "-silent"
 // spawn-at-startup "sleep" "8" "&&" "discord" "--start-minimized"
-spawn-at-startup "~/Scripts/autostart_niri.sh"
+spawn-at-startup "~/Scripts/autoStarts/autostart_niri.sh"
 

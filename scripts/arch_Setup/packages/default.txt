@@ -29,3 +29,4 @@ bluez
 nwg-icon-picker
 bear
 sox
+dunst
