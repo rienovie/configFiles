@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-if [ "$(cat /home/vince/Scripts/waybar_updates/updateValue)" == "󰻌 Updates are available!" ]; then
+if [ "$(cat /home/vince/Scripts/waybar_updates/updateValue)" == "Updates are available! 󰻌 " ]; then
     kitty --class updater sh -c "sudo pacman -Syu && read -p 'Updates have finished...'"
 fi
 

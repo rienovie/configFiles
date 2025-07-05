@@ -327,7 +327,7 @@ window-rule {
 window-rule {
     match app-id=r#".godot."#
     match app-id="Dream Escape"
-    match app-id="updater"
+    // match app-id="updater"
     match app-id="crystal-dock"
     exclude app-id=r#".godot.Editor"#
 
