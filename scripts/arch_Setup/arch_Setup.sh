@@ -5,6 +5,13 @@ source ../common.sh
 # This will be used as a script that I can run on a fresh install of any arch based distro (arch, endevourOS, cachyOS)
 # and it'll auto install/configure my install for me
 
+# Make sure system is fully up to date before running script
+sudo pacman -Syu
+
+if ! confirm "Continue with script?"; then
+    exit 0
+fi
+
 cmdToRun="sudo pacman -S"
 
 if affirm "Include default packages?"; then
@@ -66,7 +73,7 @@ while :; do
             echo "Invalid choice. Please enter 1-5."
             ;;
     esac
-    
+
     echo ""
     if [ ${#selectedPackages[@]} -gt 0 ]; then
         echo "Currently selected: ${selectedPackages[*]}"

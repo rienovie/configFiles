@@ -38,17 +38,17 @@ confirm() {
 # so you can just type: if affirm; then
 affirm() {
 
-    confirmInput="$1"
+    affirmInput="$1"
 
     if [ $# -gt 0 ]; then
-        confirmPrompt="$confirmInput [Y/n]:"
+        affirmPrompt="$affirmInput [Y/n]:"
     else
-        confirmPrompt="Continue? [Y/n]:"
+        affirmPrompt="Continue? [Y/n]:"
     fi
 
-    read -p "$confirmPrompt" -r confirmSelection
+    read -p "$affirmPrompt" -r affirmSelection
 
-    case "$confirmSelection" in
+    case "$affirmSelection" in
     "" | [yY] | [yY][eE][sS])
         return 0
         ;;
@@ -56,8 +56,8 @@ affirm() {
         return 1
         ;;
     *)
-        echo "$confirmSelection is not a valid option."
-        confirm "$confirmInput"
+        echo "$affirmSelection is not a valid option."
+        affirm "$affirmInput"
         ;;
     esac
 }
