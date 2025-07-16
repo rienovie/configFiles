@@ -5,82 +5,88 @@ source ../common.sh
 # This will be used as a script that I can run on a fresh install of any arch based distro (arch, endevourOS, cachyOS)
 # and it'll auto install/configure my install for me
 
-# Make sure system is fully up to date before running script
-sudo pacman -Syu
+slowPrint "\n~~~~~~ Updating system ~~~~~~\n"
 
-if ! confirm "Continue with script?"; then
+# Make sure system is fully up to date before running script
+if paru --version; then
+    paru
+else
+    sudo pacman -Syu
+fi
+
+if ! confirm "\nContinue to package collections?"; then
+    slowPrint "\nExiting script..."
     exit 0
 fi
+
+slowPrint "\n~~~~~~ Package Collections ~~~~~~\n"
 
 cmdToRun="sudo pacman -S"
 
 if affirm "Include default packages?"; then
-    echo "Default packages will be installed."
+    slowPrint "\nDefault packages will be installed."
     cmdToRun="$cmdToRun $(cat packages/default.txt)"
 else
-    echo "Default packages will NOT be installed."
+    slowPrint "\nDefault packages will NOT be installed."
 fi
 
 declare -a selectedPackages=()
 
 while :; do
-    echo "Available:"
-    echo $"[1]GNOME [2]Hyprland [3]LXQt Wayland [4]Niri [5]Finished"
-    read -p "Choose 1-5: " -r choice
+    slowPrint "\nAvailable:\n[G]NOME [H]yprland [L]XQt Wayland [N]iri [F]inished"
+    read -p "Choose which to add or remove: " -r choice
     case $choice in
-        1)
+        [Gg])
             if [[ ! " ${selectedPackages[@]} " =~ " gnome " ]]; then
                 selectedPackages+=("gnome")
-                echo "✓ GNOME added"
+                echo -e "\n✓ GNOME added"
             else
                 selectedPackages=("${selectedPackages[@]/gnome}")
-                echo "✗ GNOME removed"
+                echo -e "\n✗ GNOME removed"
             fi
             ;;
-        2)
+        [Hh])
             if [[ ! " ${selectedPackages[@]} " =~ " hyprland " ]]; then
                 selectedPackages+=("hyprland")
-                echo "✓ Hyprland added"
+                echo -e "\n✓ Hyprland added"
             else
                 selectedPackages=("${selectedPackages[@]/hyprland}")
-                echo "✗ Hyprland removed"
+                echo -e "\n✗ Hyprland removed"
             fi
             ;;
-        3)
+        [Ll])
             if [[ ! " ${selectedPackages[@]} " =~ " lxqt_wl " ]]; then
                 selectedPackages+=("lxqt_wl")
-                echo "✓ LXQt Wayland added"
+                echo -e "\n✓ LXQt Wayland added"
             else
                 selectedPackages=("${selectedPackages[@]/lxqt_wl}")
-                echo "✗ LXQt Wayland removed"
+                echo -e "\n✗ LXQt Wayland removed"
             fi
             ;;
-        4)
+        [Nn])
             if [[ ! " ${selectedPackages[@]} " =~ " niri " ]]; then
                 selectedPackages+=("niri")
-                echo "✓ Niri packages added"
+                echo -e "\n✓ Niri packages added"
             else
                 # Remove niri from array
                 selectedPackages=("${selectedPackages[@]/niri}")
-                echo "✗ Niri packages removed"
+                echo -e "\n✗ Niri packages removed"
             fi
             ;;
-        5)
-            echo "Package selection complete."
+        [Ff])
+            echo -e "\nPackage selection complete."
             break
             ;;
         *)
-            echo "Invalid choice. Please enter 1-5."
+            echo -e "\nInvalid choice."
             ;;
     esac
 
-    echo ""
     if [ ${#selectedPackages[@]} -gt 0 ]; then
-        echo "Currently selected: ${selectedPackages[*]}"
+        echo -e "\nCurrently selected: ${selectedPackages[*]}"
     else
-        echo "No additional packages selected"
+        echo -e "\nNo additional packages selected"
     fi
-    echo ""
 done
 
 for package in "${selectedPackages[@]}"; do
@@ -98,7 +104,7 @@ for package in "${selectedPackages[@]}"; do
             additionalFile="packages/niri.txt"
             ;;
     esac
-    
+
     if [ -f "$additionalFile" ]; then
         cmdToRun="$cmdToRun $(cat $additionalFile)"
     fi
@@ -108,16 +114,22 @@ echo "Installing packages..."
 
 $cmdToRun
 
+if ! confirm "\nContinue to git ssh setup?"; then
+    slowPrint "\nExiting script..."
+    exit 0
+fi
+
 if [ ! -d "$HOME/Apps" ]; then
+    echo "Directory $HOME/Apps does not exist, creating..."
     mkdir "$HOME/Apps"
 fi
 
-echo "GitHub SSH key..."
+slowPrint "\n~~~~~~ Github & SSH ~~~~~~\n"
 
 while :; do
     read -p 'Enter email: ' -r email
 
-    confirm "'$email' is correct?" && break
+    confirm "\n$email is correct?" && break
 done
 
 ssh-keygen -t ed25519 -C "$email"
@@ -126,9 +138,8 @@ eval "$(ssh-agent -s)"
 
 ssh-add "$HOME/.ssh/id_ed25519"
 
-echo ""
-echo "This is where you click the link and setup the ssh."
-echo "Script cannot continue until git is fully setup."
+slowPrint "\nThis is where you click the link and setup the ssh."
+slowPrint "\nScript cannot continue until git is fully setup."
 
 echo "https://github.com/settings/keys"
 echo "Copy following for ssh key:"
@@ -137,12 +148,19 @@ cat "$HOME/.ssh/id_ed25519.pub"
 
 read -p "Hit enter after you have connected ssh git to continue..." -r
 
+while :; do
+    slowPrint "\nConfirm you ACTUALLY OPENED the link and did what you needed to."
+    if ! confirm "\n"; then
+        continue
+    fi
+    break
+done
+
 git config --global user.email "$email"
 
 while :; do
     read -p "Enter git username: " -r guName
-
-    confirm "'$guName' is correct?" && break
+    confirm "\n$guName is correct?" && break
 done
 
 git config --global user.name "$guName"
@@ -159,4 +177,6 @@ cd "configFiles/bash" || exit 1
 
 bash toSystem.sh
 
-read -p "Script has finished. Hit enter to exit." -r
+slowPrint "\nScript has finished."
+
+read -p "Hit enter to exit." -r

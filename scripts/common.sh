@@ -15,7 +15,8 @@ confirm() {
         confirmPrompt="Continue? [y/N]:"
     fi
 
-    read -p "$confirmPrompt" -r confirmSelection
+    echo -ne "$confirmPrompt"
+    read -r confirmSelection
 
     case "$confirmSelection" in
     [yY] | [yY][eE][sS])
@@ -46,7 +47,8 @@ affirm() {
         affirmPrompt="Continue? [Y/n]:"
     fi
 
-    read -p "$affirmPrompt" -r affirmSelection
+    echo -ne "$affirmPrompt"
+    read -r affirmSelection
 
     case "$affirmSelection" in
     "" | [yY] | [yY][eE][sS])
@@ -69,9 +71,16 @@ affirm() {
 #     confirm "'$email' is correct?" && break
 # done
 
+# TODO: haven't checked if this works properly yet
 runExtern() {
 
     "$@" </dev/null &>/dev/null &
 
+}
+
+# echos with 1 second delay
+slowPrint() {
+    echo -e "$@"
+    sleep 1
 }
 
