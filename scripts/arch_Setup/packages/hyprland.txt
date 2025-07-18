@@ -15,7 +15,5 @@ nwg-panel
 pavu-control
 pcmanfm-qt
 rofi
-waybar
-wlogout
 xournalpp
 yazi

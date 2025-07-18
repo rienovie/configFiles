@@ -48,7 +48,7 @@ def checkForUpdates():
 
 def openUpdates():
     subprocess.run(
-        "kitty --class updater sh -c \"paru && read -p 'Updates have finished...'\"",
+        "kitty --class updater sh -c \"paru && flatpak update && read -p 'Updates have finished...'\"",
         shell=True,
     )
     checkForUpdates()

@@ -23,12 +23,13 @@
         // "width": 1280, // Waybar width
         //"spacing": 8, // Gaps between modules (4px)
         // Choose the order of the modules
-        // "modules-left": [
-        //     "custom/menu"
-        //     // "custom/right-arrow-dark",
-        //     // "custom/right-arrow-light",
-        //     // "custom/right-arrow-dark"
-        // ],
+        "modules-left": [
+            "custom/menu",
+            "wlr/taskbar"
+            // "custom/right-arrow-dark",
+            // "custom/right-arrow-light",
+            // "custom/right-arrow-dark"
+        ],
         "modules-center": [
             // "custom/left-arrow-dark",
             // "custom/menu",
@@ -38,7 +39,7 @@
             "pulseaudio",
             "custom/playerctl",
             "clock",
-            "custom/updates",
+            // "custom/updates",
             "custom/swaync",
             "hyprland/workspaces",
             "custom/power"
@@ -65,6 +66,16 @@
         "custom/left-arrow-dark": {
             "format": "",
             "tooltip": false
+        },
+        "wlr/taskbar": {
+            "format": "{icon} {name}",
+            "icon-size": 13,
+            "tooltip": false,
+            "on-click": "activate",
+            "on-click-right": "close",
+            "app_ids-mapping": {
+                "gnome-terminal-server": "org.gnome.Terminal"
+            }
         },
         "custom/left-arrow-light": {
             "format": "",
@@ -286,8 +297,8 @@
             // "format" : "  〄 ",
             // "format": "  ☵ Applications",
             "tooltip-format": "Application Menu",
-            // "on-click": "nwg-menu -va top -fm nautilus -padding 4 -cmd-logout 'hyprctl dispatch exit'"
-            "on-click": "nwg-drawer"
+            "on-click": "nwg-menu -va top -fm pcmanfm-qt -padding 4 -cmd-logout 'niri msg action quit'"
+            // "on-click": "nwg-drawer"
             // "on-click": "jgmenu_run"
             // "on-click": "kando -m example-menu"
         },
@@ -295,17 +306,18 @@
             "format": "  ",
             // "on-click": "bash ~/.config/rofi/powermenu/type-1/powermenu.sh"
             // "on-click": "wlogout"
-            "on-click": "wlogout -b 5"
+            // "on-click": "wlogout -b 5"
             // "on-click": "nwg-bar"
             // "tooltip": false,
-            // "menu": "on-click",
-            // "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
-            // "menu-actions": {
-            // 	"shutdown": "shutdown",
-            // 	"reboot": "reboot",
-            // 	"suspend": "systemctl suspend",
-            // 	"hibernate": "systemctl hibernate"
-            // }
+            "menu": "on-click",
+            "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
+            "menu-actions": {
+                "cancel": "",
+                "resetwb": "~/Scripts/waybarReset.sh",
+                "logout": "niri msg action quit",
+            	"shutdown": "shutdown",
+            	"reboot": "reboot"
+            }
         },
         "custom/playerctl": {
             "format": "  {}  ",
@@ -317,7 +329,7 @@
             "on-click-right": "playerctl next"
         },
         "custom/swaync": {
-            "format": "    󰚢    ",
+            "format": " 󰚢  ",
             "on-click": "swaync-client -t"
         },
         "custom/updates": {

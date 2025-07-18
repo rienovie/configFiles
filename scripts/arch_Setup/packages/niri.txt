@@ -1,2 +1,5 @@
 niri
 pcmanfm-qt
+nwg-drawer
+xwayland-satellite
+swaybg

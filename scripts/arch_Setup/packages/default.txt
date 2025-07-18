@@ -30,3 +30,7 @@ nwg-icon-picker
 bear
 sox
 dunst
+waybar
+wlogout
+wl-clipboard
+swaync

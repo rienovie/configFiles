@@ -1,0 +1,168 @@
+/*
+Dracula Theme - Purple and pink accents, dark and mysterious
+*/
+
+* {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    color: #f8f8f2;
+}
+
+.background {
+    background: rgba(40, 42, 54, 0.95);
+}
+
+#root-box, .background, #app-list, .overlay-indicator {
+    background: transparent;
+}
+
+#root-box {
+    min-width: 320px;
+    background: rgba(40, 42, 54, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(189, 147, 249, 0.2);
+    margin: 10px;
+}
+
+.app-row {
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 2px 6px;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.app-row:focus {
+    outline: unset;
+}
+
+.app-row:hover {
+    background: rgba(68, 71, 90, 0.8);
+    border-color: rgba(189, 147, 249, 0.3);
+    box-shadow: 0 2px 8px rgba(189, 147, 249, 0.1);
+}
+
+.app-row:selected {
+    background: rgba(255, 85, 85, 0.15);
+    border-color: rgba(255, 85, 85, 0.4);
+    box-shadow: 0 0 0 1px rgba(255, 85, 85, 0.2);
+}
+
+.app-row:hover:selected,
+.app-row:hover.selected {
+    background: rgba(255, 85, 85, 0.2);
+    border-color: rgba(255, 85, 85, 0.5);
+    box-shadow: 0 2px 8px rgba(255, 85, 85, 0.2);
+}
+
+.app-label {
+    margin-left: 12px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.app-row:hover .app-label {
+    color: #ffffff;
+}
+
+.app-row:selected .app-label {
+    color: #ff5555;
+    font-weight: 600;
+}
+
+#app-list {
+    padding: 8px 6px;
+    background: transparent;
+}
+
+#search {
+    background: rgba(68, 71, 90, 0.8);
+    border: 1px solid rgba(189, 147, 249, 0.3);
+    border-radius: 6px;
+    outline: unset;
+    margin: 12px 8px;
+    font-size: 16px;
+    padding: 10px 14px;
+    color: #f8f8f2;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#search:focus {
+    background: rgba(68, 71, 90, 1);
+    border-color: rgba(189, 147, 249, 0.6);
+    box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.2);
+}
+
+selection {
+    background-color: rgba(189, 147, 249, 0.3);
+    color: #282a36;
+}
+
+scrollbar.vertical {
+    background: transparent;
+    border: none;
+}
+
+scrollbar.vertical slider {
+    background: rgba(189, 147, 249, 0.2);
+    border-radius: 4px;
+    min-width: 8px;
+    transition: background 0.2s ease;
+}
+
+scrollbar.vertical slider:hover {
+    background: rgba(189, 147, 249, 0.4);
+}
+
+scrollbar.vertical trough {
+    background: transparent;
+    border: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.overlay-indicator {
+    background: rgba(255, 184, 108, 0.2);
+    border-radius: 4px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.app-row image {
+    transition: opacity 0.2s ease;
+}
+
+.app-row:hover image {
+    opacity: 0.9;
+}
+
+.app-row:focus-visible {
+    outline: 2px solid rgba(189, 147, 249, 0.6);
+    outline-offset: 2px;
+}
+
+* {
+    transition-property: background, border, box-shadow, color, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+} 

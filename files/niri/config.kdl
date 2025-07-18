@@ -173,7 +173,7 @@ layout {
         active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#00000034"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -242,7 +242,7 @@ layout {
         offset x=5 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#00000064"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -308,9 +308,9 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id=r#".godot."#
     match app-id="Dream Escape"
-    match app-id="updater"
     match app-id="crystal-dock"
     exclude app-id=r#".godot.Editor"#
+    match app-id="jgmenu"
 
     open-floating true
 }
@@ -377,10 +377,11 @@ binds {
     Mod+T { spawn "sh" "/home/vince/Scripts/kitty_launch.sh"; }
     // Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
-    Mod+Space { spawn "walker"; }
+    // Mod+Space { spawn "walker"; }
+    Mod+Space { spawn "sirula"; }
     // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
-    Mod+F { spawn "io.elementary.files"; }
+    Mod+F { spawn "pcmanfm-qt"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+B { spawn "sh" "/home/vince/Scripts/waybarReset.sh"; }
     // Super+Alt+L { spawn "swaylock"; }
@@ -448,10 +449,10 @@ binds {
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+H     { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    Mod+Shift+L     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -621,6 +622,7 @@ binds {
 
 environment {
     DISPLAY ":0"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 // replaced with autostart script
@@ -629,14 +631,16 @@ environment {
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
 // spawn-at-startup "bash" "-c" "crystal-dock"
-spawn-at-startup "swaybg" "-i" "/usr/share/endeavouros/backgrounds/eos_wallpapers_community/Endy_vector_satelliet.png" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/usr/share/wallpapers/cachyos-wallpapers/cachygalaxy99.jpg" "-m" "fill"
 spawn-at-startup "swaync"
 
-spawn-at-startup "nwg-drawer" "-r" "-nofs"
+spawn-at-startup "pcmanfm-qt" "-d"
+
+// spawn-at-startup "nwg-drawer" "-r" "-nofs"
 spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 
 // spawn-at-startup "sleep" "2" "&&" "lua" "/home/vince/Scripts/nwg_executor/nwg_executor_update.lua" "--const"
-spawn-at-startup "~/Scripts/waybar_updates/systemStartup.sh"
+// spawn-at-startup "~/Scripts/waybar_updates/systemStartup.sh"
 
 // replaced with autostart script
 // spawn-at-startup "sleep" "8" "&&" "steam" "-silent"
