@@ -310,7 +310,7 @@ window-rule {
     match app-id="Dream Escape"
     match app-id="crystal-dock"
     exclude app-id=r#".godot.Editor"#
-    match app-id="jgmenu"
+    match app-id="org.pulseaudio.pavucontrol"
 
     open-floating true
 }
@@ -330,8 +330,6 @@ window-rule {
 window-rule {
     match app-id="updater"
 
-    default-column-width { fixed 2000; }
-    default-window-height { fixed 1200; }
     opacity 1.0
 }
 
@@ -618,6 +616,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
+
+    Mod+O { toggle-window-rule-opacity; }
 }
 
 environment {

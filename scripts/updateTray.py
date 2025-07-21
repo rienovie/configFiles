@@ -6,12 +6,14 @@ from qtpy.QtWidgets import QApplication, QSystemTrayIcon
 from qtpy.QtGui import QIcon
 from qtpy.QtCore import QTimer
 
-utdIcon = QIcon("/usr/share/icons/breeze-dark/status/22@3x/update-none.svg")
-uaIcon = QIcon("/usr/share/icons/breeze-dark/status/22@3x/update-medium.svg")
-chkIcon = QIcon("/usr/share/icons/breeze-dark/actions/32/view-refresh.svg")
+utdLocation: str = "/usr/share/icons/breeze-dark/status/64/security-high.svg"
+uaLocation: str = "/usr/share/icons/breeze-dark/status/64/security-medium.svg"
+
+utdIcon = QIcon(utdLocation)
+uaIcon = QIcon(uaLocation)
 
 app = QApplication(argv)
-tray = QSystemTrayIcon(chkIcon, parent=app)
+tray = QSystemTrayIcon(utdIcon, parent=app)
 global status
 status = False
 global timerInterval
@@ -29,7 +31,6 @@ def clicked(whichClick):
 
 
 def checkForUpdates():
-    tray.setIcon(chkIcon)
     tray.setToolTip("Checking for updates...")
     global status
     status = (
@@ -39,11 +40,11 @@ def checkForUpdates():
     if status:
         tray.setIcon(uaIcon)
         tray.setToolTip("Updates are avaiable! Click to update!")
-        tray.showMessage("System Updates", "Updates are available!", uaIcon)
+        sendNotification("Updates are available!", uaLocation)
     else:
         tray.setIcon(utdIcon)
         tray.setToolTip("System is up-to-date. Click to check for updates...")
-        tray.showMessage("System Updates", "System is up-to-date.", utdIcon)
+        sendNotification("System is up-to-date.", utdLocation)
 
 
 def openUpdates():
@@ -56,6 +57,15 @@ def openUpdates():
 
 def timerFunc():
     checkForUpdates()
+
+
+# BUG: for some reason ID is not working properly
+def sendNotification(message, icon):
+    cmd = 'dunstify "System Updates" -i "' + icon + '" -r 127 "' + message + '"'
+    subprocess.run(
+        cmd,
+        shell=True,
+    )
 
 
 tray.activated.connect(clicked)

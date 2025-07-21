@@ -1,32 +1,37 @@
 /*
-Tokyo Night Storm Theme - Enhanced with storm effects, lightning, and dynamic weather animations
+Sirula uses GTK and can be themed with CSS (https://developer.gnome.org/gtk3/stable/chap-css-overview.html)
+This theme was tested on top of Adwaita-Dark.
+See consts.rs for a list of defined classes and names.
+
+Dark theme with animations and modern styling
 */
 
 * {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+    font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
     font-size: 14px;
-    color: #a9b1d6;
+    color: #e0e0e0;
 }
 
 .background {
-    background: rgba(26, 27, 38, 0.95);
+    background: rgba(18, 18, 18, 0.95);
 }
 
 #root-box, .background, #app-list, .overlay-indicator {
     background: transparent;
 }
 
+/* Main container styling */
 #root-box {
     min-width: 320px;
-    background: rgba(26, 27, 38, 0.95);
+    background: rgba(28, 28, 28, 0.95);
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(122, 162, 247, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
     margin: 10px;
-    animation: stormCloud 8s ease-in-out infinite;
 }
 
+/* App row styling with animations */
 .app-row {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     border-radius: 8px;
     padding: 8px 12px;
     margin: 2px 6px;
@@ -38,90 +43,91 @@ Tokyo Night Storm Theme - Enhanced with storm effects, lightning, and dynamic we
     outline: unset;
 }
 
+/* Hover effects */
 .app-row:hover {
-    background: rgba(41, 42, 60, 0.8);
-    border-color: rgba(122, 162, 247, 0.3);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    animation: lightning 0.5s ease;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Selected state */
 .app-row:selected {
-    background: rgba(247, 118, 142, 0.2);
-    border-color: rgba(247, 118, 142, 0.5);
-    box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.3);
-    animation: thunder 2s ease-in-out infinite;
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2), 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
+/* Hover + selected combination */
 .app-row:hover:selected,
 .app-row:hover.selected {
-    background: rgba(247, 118, 142, 0.25);
-    border-color: rgba(247, 118, 142, 0.6);
-    box-shadow: 0 2px 8px rgba(247, 118, 142, 0.3);
-    animation: thunder 1s ease-in-out infinite;
+    background: rgba(99, 102, 241, 0.25);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2), 0 0 0 1px rgba(99, 102, 241, 0.3);
 }
 
+/* App label styling */
 .app-label {
     margin-left: 12px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .app-row:hover .app-label {
-    color: #c0caf5;
-    animation: lightningText 0.3s ease;
+    color: #ffffff;
 }
 
 .app-row:selected .app-label {
-    color: #f7768e;
+    color: #a5b4fc;
     font-weight: 600;
-    animation: thunderText 2s ease-in-out infinite;
 }
 
+/* App list container */
 #app-list {
     padding: 8px 6px;
     background: transparent;
 }
 
+/* Search box styling */
 #search {
-    background: rgba(41, 42, 60, 0.8);
-    border: 1px solid rgba(122, 162, 247, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     outline: unset;
     margin: 12px 8px;
     font-size: 16px;
     padding: 10px 14px;
-    color: #a9b1d6;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #search:focus {
-    background: rgba(41, 42, 60, 1);
-    border-color: rgba(122, 162, 247, 0.6);
-    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
-    animation: lightning 0.5s ease;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Selection styling */
 selection {
-    background-color: rgba(122, 162, 247, 0.4);
-    color: #1a1b26;
+    background-color: rgba(99, 102, 241, 0.3);
+    color: #ffffff;
 }
 
+/* Scrollbar styling */
 scrollbar.vertical {
     background: transparent;
     border: none;
 }
 
 scrollbar.vertical slider {
-    background: rgba(122, 162, 247, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     min-width: 8px;
-    transition: background 0.3s ease;
+    transition: background 0.2s ease;
 }
 
 scrollbar.vertical slider:hover {
-    background: rgba(122, 162, 247, 0.5);
-    animation: lightning 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 scrollbar.vertical trough {
@@ -129,83 +135,7 @@ scrollbar.vertical trough {
     border: none;
 }
 
-/* Enhanced Storm Animations */
-@keyframes stormCloud {
-    0% {
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(122, 162, 247, 0.2);
-    }
-    25% {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(122, 162, 247, 0.3);
-    }
-    50% {
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(122, 162, 247, 0.2);
-    }
-    75% {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(122, 162, 247, 0.3);
-    }
-    100% {
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(122, 162, 247, 0.2);
-    }
-}
-
-@keyframes lightning {
-    0% {
-        background: rgba(41, 42, 60, 0.8);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        background: rgba(122, 162, 247, 0.1);
-        box-shadow: 0 0 20px rgba(122, 162, 247, 0.4);
-    }
-    100% {
-        background: rgba(41, 42, 60, 0.8);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-}
-
-@keyframes thunder {
-    0% {
-        background: rgba(247, 118, 142, 0.2);
-        box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.3);
-    }
-    50% {
-        background: rgba(247, 118, 142, 0.3);
-        box-shadow: 0 0 15px rgba(247, 118, 142, 0.5);
-    }
-    100% {
-        background: rgba(247, 118, 142, 0.2);
-        box-shadow: 0 0 0 1px rgba(247, 118, 142, 0.3);
-    }
-}
-
-@keyframes lightningText {
-    0% {
-        color: #c0caf5;
-    }
-    50% {
-        color: #ffffff;
-        text-shadow: 0 0 10px rgba(122, 162, 247, 0.8);
-    }
-    100% {
-        color: #c0caf5;
-    }
-}
-
-@keyframes thunderText {
-    0% {
-        color: #f7768e;
-        text-shadow: 0 0 2px rgba(247, 118, 142, 0.3);
-    }
-    50% {
-        color: #ffffff;
-        text-shadow: 0 0 8px rgba(247, 118, 142, 0.6);
-    }
-    100% {
-        color: #f7768e;
-        text-shadow: 0 0 2px rgba(247, 118, 142, 0.3);
-    }
-}
-
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -218,42 +148,40 @@ scrollbar.vertical trough {
 @keyframes pulse {
     0% {
         opacity: 1;
-        background: rgba(255, 218, 11, 0.2);
     }
     50% {
         opacity: 0.7;
-        background: rgba(255, 218, 11, 0.4);
     }
     100% {
         opacity: 1;
-        background: rgba(255, 218, 11, 0.2);
     }
 }
 
+/* Overlay indicator styling */
 .overlay-indicator {
-    background: rgba(255, 218, 11, 0.2);
+    background: rgba(99, 102, 241, 0.2);
     border-radius: 4px;
     animation: pulse 2s ease-in-out infinite;
 }
 
+/* Additional hover effects for icons */
 .app-row image {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .app-row:hover image {
     opacity: 0.9;
-    animation: lightning 0.3s ease;
 }
 
+/* Focus ring for accessibility */
 .app-row:focus-visible {
-    outline: 2px solid rgba(122, 162, 247, 0.6);
+    outline: 2px solid rgba(99, 102, 241, 0.6);
     outline-offset: 2px;
 }
 
-
-
+/* Smooth transitions for all interactive elements */
 * {
     transition-property: background, border, box-shadow, color, opacity;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     transition-timing-function: ease;
 } 
