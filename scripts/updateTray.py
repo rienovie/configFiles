@@ -49,7 +49,7 @@ def checkForUpdates():
 
 def openUpdates():
     subprocess.run(
-        "kitty --class updater sh -c \"paru && flatpak update && read -p 'Updates have finished...'\"",
+        "ghostty --class=updater --background=444444 --custom-shader=$HOME/Apps/ghostty-shaders/bloom.glsl -e \"paru && flatpak update && read -p 'Updates have finished...'\"",
         shell=True,
     )
     checkForUpdates()

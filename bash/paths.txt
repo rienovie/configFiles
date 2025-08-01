@@ -24,3 +24,5 @@ godot
 walker
 lxqt
 sirula
+alacritty
+ghostty
