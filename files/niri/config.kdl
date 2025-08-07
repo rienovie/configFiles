@@ -381,12 +381,13 @@ binds {
     // Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
     // Mod+Space { spawn "walker"; }
-    Mod+Space { spawn "sirula"; }
+    // Mod+Space { spawn "sirula"; }
+    Mod+Space { spawn "sherlock"; }
     // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
     Mod+F { spawn "pcmanfm-qt"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
-    Mod+B { spawn "sh" "/home/vince/Scripts/waybarReset.sh"; }
+    Mod+B { spawn "sh" "/home/vince/Scripts/bash/waybarReset.sh"; }
     // Super+Alt+L { spawn "swaylock"; }
     // Mod { spawn "wofi" "--show" "run"; }
 

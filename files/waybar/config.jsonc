@@ -335,7 +335,7 @@
             "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
             "menu-actions": {
                 "cancel": "",
-                "resetwb": "~/Scripts/waybarReset.sh",
+                "resetwb": "~/Scripts/bash/waybarReset.sh",
                 "logout": "niri msg action quit",
             	"shutdown": "shutdown now",
             	"reboot": "reboot"
