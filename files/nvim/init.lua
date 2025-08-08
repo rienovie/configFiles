@@ -512,8 +512,8 @@ vim.keymap.set("n", "<F2>", "<cmd>:edit ~/.config/nvim/init.lua<CR>", { desc = "
 vim.keymap.set({ "n", "i" }, "<F5>", "<cmd>:w<CR>", { desc = "Save current file" })
 vim.keymap.set("v", "<leader>p", '"_dP', { desc = "[P]aste without overwriting buffer" })
 vim.keymap.set({ "n", "i" }, "<F12>", smartQuit, { desc = "Smart Quit" })
-vim.keymap.set("n", "<C-f>", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
-vim.keymap.set("n", "<F7>", "<cmd>:lua require('harpoon.mark').toggle_file()<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
+-- vim.keymap.set("n", "<F7>", "<cmd>:lua require('harpoon.mark').toggle_file()<CR>")
 vim.keymap.set("n", "<C-x>", "<cmd>BufferClose<CR>")
 --vim.keymap.set("n", "<F6>", "<cmd>BufferPick<CR>")
 
@@ -600,7 +600,7 @@ vim.keymap.set("n", "<leader>du", "<cmd>DapStepOut<CR>", { desc = "[D]ap Step O[
 vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "[D]ap [C]ontinue" })
 vim.keymap.set("n", "<leader>dt", "<cmd>DapTerminate<CR>", { desc = "[D]ap [T]erminate" })
 
-vim.keymap.set("n", "<F10>", "<cmd>:Neotree float<CR>")
+vim.keymap.set("n", "<F10>", "<cmd>:Neotree float toggle<CR>")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

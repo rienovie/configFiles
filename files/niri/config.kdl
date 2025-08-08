@@ -311,6 +311,7 @@ window-rule {
     match app-id="crystal-dock"
     exclude app-id=r#".godot.Editor"#
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="Rofi"
 
     open-floating true
 }
@@ -381,9 +382,9 @@ binds {
     // Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
     // Mod+Space { spawn "walker"; }
-    // Mod+Space { spawn "sirula"; }
-    Mod+Space { spawn "sherlock"; }
-    // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/rofiMenu.zsh"; }
+    Mod+Space { spawn "sirula"; }
+    // Mod+Space { spawn "sherlock"; }
+    // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
     Mod+F { spawn "pcmanfm-qt"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }

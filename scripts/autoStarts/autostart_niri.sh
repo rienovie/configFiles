@@ -11,7 +11,7 @@ xwayland-satellite >/dev/null 3>&1 &
 # sleep is required because xwayland-satellite needs to startup prior
 sleep 4
 
-python ~/Scripts/updateTray.py &
+python ~/Scripts/python/updateTray.py &
 
 steam -silent >/dev/null 3>&1 &
 discord --start-minimized >/dev/null 3>&1 &

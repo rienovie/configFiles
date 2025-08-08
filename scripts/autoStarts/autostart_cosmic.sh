@@ -8,5 +8,5 @@ fi
 
 steam -silent >/dev/null 3>&1 &
 discord --start-minimized >/dev/null 3>&1 &
-sh /home/vince/Scripts/checkForUpdates.sh >/dev/null 3>&1
+python /home/vince/Scripts/python/updateTray.py >/dev/null 3>&1
 
