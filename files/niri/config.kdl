@@ -141,7 +141,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.75; }
+    default-column-width { proportion 0.95; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -318,7 +318,7 @@ window-rule {
 
 window-rule {
     match is-focused=true
-    opacity 0.95
+    // opacity 0.95
     draw-border-with-background false
 }
 
@@ -329,7 +329,7 @@ window-rule {
 
 window-rule {
     match is-focused=false
-    opacity 0.85
+    // opacity 0.85
     draw-border-with-background false
 }
 

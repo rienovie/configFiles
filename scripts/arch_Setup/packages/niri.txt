@@ -3,3 +3,4 @@ pcmanfm-qt
 nwg-drawer
 xwayland-satellite
 swaybg
+qt6ct

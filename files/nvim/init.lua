@@ -448,6 +448,7 @@ end
 --riekey      \/keybinds\/      /\functions/\
 
 vim.keymap.set({ "n", "i", "t" }, "<F6>", '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true })
+vim.keymap.set({ "n", "i", "v" }, "<F7>", "<cmd>CccPick<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", "<cmd>DapToggleBreakpoint<CR>", { noremap = true })
 

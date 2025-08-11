@@ -17,9 +17,9 @@
     {
         "layer": "top", // Waybar at top layer
         "position": "top", // Waybar position (top|bottom|left|right)
-        "height": 32, // Waybar height (to be removed for auto height)
-        "output": "DP-2", // desktop
-        // "output": "eDP-1", // laptop
+        "height": 28, // Waybar height (to be removed for auto height)
+        // "output": "DP-2", // desktop
+        "output": "eDP-1", // laptop
         // "width": 1280, // Waybar width
         //"spacing": 8, // Gaps between modules (4px)
         // Choose the order of the modules
@@ -40,6 +40,7 @@
         // ],
         "modules-right": [
             "custom/playerctl",
+            "battery",
             "pulseaudio",
             "cpu",
             "memory",
@@ -234,7 +235,7 @@
             "states": {
                 // "good": 95,
                 "warning": 30,
-                "critical": 15
+                "critical": 8
             },
             "format": "{capacity}% {icon}",
             "format-full": "{capacity}% {icon}",

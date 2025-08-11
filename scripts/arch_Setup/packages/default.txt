@@ -34,3 +34,4 @@ waybar
 wlogout
 wl-clipboard
 swaync
+python-qt.py
