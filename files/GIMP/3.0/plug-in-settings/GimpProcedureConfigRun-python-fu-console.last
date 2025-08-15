@@ -1,0 +1,6 @@
+# settings
+
+(run-mode interactive)
+(history 10 "" "help" "help()" "supernova" "q" "help()" "q" "print hello" "print(hello)" "print(\"hello\")")
+
+# end of settings

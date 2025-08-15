@@ -56,4 +56,7 @@ function confirm
     end
 end
 
-
+function slowPrint
+    echo -e $argv
+    sleep 1
+end

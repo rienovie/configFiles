@@ -45,8 +45,8 @@
 
 font-size = 14
 theme = "Harper"
-background = 3e5771
-foreground = 000000
+background = #3e5771
+foreground = #000000
 selection-invert-fg-bg
 # selection-background = 000000
 # selection-foreground = ffffff

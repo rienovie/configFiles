@@ -39,7 +39,7 @@
         //     // "custom/menu",
         // ],
         "modules-right": [
-            "custom/playerctl",
+            // "custom/playerctl",
             "battery",
             "pulseaudio",
             "cpu",
@@ -72,7 +72,7 @@
         },
         "wlr/taskbar": {
             "format": " {icon} {state}  ",
-            "icon-size": 28,
+            "icon-size": 24,
             "tooltip": true,
             "on-click": "activate",
             "all-outputs": true,
