@@ -4,6 +4,7 @@ alias gc="git clone --recursive"
 alias u="cd .."
 alias x="chmod +x"
 alias cur="/home/vince/Apps/Cursor/*.AppImage"
+alias repo="cd /home/vince/Repos"
 
 unalias ls 2>/dev/null
 ls() {

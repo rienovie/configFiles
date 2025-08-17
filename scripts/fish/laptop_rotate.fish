@@ -8,8 +8,10 @@ set current_transform (grep "transform" $config_file | sed 's/.*transform "\(.*\
 if test "$current_transform" = "normal"
     set new_transform "90"
     waybar -c ~/.config/waybar/laptop_vertical_config.jsonc &
+    gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
 else
     set new_transform "normal"
+    gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false
     waybar &
 end
 
