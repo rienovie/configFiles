@@ -1,12 +1,11 @@
 # GIMP user context
 
-(tool "gimp-operation-tool")
+(tool "gimp-paintbrush-tool")
 (paint-info "gimp-paintbrush")
 (foreground
     (color "R'G'B'A float" 16 "\1\0\200\77\1\0\200\77\1\0\200\77\0\0\200\77" 0))
 (background
     (color "R'G'B'A float" 16 "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\200\77" 0))
-(opacity 0.90000000000000002)
 (brush "1. Pixel")
 (dynamics "Pressure Size")
 (mybrush "100% Opaque")

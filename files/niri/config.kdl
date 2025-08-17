@@ -83,10 +83,6 @@ input {
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 2
 
-    // Transform allows to rotate the output counter-clockwise, valid values are:
-    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
-
     // Position of the output in the global coordinate space.
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
     // The cursor can only move between directly adjacent outputs.
@@ -107,6 +103,11 @@ output "DP-2" {
 output "HDMI-A-1" {
     mode "1920x1080@60"
     position x=2560 y=420
+}
+output "eDP-1" {
+    mode "1920x1080@60.020"
+    scale 1.0
+    transform "normal"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -324,7 +325,8 @@ window-rule {
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="top-left"
+    default-floating-position x=10 y=10 relative-to="bottom-left"
+    open-focused false
 }
 
 window-rule {

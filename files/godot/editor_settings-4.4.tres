@@ -7,14 +7,16 @@ keycode = 4194326
 network/connection/engine_version_update_mode = 1
 interface/theme/preset = "Custom"
 interface/theme/spacing_preset = "Custom"
+interface/theme/icon_and_font_color = 1
 interface/theme/base_color = Color(0.487096, 0.711151, 0.812725, 1)
 interface/theme/accent_color = Color(0, 0.21307, 0.521773, 1)
-interface/theme/contrast = 0.09
+interface/theme/contrast = -0.14
+interface/theme/draw_extra_borders = true
 interface/theme/relationship_line_opacity = 0.3
 interface/theme/border_size = 1
 interface/theme/corner_radius = 4
-text_editor/external/exec_path = "bash"
-text_editor/external/exec_flags = "/home/vince/Scripts/godot_nv_launch.sh {file}"
+text_editor/external/exec_path = "ghostty"
+text_editor/external/exec_flags = "-e nvim --listen /tmp/gdnv.pipe {file}"
 text_editor/external/use_external_editor = true
 editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
 editors/3d/navigation/emulate_numpad = false
@@ -47,9 +49,6 @@ _project_settings_advanced_mode = true
 _export_template_download_directory = ""
 _script_setup_templates_dictionary = {}
 _script_setup_use_script_templates = false
-asset_library/available_urls = {
-"godotengine.org (Official)": "https://godotengine.org/asset-library/api"
-}
 shortcuts = [{
 "name": "spatial_editor/viewport_zoom_modifier_1",
 "shortcuts": [SubResource("InputEventKey_ugdx7")]

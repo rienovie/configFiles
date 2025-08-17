@@ -8,7 +8,7 @@ Dark theme with animations and modern styling
 
 * {
     font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #e0e0e0;
 }
 
@@ -16,7 +16,10 @@ Dark theme with animations and modern styling
     background: rgba(18, 18, 18, 0.95);
 }
 
-#root-box, .background, #app-list, .overlay-indicator {
+#root-box,
+.background,
+#app-list,
+.overlay-indicator {
     background: transparent;
 }
 
@@ -140,6 +143,7 @@ scrollbar.vertical trough {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -149,9 +153,11 @@ scrollbar.vertical trough {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.7;
     }
+
     100% {
         opacity: 1;
     }
@@ -184,4 +190,4 @@ scrollbar.vertical trough {
     transition-property: background, border, box-shadow, color, opacity;
     transition-duration: 0.2s;
     transition-timing-function: ease;
-} 
+}

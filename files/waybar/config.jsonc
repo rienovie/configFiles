@@ -1,4 +1,3 @@
-
 [
     // {
     //     "layer": "top",
@@ -17,7 +16,7 @@
     {
         "layer": "top", // Waybar at top layer
         "position": "top", // Waybar position (top|bottom|left|right)
-        "height": 28, // Waybar height (to be removed for auto height)
+        "height": 48, // Waybar height (to be removed for auto height)
         // "output": "DP-2", // desktop
         "output": "eDP-1", // laptop
         // "width": 1280, // Waybar width
@@ -72,7 +71,7 @@
         },
         "wlr/taskbar": {
             "format": " {icon} {state}  ",
-            "icon-size": 24,
+            "icon-size": 32,
             "tooltip": true,
             "on-click": "activate",
             "all-outputs": true,
@@ -187,7 +186,7 @@
             }
         },
         "tray": {
-            "icon-size": 24,
+            "icon-size": 32,
             "spacing": 12
         },
         "clock": {
@@ -198,11 +197,11 @@
         "cpu": {
             "format": "  {usage}% ",
             "tooltip": false,
-            "on-click": "qps"
+            "on-click": "plasma-systemmonitor"
         },
         "memory": {
             "format": "  {}% ",
-            "on-click": "qps"
+            "on-click": "plasma-systemmonitor"
         },
         "temperature": {
             // "thermal-zone": 2,
@@ -229,7 +228,14 @@
                 "",
                 "",
                 ""
-            ]
+            ],
+            "on-click": "fish /home/vince/Scripts/fish/brightness.fish"
+        },
+        "backlight/slider": {
+            "min": 0,
+            "max": 100,
+            "orientation": "horizontal",
+            "device": "acpi_video1"
         },
         "battery": {
             "states": {
@@ -320,7 +326,7 @@
             "format": "  ☵   Apps",
             "tooltip-format": "Application Menu",
             // "on-click": "nwg-menu -va top -fm pcmanfm-qt -padding 4 -cmd-logout 'niri msg action quit'"
-            "on-click": "sirula"
+            "on-click": "fish /home/vince/Scripts/fish/sirula_launch.fish"
             // "on-click": "nwg-drawer"
             // "on-click": "jgmenu_run"
             // "on-click": "kando -m example-menu"
@@ -336,10 +342,11 @@
             "menu-file": "~/.config/waybar/power_menu.xml", // Menu file in resources folder
             "menu-actions": {
                 "cancel": "",
+                "rotScrn": "niri msg action spawn -- fish ~/Scripts/fish/laptop_rotate.fish",
                 "resetwb": "~/Scripts/bash/waybarReset.sh",
                 "logout": "niri msg action quit",
-            	"shutdown": "shutdown now",
-            	"reboot": "reboot"
+                "shutdown": "shutdown now",
+                "reboot": "reboot"
             }
         },
         "custom/playerctl": {

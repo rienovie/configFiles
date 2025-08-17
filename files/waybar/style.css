@@ -2,7 +2,7 @@
 	/* `otf-font-awesome` is required to be installed for icons */
 	/* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
 	font-family: Source Code Pro, Bold Italic;
-	font-size: 16px;
+	font-size: 22px;
 }
 
 window#waybar {
@@ -91,6 +91,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-toggleFS,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -195,6 +196,14 @@ label:focus {
 #cpu {
 	background-color: #123621;
 	color: #b3b3b3;
+	border-radius: 6px;
+	margin: 4px;
+	margin-left: 0px;
+}
+
+#custom-toggleFS {
+	background-color: #6d593b;
+	color: #ffffff;
 	border-radius: 6px;
 	margin: 4px;
 	margin-left: 0px;

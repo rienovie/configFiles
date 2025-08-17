@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 #
 
-font-size = 14
+font-size = 18
 theme = "Harper"
 background = #3e5771
 foreground = #000000
