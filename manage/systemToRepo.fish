@@ -22,26 +22,26 @@ set repoPath "../files/$systemName"
 set systemPath "$HOME/.config"
 
 slowPrint "Handling vars..."
-if not test -d ../vars/$systemName
-    mkdir ../vars/$systemName
+if not test -d "../vars/$systemName"
+    mkdir "../vars/$systemName"
 end
-rm -rf ../vars/$systemName/*
-cp -alr vars/ ../vars/$systemName
+rm -rf "../vars/$systemName/*"
+cp -alr "vars/" "../vars/$systemName"
 
 slowPrint "Handled vars, now handling config files..."
 
-set paths (cat vars/paths)
-set defaultPaths (cat defaultConfigPaths)
+set paths (cat "vars/paths")
+set defaultPaths (cat "defaultConfigPaths")
 set paths "$paths\n$defaultPaths"
 
 for path in $paths
-    if test -d $repoPath/$path
+    if test -d "$repoPath/$path"
         # Could make this better by skipping rm from .gitignore
-        rm -rf $repoPath/$path/*
+        rm -rf "$repoPath/$path/*"
     else
-        mkdir -p $repoPath/$path
+        mkdir -p "$repoPath/$path"
     end
-    cp -alr $systemPath/$path $repoPath/$path
+    cp -alr "$systemPath/$path" "$repoPath/$path"
 end
 
 slowPrint "Config files handled... now handling scripts..."
@@ -49,36 +49,36 @@ slowPrint "Config files handled... now handling scripts..."
 set scriptsPath "../scripts"
 set systemScriptsPath "$HOME/Scripts"
 
-if test -d $scriptsPath
-    rm -rf $scriptsPath/*
+if test -d "$scriptsPath"
+    rm -rf "$scriptsPath/*"
 else
-    mkdir -p $scriptsPath
+    mkdir -p "$scriptsPath"
 end
-cp -alr $systemScriptsPath $scriptsPath
+cp -alr "$systemScriptsPath" "$scriptsPath"
 
 slowPrint "Scripts handled... now handling sounds..."
 
 set soundsPath "../sounds"
 set systemSoundsPath "$HOME/Music/sounds"
 
-if test -d $soundsPath
-    rm -rf $soundsPath/*
+if test -d "$soundsPath"
+    rm -rf "$soundsPath/*"
 else
-    mkdir -p $soundsPath
+    mkdir -p "$soundsPath"
 end
-cp -alr $systemSoundsPath $soundsPath
+cp -alr "$systemSoundsPath" "$soundsPath"
 
 slowPrint "Sounds handled... now handling wallpapers..."
 
 set wallpapersPath "../wallpapers"
 set systemWallpapersPath "$HOME/Pictures/wallpapers"
 
-if test -d $wallpapersPath
-    rm -rf $wallpapersPath/*
+if test -d "$wallpapersPath"
+    rm -rf "$wallpapersPath/*"
 else
-    mkdir -p $wallpapersPath
+    mkdir -p "$wallpapersPath"
 end
-cp -alr $systemWallpapersPath $wallpapersPath
+cp -alr "$systemWallpapersPath" "$wallpapersPath"
 
 slowPrint "Wallpapers handled."
 

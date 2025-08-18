@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if not test -f init.fish
+if not test -f "init.fish"
     echo "Please run script from manage directory."
 end
 
@@ -9,7 +9,7 @@ source "../scripts/fish/common.fish"
 # Will set this for the entire script
 set slowPrintDelay 1
 
-set systemName (cat vars/system)
+set systemName (cat "vars/system")
 
 slowPrint "This script will REPLACE the current system config files with the repo '$systemName' config files."
 slowPrint "Please verify that you want to continue."
@@ -22,29 +22,29 @@ set repoPath "../files/$systemName"
 set systemPath "$HOME/.config"
 
 slowPrint "Handling vars..."
-rm -rf vars/*
-if not test -d ../vars/$systemName
-    mkdir ../vars/$systemName
-    touch ../vars/$systemName/paths
-    echo $systemName > ../vars/$systemName/system
-    touch ../vars/$systemName/initialized
+rm -rf "vars/*"
+if not test -d "../vars/$systemName"
+    mkdir "../vars/$systemName"
+    touch "../vars/$systemName/paths"
+    echo "$systemName" > "../vars/$systemName/system"
+    touch "../vars/$systemName/initialized"
 end
-cp -alr ../vars/$systemName vars/
+cp -alr "../vars/$systemName" "vars/"
 
 slowPrint "Handled vars, now handling config files..."
 
-set paths (cat vars/paths)
-set defaultPaths (cat defaultConfigPaths)
+set paths (cat "vars/paths")
+set defaultPaths (cat "defaultConfigPaths")
 set paths "$paths\n$defaultPaths"
 
 for path in $paths
-    if test -d $systemPath/$path
+    if test -d "$systemPath/$path"
         # Could make this better by skipping rm from .gitignore
-        rm -rf $systemPath/$path/*
+        rm -rf "$systemPath/$path/*"
     else
-        mkdir -p $systemPath/$path
+        mkdir -p "$systemPath/$path"
     end
-    cp -alr $repoPath/$path $systemPath/$path
+    cp -alr "$repoPath/$path" "$systemPath/$path"
 end
 
 slowPrint "Config files handled... now handling scripts..."
@@ -52,36 +52,36 @@ slowPrint "Config files handled... now handling scripts..."
 set scriptsPath "../scripts"
 set systemScriptsPath "$HOME/Scripts"
 
-if test -d $systemScriptsPath
-    rm -rf $systemScriptsPath/*
+if test -d "$systemScriptsPath"
+    rm -rf "$systemScriptsPath/*"
 else
-    mkdir -p $systemScriptsPath
+    mkdir -p "$systemScriptsPath"
 end
-cp -alr $scriptsPath $systemScriptsPath
+cp -alr "$scriptsPath" "$systemScriptsPath"
 
 slowPrint "Scripts handled... now handling sounds..."
 
 set soundsPath "../sounds"
 set systemSoundsPath "$HOME/Music/sounds"
 
-if test -d $systemSoundsPath
-    rm -rf $systemSoundsPath/*
+if test -d "$systemSoundsPath"
+    rm -rf "$systemSoundsPath/*"
 else
-    mkdir -p $systemSoundsPath
+    mkdir -p "$systemSoundsPath"
 end
-cp -alr $soundsPath $systemSoundsPath
+cp -alr "$soundsPath" "$systemSoundsPath"
 
 slowPrint "Sounds handled... now handling wallpapers..."
 
 set wallpapersPath "../wallpapers"
 set systemWallpapersPath "$HOME/Pictures/wallpapers"
 
-if test -d $systemWallpapersPath
-    rm -rf $systemWallpapersPath/*
+if test -d "$systemWallpapersPath"
+    rm -rf "$systemWallpapersPath/*"
 else
-    mkdir -p $systemWallpapersPath
+    mkdir -p "$systemWallpapersPath"
 end
-cp -alr $wallpapersPath $systemWallpapersPath
+cp -alr "$wallpapersPath" "$systemWallpapersPath"
 
 slowPrint "Wallpapers handled."
 

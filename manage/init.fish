@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if not test -f init.fish
+if not test -f "init.fish"
     echo "Please run this script from the manage directory."
     exit 1
 end
@@ -20,7 +20,7 @@ end
 
 slowPrint "Initializing variables for the repo."
 
-if test -d vars
+if test -d "vars"
     slowPrint "vars directory already exists."
     slowPrint "This script was probably run before."
 
@@ -30,11 +30,11 @@ if test -d vars
     end
 
     slowPrint "Clearing vars directory..."
-    rm -rf vars/*
+    rm -rf "vars/*"
 
 else
     slowPrint "Creating vars directory..."
-    mkdir -p vars
+    mkdir -p "vars"
 end
 
 read --prompt-str "What should this system be called? " systemName
@@ -45,13 +45,13 @@ end
 
 # NOTE: Not sure if I'll need any other vars, but this is where they'll be initialized
 # The initialized file is not currently used, but it's here if needed later
-echo $systemName > vars/system
-touch vars/paths vars/initialized
+echo "$systemName" > "vars/system"
+touch "vars/paths" "vars/initialized"
 
 slowPrint "Checking to see if system config already exists..."
 
-if test -d ../files/$systemName
-    slowPrint "Found system config in ../files/$systemName"
+if test -d "../files/$systemName"
+    slowPrint "Found system config in '../files/$systemName'"
 
     if not confirm "Would you like to apply the config found to this system?"
         echo "Exiting..."
@@ -65,13 +65,16 @@ if test -d ../files/$systemName
     slowPrint "Initializing script complete."
     exit 0
 else
-    mkdir ../files/$systemName
+    mkdir -p "../files/$systemName"
 
     set copyLoop true
     while $copyLoop
         slowPrint "Would you like to add the current system config to the repo?"
         slowPrint "Or would you like to copy an already existing config to this system?"
-        read --prompt-str "No entry will exit the script.\n'add' will add the current system config to the repo.\n'copy' will ask for name to copy." configApply
+        slowPrint "No entry will exit the script."
+        slowPrint "'add' will add the current system config to the repo."
+        slowPrint "'copy' will ask for name to copy."
+        read --prompt-str "Enter your choice: " configApply
 
         switch $configApply
             case add
@@ -82,11 +85,11 @@ else
             case copy
                 while $copyLoop
                     slowPrint "Listing configs in ../files..."
-                    ls -d ../files/*
+                    ls -d "../files/*"
                     read --prompt-str "What is the name of the config you would like to copy? " configName
-                    if test -d ../files/$configName
+                    if test -d "../files/$configName"
                         slowPrint "Copying config..."
-                        cp -r ../files/$configName ../files/$systemName
+                        cp -r "../files/$configName" "../files/$systemName"
 
                         slowPrint "Calling the repoToSystem.fish script..."
                         source "repoToSystem.fish"
