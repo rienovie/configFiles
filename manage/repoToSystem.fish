@@ -35,7 +35,7 @@ slowPrint "Handled vars, now handling config files..."
 
 set paths (cat "vars/paths")
 set defaultPaths (cat "defaultConfigPaths")
-set paths "$paths\n$defaultPaths"
+set paths $paths $defaultPaths
 
 for path in $paths
     if test -d "$systemPath/$path"
