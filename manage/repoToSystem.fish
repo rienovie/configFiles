@@ -22,14 +22,14 @@ set repoPath "../files/$systemName"
 set systemPath "$HOME/.config"
 
 slowPrint "Handling vars..."
-rm -rf "vars/*"
+rm -rf "vars"
 if not test -d "../vars/$systemName"
     mkdir "../vars/$systemName"
     touch "../vars/$systemName/paths"
     echo "$systemName" > "../vars/$systemName/system"
     touch "../vars/$systemName/initialized"
 end
-cp -alr "../vars/$systemName/*" "vars/"
+cp -alr "../vars/$systemName" "vars"
 
 slowPrint "Handled vars, now handling config files..."
 
@@ -40,11 +40,11 @@ set paths $paths $defaultPaths
 for path in $paths
     if test -d "$systemPath/$path"
         # Could make this better by skipping rm from .gitignore
-        rm -rf "$systemPath/$path/*"
+        rm -rf "$systemPath/$path"
     else
         mkdir -p "$systemPath/$path"
     end
-    cp -alr "$repoPath/$path/*" "$systemPath/$path"
+    cp -alr "$repoPath/$path" "$systemPath/$path"
 end
 
 slowPrint "Config files handled... now handling scripts..."
@@ -53,11 +53,11 @@ set scriptsPath "../scripts"
 set systemScriptsPath "$HOME/Scripts"
 
 if test -d "$systemScriptsPath"
-    rm -rf "$systemScriptsPath/*"
+    rm -rf "$systemScriptsPath"
 else
     mkdir -p "$systemScriptsPath"
 end
-cp -alr "$scriptsPath/*" "$systemScriptsPath"
+cp -alr "$scriptsPath" "$systemScriptsPath"
 
 slowPrint "Scripts handled... now handling sounds..."
 
@@ -65,11 +65,11 @@ set soundsPath "../sounds"
 set systemSoundsPath "$HOME/Music/sounds"
 
 if test -d "$systemSoundsPath"
-    rm -rf "$systemSoundsPath/*"
+    rm -rf "$systemSoundsPath"
 else
     mkdir -p "$systemSoundsPath"
 end
-cp -alr "$soundsPath/*" "$systemSoundsPath"
+cp -alr "$soundsPath" "$systemSoundsPath"
 
 slowPrint "Sounds handled... now handling wallpapers..."
 
@@ -77,11 +77,11 @@ set wallpapersPath "../wallpapers"
 set systemWallpapersPath "$HOME/Pictures/wallpapers"
 
 if test -d "$systemWallpapersPath"
-    rm -rf "$systemWallpapersPath/*"
+    rm -rf "$systemWallpapersPath"
 else
     mkdir -p "$systemWallpapersPath"
 end
-cp -alr "$wallpapersPath/*" "$systemWallpapersPath"
+cp -alr "$wallpapersPath" "$systemWallpapersPath"
 
 slowPrint "Wallpapers handled."
 

@@ -25,8 +25,8 @@ slowPrint "Handling vars..."
 if not test -d "../vars/$systemName"
     mkdir "../vars/$systemName"
 end
-rm -rf "../vars/$systemName/*"
-cp -alr "vars/" "../vars/$systemName"
+rm -rf "../vars/$systemName"
+cp -alr "vars" "../vars/$systemName"
 
 slowPrint "Handled vars, now handling config files..."
 
@@ -37,9 +37,7 @@ set paths $paths $defaultPaths
 for path in $paths
     if test -d "$repoPath/$path"
         # Could make this better by skipping rm from .gitignore
-        rm -rf "$repoPath/$path/*"
-    else
-        mkdir -p "$repoPath/$path"
+        rm -rf "$repoPath/$path/"
     end
     cp -alr "$systemPath/$path" "$repoPath/$path"
 end
@@ -50,7 +48,7 @@ set scriptsPath "../scripts"
 set systemScriptsPath "$HOME/Scripts"
 
 if test -d "$scriptsPath"
-    rm -rf "$scriptsPath/*"
+    rm -rf "$scriptsPath"
 else
     mkdir -p "$scriptsPath"
 end
@@ -62,7 +60,7 @@ set soundsPath "../sounds"
 set systemSoundsPath "$HOME/Music/sounds"
 
 if test -d "$soundsPath"
-    rm -rf "$soundsPath/*"
+    rm -rf "$soundsPath"
 else
     mkdir -p "$soundsPath"
 end
@@ -74,7 +72,7 @@ set wallpapersPath "../wallpapers"
 set systemWallpapersPath "$HOME/Pictures/wallpapers"
 
 if test -d "$wallpapersPath"
-    rm -rf "$wallpapersPath/*"
+    rm -rf "$wallpapersPath"
 else
     mkdir -p "$wallpapersPath"
 end

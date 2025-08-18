@@ -30,7 +30,7 @@ if test -d "vars"
     end
 
     slowPrint "Clearing vars directory..."
-    rm -rf "vars/*"
+    rm -rf "vars"
 
 else
     slowPrint "Creating vars directory..."
@@ -85,11 +85,11 @@ else
             case copy
                 while $copyLoop
                     slowPrint "Listing configs in ../files..."
-                    ls -d "../files/*"
+                    ls -d "../files"
                     read --prompt-str "What is the name of the config you would like to copy? " configName
                     if test -d "../files/$configName"
                         slowPrint "Copying config..."
-                        cp -r "../files/$configName/*" "../files/$systemName"
+                        cp -r "../files/$configName" "../files/$systemName"
 
                         slowPrint "Calling the repoToSystem.fish script..."
                         source "repoToSystem.fish"
