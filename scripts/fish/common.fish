@@ -56,7 +56,9 @@ function confirm
     end
 end
 
+set slowPrintDelay 0.5
+# can set delay with set slowPrintDelay 0.5
 function slowPrint
     echo -e $argv
-    sleep 1
+    sleep $slowPrintDelay
 end

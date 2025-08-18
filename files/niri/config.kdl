@@ -384,7 +384,7 @@ binds {
     // Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
     // Mod+Space { spawn "walker"; }
-    Mod+Space { spawn "sirula"; }
+    Mod+Space { spawn "fish" "/home/vince/Scripts/fish/sirula_launch.fish"; }
     // Mod+Space { spawn "sherlock"; }
     // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
