@@ -29,7 +29,7 @@ if not test -d "../vars/$systemName"
     echo "$systemName" > "../vars/$systemName/system"
     touch "../vars/$systemName/initialized"
 end
-cp -alr "../vars/$systemName" "vars/"
+cp -alr "../vars/$systemName/*" "vars/"
 
 slowPrint "Handled vars, now handling config files..."
 
@@ -44,7 +44,7 @@ for path in $paths
     else
         mkdir -p "$systemPath/$path"
     end
-    cp -alr "$repoPath/$path" "$systemPath/$path"
+    cp -alr "$repoPath/$path/*" "$systemPath/$path"
 end
 
 slowPrint "Config files handled... now handling scripts..."
@@ -57,7 +57,7 @@ if test -d "$systemScriptsPath"
 else
     mkdir -p "$systemScriptsPath"
 end
-cp -alr "$scriptsPath" "$systemScriptsPath"
+cp -alr "$scriptsPath/*" "$systemScriptsPath"
 
 slowPrint "Scripts handled... now handling sounds..."
 
@@ -69,7 +69,7 @@ if test -d "$systemSoundsPath"
 else
     mkdir -p "$systemSoundsPath"
 end
-cp -alr "$soundsPath" "$systemSoundsPath"
+cp -alr "$soundsPath/*" "$systemSoundsPath"
 
 slowPrint "Sounds handled... now handling wallpapers..."
 
@@ -81,7 +81,7 @@ if test -d "$systemWallpapersPath"
 else
     mkdir -p "$systemWallpapersPath"
 end
-cp -alr "$wallpapersPath" "$systemWallpapersPath"
+cp -alr "$wallpapersPath/*" "$systemWallpapersPath"
 
 slowPrint "Wallpapers handled."
 

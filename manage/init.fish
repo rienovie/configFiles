@@ -89,7 +89,7 @@ else
                     read --prompt-str "What is the name of the config you would like to copy? " configName
                     if test -d "../files/$configName"
                         slowPrint "Copying config..."
-                        cp -r "../files/$configName" "../files/$systemName"
+                        cp -r "../files/$configName/*" "../files/$systemName"
 
                         slowPrint "Calling the repoToSystem.fish script..."
                         source "repoToSystem.fish"
