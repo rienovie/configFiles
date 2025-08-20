@@ -655,6 +655,6 @@ spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 // replaced with autostart script
 // spawn-at-startup "sleep" "8" "&&" "steam" "-silent"
 // spawn-at-startup "sleep" "8" "&&" "discord" "--start-minimized"
-spawn-at-startup "~/Scripts/autoStarts/autostart_niri.sh"
+spawn-at-startup "fish" "/home/vince/Scripts/autoStarts/autostart_niri_laptop.fish"
 spawn-at-startup "squeekboard"
 

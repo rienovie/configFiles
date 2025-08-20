@@ -7,11 +7,15 @@ end
 source "../scripts/fish/common.fish"
 
 # Will set this for the entire script
-set slowPrintDelay 1
+# Shorter delay because this is the most common script to run
+set slowPrintDelay 0.25
 
 set systemName (cat vars/system)
 
 slowPrint "This script will REPLACE the current repo '$systemName' config files with the system config files."
+repeat 3 echo
+slowPrint "System Config  --> replacing -->  Repo Config $systemName"
+repeat 3 echo
 slowPrint "Please verify that you want to continue."
 
 if not confirm

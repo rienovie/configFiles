@@ -8,7 +8,8 @@ end
 source "../scripts/fish/common.fish"
 
 # Will set this for the entire script
-set slowPrintDelay 1
+# Long delay because this is the important script
+set slowPrintDelay 4
 
 slowPrint "This is the initialization for this repo."
 slowPrint "It should only be run once per system."
