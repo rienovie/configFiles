@@ -1,0 +1,104 @@
+# Hyperflux Theme Configuration
+
+[ui.anchors]
+bottom = true
+left = true
+right = true
+top = true
+
+[ui.window]
+h_align = "fill"
+v_align = "fill"
+
+[ui.window.box]
+h_align = "center"
+width = 800 # Wider for more dynamic content
+min_width = 600
+
+[ui.window.box.bar]
+orientation = "horizontal"
+position = "end"
+
+[ui.window.box.bar.entry]
+h_align = "fill"
+h_expand = false
+
+[ui.window.box.bar.entry.icon]
+h_align = "center"
+h_expand = true
+pixel_size = 32 # Larger icons
+theme = ""
+
+[ui.window.box.margins]
+top = 25 # Less top margin
+
+[ui.window.box.ai_scroll]
+name = "aiScroll"
+h_align = "fill"
+v_align = "fill"
+max_height = 400 # More height
+min_width = 500 # More width
+height = 400
+width = 500
+
+[ui.window.box.ai_scroll.margins]
+top = 18 # More margin
+
+[ui.window.box.ai_scroll.list]
+name = "aiList"
+orientation = "vertical"
+width = 500
+spacing = 15 # More spacing
+
+[ui.window.box.ai_scroll.list.item]
+name = "aiItem"
+h_align = "fill"
+v_align = "fill"
+x_align = 0
+y_align = 0
+wrap = true
+
+[ui.window.box.scroll.list]
+marker_color = "#FF00FF" # Magenta marker
+max_height = 400
+max_width = 500
+min_width = 500
+width = 500
+
+[ui.window.box.scroll.list.item.activation_label]
+h_align = "fill"
+v_align = "fill"
+width = 28 # Wider activation label
+x_align = 0.5
+y_align = 0.5
+
+[ui.window.box.scroll.list.item.icon]
+pixel_size = 32
+theme = ""
+
+[ui.window.box.scroll.list.margins]
+top = 18
+
+[ui.window.box.search.prompt]
+name = "prompt"
+icon = "edit-find"
+theme = ""
+pixel_size = 24 # Larger prompt icon
+h_align = "center"
+v_align = "center"
+
+[ui.window.box.search.clear]
+name = "clear"
+icon = "edit-clear"
+theme = ""
+pixel_size = 24 # Larger clear icon
+h_align = "center"
+v_align = "center"
+
+[ui.window.box.search.input]
+h_align = "fill"
+h_expand = true
+icons = true
+
+[ui.window.box.search.spinner]
+hide = true

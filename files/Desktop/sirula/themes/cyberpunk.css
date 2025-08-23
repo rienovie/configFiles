@@ -1,0 +1,168 @@
+/*
+Cyberpunk Theme - Neon colors, high contrast, futuristic
+*/
+
+* {
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: 14px;
+    color: #00ff41;
+}
+
+.background {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+#root-box, .background, #app-list, .overlay-indicator {
+    background: transparent;
+}
+
+#root-box {
+    min-width: 320px;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 0px;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5), 0 0 0 2px rgba(0, 255, 65, 0.3);
+    margin: 10px;
+}
+
+.app-row {
+    transition: all 0.2s ease;
+    border-radius: 0px;
+    padding: 8px 12px;
+    margin: 2px 6px;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.app-row:focus {
+    outline: unset;
+}
+
+.app-row:hover {
+    background: rgba(0, 255, 65, 0.1);
+    border-color: rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.app-row:selected {
+    background: rgba(255, 0, 128, 0.2);
+    border-color: rgba(255, 0, 128, 0.8);
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
+}
+
+.app-row:hover:selected,
+.app-row:hover.selected {
+    background: rgba(255, 0, 128, 0.3);
+    border-color: rgba(255, 0, 128, 1);
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+}
+
+.app-label {
+    margin-left: 12px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.app-row:hover .app-label {
+    color: #ffffff;
+}
+
+.app-row:selected .app-label {
+    color: #ff0080;
+    font-weight: bold;
+}
+
+#app-list {
+    padding: 8px 6px;
+    background: transparent;
+}
+
+#search {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 255, 65, 0.5);
+    border-radius: 0px;
+    outline: unset;
+    margin: 12px 8px;
+    font-size: 16px;
+    padding: 10px 14px;
+    color: #00ff41;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+#search:focus {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(0, 255, 65, 1);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+selection {
+    background-color: rgba(255, 0, 128, 0.5);
+    color: #ffffff;
+}
+
+scrollbar.vertical {
+    background: transparent;
+    border: none;
+}
+
+scrollbar.vertical slider {
+    background: rgba(0, 255, 65, 0.3);
+    border-radius: 0px;
+    min-width: 8px;
+    transition: background 0.2s ease;
+}
+
+scrollbar.vertical slider:hover {
+    background: rgba(0, 255, 65, 0.5);
+}
+
+scrollbar.vertical trough {
+    background: transparent;
+    border: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.overlay-indicator {
+    background: rgba(255, 0, 128, 0.3);
+    border-radius: 0px;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.app-row image {
+    transition: opacity 0.2s ease;
+}
+
+.app-row:hover image {
+    opacity: 0.8;
+}
+
+.app-row:focus-visible {
+    outline: 2px solid rgba(0, 255, 65, 0.8);
+    outline-offset: 2px;
+}
+
+* {
+    transition-property: background, border, box-shadow, color, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+} 

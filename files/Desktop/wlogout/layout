@@ -1,0 +1,25 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+}
+{
+    "label" : "logout",
+    "action" : "sh /home/vince/Scripts/wlogout_exit.sh",
+    "text" : "Logout",
+}
+{
+    "label" : "kill",
+    "action" : "sh /home/vince/Scripts/wlogout_kill.sh",
+    "text" : "Kill App",
+}
+{
+    "label" : "cancel",
+    "action" : "",
+    "text" : "Cancel",
+}

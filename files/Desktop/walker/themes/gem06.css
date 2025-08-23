@@ -1,0 +1,367 @@
+/* Glassy Glitch Theme */
+
+@define-color foreground #D0EFFF;
+/* Light blue/white */
+@define-color background #0A1428;
+/* Very dark blue */
+@define-color background_light #1A2E4C;
+/* Darker blue */
+@define-color accent_color #66B2FF;
+/* Sky Blue */
+@define-color secondary_accent #2C486F;
+/* Muted blue */
+@define-color highlight_color #9966FF;
+/* Medium Purple for highlights */
+@define-color error_color rgba(255, 60, 60, 0.7);
+/* Soft red for errors */
+
+/* Helper for "frosted glass" effect, may require compositor support */
+@define-color translucent_bg alpha(@background_light, 0.7);
+@define-color translucent_border alpha(@accent_color, 0.4);
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 1.3em;
+  border-radius: 4px;
+  color: @foreground;
+  border: 1px solid alpha(white, 0.2);
+  /* Subtle "glitch" pulse on error */
+  -gtk-animation-name: error-pulse;
+  -gtk-animation-duration: 0.8s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: 2;
+  /* Pulse twice */
+}
+
+@-gtk-keyframes error-pulse {
+  0% {
+    box-shadow: 0 0 0px @error_color;
+  }
+
+  50% {
+    box-shadow: 0 0 10px @error_color;
+  }
+
+  100% {
+    box-shadow: 0 0 0px @error_color;
+  }
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  border-radius: 12px;
+  background: @translucent_bg;
+  /* Translucent background */
+  padding: 40px;
+  border: 1px solid @translucent_border;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 15px 25px rgba(0, 0, 0, 0.3);
+  -gtk-transition: all 0.4s ease-in-out;
+  -gtk-backdrop-filter: blur(10px);
+  /* Frosted glass effect */
+}
+
+#box:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 20px 30px rgba(0, 0, 0, 0.4),
+    0 0 18px @accent_color;
+  border: 1px solid @accent_color;
+}
+
+#search {
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.25);
+  background: alpha(@background_light, 0.8);
+  /* Slightly less translucent */
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid alpha(@secondary_accent, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+#search:focus-within {
+  border: 1px solid @highlight_color;
+  background: @background_light;
+}
+
+#prompt {
+  margin-left: 6px;
+  margin-right: 15px;
+  color: @accent_color;
+  opacity: 0.7;
+  transition:
+    color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+#prompt:hover {
+  color: @highlight_color;
+  opacity: 1;
+  /* Subtle wobble on hover */
+  -gtk-animation-name: wobble-prompt;
+  -gtk-animation-duration: 0.3s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: 1;
+}
+
+@-gtk-keyframes wobble-prompt {
+  0% {
+    -gtk-transform: translateX(0px);
+  }
+
+  33% {
+    -gtk-transform: translateX(-2px);
+  }
+
+  66% {
+    -gtk-transform: translateX(2px);
+  }
+
+  100% {
+    -gtk-transform: translateX(0px);
+  }
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.8;
+  transition:
+    color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+#clear:hover {
+  color: @accent_color;
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 6px;
+  font-size: 1.1em;
+  padding: 5px;
+  color: @foreground;
+  background: alpha(@background_light, 0.6);
+  border: 1px solid alpha(@secondary_accent, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+#input:focus {
+  background: @background_light;
+  border: 1px solid @highlight_color;
+  box-shadow: 0 0 6px @highlight_color;
+}
+
+#password {
+  background: alpha(@secondary_accent, 0.5);
+}
+
+#spinner {
+  padding: 10px;
+  color: @accent_color;
+  /* Faster, more erratic spin */
+  -gtk-animation-name: erratic-spin;
+  -gtk-animation-duration: 0.5s;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-timing-function: steps(8);
+  /* Choppy animation */
+}
+
+@-gtk-keyframes erratic-spin {
+  from {
+    -gtk-transform: rotate(0deg);
+  }
+
+  to {
+    -gtk-transform: rotate(360deg);
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.7;
+}
+
+#input placeholder {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.7);
+}
+
+#list {
+  margin-top: 10px;
+}
+
+child {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid alpha(@secondary_accent, 0.3);
+  background: alpha(@background_light, 0.4);
+}
+
+child:selected,
+child:hover {
+  background: alpha(@highlight_color, 0.2);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 10px alpha(@accent_color, 0.6);
+  transform: scale(1.02);
+  /* Slight zoom on hover/select */
+  /* Quick flash on selection */
+  -gtk-animation-name: flash;
+  -gtk-animation-duration: 0.1s;
+  -gtk-animation-timing-function: ease-out;
+  -gtk-animation-iteration-count: 1;
+}
+
+@-gtk-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 10px;
+  color: @accent_color;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 600;
+  color: @highlight_color;
+}
+
+#sub {
+  opacity: 0.6;
+  font-size: 0.85em;
+  color: alpha(@foreground, 0.8);
+}
+
+#activationlabel {
+  color: @accent_color;
+  transition: color 0.2s ease-in-out;
+}
+
+#activationlabel:hover {
+  color: @highlight_color;
+}
+
+#bar {
+  margin-top: 15px;
+  background: alpha(@background_light, 0.5);
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid alpha(@secondary_accent, 0.3);
+}
+
+.barentry {
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_color, 0.1);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 8px @accent_color;
+  transform: translateY(-2px);
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+  color: alpha(@foreground, 0.5);
+  filter: saturate(0.5);
+  /* Desaturate for inactive */
+}
+
+.aiItem {
+  padding: 15px;
+  border-radius: 8px;
+  color: @foreground;
+  background: alpha(@background_light, 0.6);
+  margin-bottom: 8px;
+  border: 1px solid alpha(@secondary_accent, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.aiItem:hover {
+  background: alpha(@background_light, 0.8);
+  box-shadow: 0 0 12px @highlight_color;
+  transform: translateY(-2px);
+  /* Slight lift */
+}
+
+.aiItem.user {
+  background: alpha(@background, 0.8);
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 4px solid @accent_color;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.aiItem.assistant {
+  background: alpha(@background_light, 0.8);
+  border-left: none;
+  border-right: 4px solid @highlight_color;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

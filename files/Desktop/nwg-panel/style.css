@@ -1,0 +1,137 @@
+/***** SUGGESTED TO CHANGE CAREFULLY *****/
+
+/* Recommended if panel "height" unset or smaller then your theme default button height */
+button {
+	margin: 3px;
+	background: linear-gradient(to top, rgba(20, 22, 34, 0.8) 25%, rgba(20, 22, 34, 0) 100%);
+	border: 0;
+}
+
+button:hover {
+	background: linear-gradient(to top, rgba(90, 100, 155, 0.8) 25%, rgba(90, 100, 155, 0) 100%);
+}
+
+/* SwayTaskBar and SwayWorkspaces use custom widgets, that need this and the next name
+   to highlight currently focused task / workspace. */
+#task-box {
+	padding-left: 4px;
+	padding-right: 4px
+}
+
+#task-box-focused {
+	/* background-color: rgba (255, 255, 255, 0.12); */
+	background: linear-gradient(to bottom, rgba(45, 50, 75, 0.8) 25%, rgba(45, 50, 75, 0) 100%);
+	padding-left: 4px;
+	padding-right: 4px
+}
+
+
+/***** MODIFY TO YOUR TASTE *****/
+
+/* Sample button in sample config w/ no background nor border */
+#button-custom {
+	background: rgba (0, 0, 0, 0.0);
+	border: 0
+}
+
+/* Top panel in sample config uses this name */
+#panel-top {
+	/* background: linear-gradient(to bottom, rgba(20, 22, 34, 0.8) 25%, rgba(20, 22, 34, 0) 100%); */
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0.8) 95%, rgba(0, 0, 0, 0) 125%);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	/* background: #101010; */
+	color: #eeeeee
+}
+
+/* Bottom panel in sample config uses this name */
+#panel-bottom {
+	background: #0c0c15;
+	color: #ffffff
+}
+
+/* Controls window in sample config uses this name */
+#controls-window {
+	border-radius: 4px;
+	/* background: #36364f; */
+	/* background: rgba(0, 0, 0, 0.9); */
+	background: rgba(20, 22, 34, 0.98);
+	color: #eeeeee;
+}
+
+#controls-window scale value {
+	color: #eeeeee
+}
+
+/* Brightness slider popup window in sample config uses this name */
+#brightness-popup {
+	border-radius: 15px;
+	background: #36364f;
+	color: #eeeeee
+}
+
+#brightness-popup box {
+	padding: 15px;
+}
+
+/* Executors usually behave better in monospace fonts */
+#executor-label {
+	font-family: monospace
+}
+
+/* and so does the Clock */
+#clock {
+	font-family: monospace;
+	font-size: 16px
+}
+
+/* Sample executor-weather uses "css-name": "weather" */
+#weather {
+	font-size: 16px
+}
+
+/* dwl-tags module */
+#dwl-tag-box {
+	padding-top: 4px;
+	padding-bottom: 4px
+}
+
+#dwl-tag-occupied {
+	font-family: monospace;
+	color: #eee;
+	background-color: #006699;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#dwl-tag-free {
+	font-family: monospace;
+	color: #eee;
+	background-color: rgba (32, 50, 90, 1.0);
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#dwl-tag-urgent {
+	font-family: monospace;
+	color: #eee;
+	background-color: #ee6600;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#dwl-tag-selected {
+	border: solid 2px;
+	border-color: #81a1c1
+}
+
+#update-check {
+	/* padding-left: 25px; */
+	/* padding-right: 25px; */
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+#btn_drawer {
+	color: rgba(255, 255, 255, 1);
+}

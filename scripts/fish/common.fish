@@ -56,16 +56,4 @@ function confirm
     end
 end
 
-set slowPrintDelay 0.5
-# can set delay with set slowPrintDelay 0.5
-function slowPrint
-    echo -e $argv
-    sleep $slowPrintDelay
-end
 
-# First arg is the count
-function repeat
-    for i in (seq 1 $argv[1])
-        eval $argv[2..-1]
-    end
-end

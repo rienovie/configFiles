@@ -8,7 +8,7 @@ source "../scripts/fish/common.fish"
 
 # Will set this for the entire script
 # Long delay because this is the more dangerous script
-set slowPrintDelay 2
+set slowPrintDelay 1
 
 set systemName (cat "vars/system")
 
@@ -26,14 +26,14 @@ set repoPath "../files/$systemName"
 set systemPath "$HOME/.config"
 
 slowPrint "Handling vars..."
-rm -rf "vars"
+rm -rf vars
 if not test -d "../vars/$systemName"
     mkdir "../vars/$systemName"
     touch "../vars/$systemName/paths"
-    echo "$systemName" > "../vars/$systemName/system"
+    echo "$systemName" >"../vars/$systemName/system"
     touch "../vars/$systemName/initialized"
 end
-cp -alr "../vars/$systemName" "vars"
+cp -alr "../vars/$systemName" vars
 
 slowPrint "Handled vars, now handling config files..."
 

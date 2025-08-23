@@ -1,0 +1,353 @@
+/* Ghostly Mist Theme */
+
+@define-color foreground #E0F0F8;
+/* Light icy blue */
+@define-color background #0D1C2E;
+/* Deep almost black-blue */
+@define-color background_light #1A344E;
+/* Muted slate blue */
+@define-color accent_color #87CEEB;
+/* Sky blue, ethereal */
+@define-color secondary_accent #2B4E6F;
+/* Desaturated dark blue */
+@define-color highlight_color #ADD8E6;
+/* Light Blue, almost white */
+@define-color error_color rgba(220, 20, 60, 0.6);
+/* Crimson red, muted */
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: @error_color;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  color: @foreground;
+  box-shadow: 0 0 8px @error_color;
+  /* Faint, lingering pulse */
+  -gtk-animation-name: faint-pulse;
+  -gtk-animation-duration: 2s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes faint-pulse {
+  0% {
+    opacity: 0.8;
+    box-shadow: 0 0 5px @error_color;
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 15px @error_color;
+  }
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  border-radius: 15px;
+  /* Softer, rounder */
+  background: alpha(@background_light, 0.8);
+  /* Semi-transparent */
+  padding: 40px;
+  border: 1px solid alpha(@secondary_accent, 0.5);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2);
+  -gtk-backdrop-filter: blur(8px);
+  /* Frosted glass effect */
+  -gtk-transition: all 0.6s ease-out;
+  /* Smooth, lingering transition */
+  overflow: hidden;
+  /* For potential mist effects */
+}
+
+#box:hover {
+  background: alpha(@background_light, 0.9);
+  border: 1px solid @accent_color;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px @accent_color;
+  transform: translateY(-5px);
+  /* Gentle float up */
+}
+
+#search {
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  background: alpha(@background, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  /* More rounded */
+  border: 1px solid alpha(@secondary_accent, 0.7);
+  transition: all 0.4s ease-in-out;
+}
+
+#search:focus-within {
+  border: 1px solid @highlight_color;
+  background: @background;
+  box-shadow: 0 0 10px @highlight_color;
+}
+
+#prompt {
+  margin-left: 5px;
+  margin-right: 14px;
+  color: @accent_color;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+
+#prompt:hover {
+  color: @highlight_color;
+  opacity: 1;
+  transform: scale(1.1);
+  /* Gentle pop */
+}
+
+#clear {
+  color: @highlight_color;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+#clear:hover {
+  color: @accent_color;
+  opacity: 1;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 8px;
+  font-size: 1.1em;
+  padding: 6px;
+  color: @foreground;
+  background: alpha(@background_light, 0.7);
+  border: 1px solid alpha(@secondary_accent, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+#input:focus {
+  background: @background_light;
+  border: 1px solid @highlight_color;
+  box-shadow: 0 0 8px @highlight_color;
+}
+
+#password {
+  background: alpha(@secondary_accent, 0.6);
+}
+
+#spinner {
+  padding: 10px;
+  color: @accent_color;
+  /* Slow, ghostly dissolve/spin */
+  -gtk-animation-name: ghostly-spin;
+  -gtk-animation-duration: 3s;
+  -gtk-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  -gtk-animation-iteration-count: infinite;
+}
+
+@-gtk-keyframes ghostly-spin {
+  0% {
+    -gtk-transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    -gtk-transform: rotate(180deg) scale(0.8);
+    opacity: 0.5;
+    /* Fade out slightly */
+  }
+
+  100% {
+    -gtk-transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.7;
+}
+
+#input placeholder {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.7);
+}
+
+#list {
+  margin-top: 12px;
+}
+
+child {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* Slow, smooth ease */
+  border: 1px solid transparent;
+  background: alpha(@background, 0.6);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+child:selected,
+child:hover {
+  background: alpha(@highlight_color, 0.2);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 15px alpha(@accent_color, 0.7);
+  transform: translateX(8px) scale(1.01);
+  /* Gentle slide and subtle zoom */
+  /* Ghostly fade in/out on selection */
+  -gtk-animation-name: ghostly-fade;
+  -gtk-animation-duration: 1.2s;
+  -gtk-animation-timing-function: ease-in-out;
+  -gtk-animation-iteration-count: infinite;
+  -gtk-animation-direction: alternate;
+}
+
+@-gtk-keyframes ghostly-fade {
+  0% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#item {
+  margin: 0;
+  padding: 0;
+}
+
+#icon {
+  margin-right: 10px;
+  color: @accent_color;
+  opacity: 0.9;
+}
+
+#text {
+  color: @foreground;
+}
+
+#label {
+  font-weight: 500;
+  color: @highlight_color;
+  text-shadow: 0 0 2px @highlight_color;
+}
+
+#sub {
+  opacity: 0.5;
+  font-size: 0.85em;
+  color: alpha(@foreground, 0.8);
+}
+
+#activationlabel {
+  color: @accent_color;
+  transition: all 0.3s ease-in-out;
+}
+
+#activationlabel:hover {
+  color: @highlight_color;
+}
+
+#bar {
+  margin-top: 18px;
+  background: alpha(@background, 0.7);
+  border-radius: 10px;
+  padding: 6px;
+  border: 1px solid alpha(@secondary_accent, 0.4);
+}
+
+.barentry {
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.barentry:hover {
+  background: alpha(@accent_color, 0.1);
+  border: 1px solid @accent_color;
+  box-shadow: 0 0 10px @accent_color;
+  transform: translateY(-3px);
+  /* Gentle lift */
+}
+
+.activation #activationlabel {
+  color: @highlight_color;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.4;
+  color: alpha(@foreground, 0.4);
+  filter: blur(1px) brightness(0.6);
+  /* Blurred and dimmed */
+}
+
+.aiItem {
+  padding: 18px;
+  border-radius: 12px;
+  color: @foreground;
+  background: alpha(@background_light, 0.7);
+  margin-bottom: 10px;
+  border: 1px solid alpha(@secondary_accent, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease-in-out;
+}
+
+.aiItem:hover {
+  background: alpha(@background_light, 0.9);
+  box-shadow: 0 0 15px @highlight_color;
+  transform: scale(1.005);
+  /* Very subtle zoom */
+}
+
+.aiItem.user {
+  background: alpha(@background, 0.7);
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 4px solid @accent_color;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.aiItem.assistant {
+  background: alpha(@background_light, 0.7);
+  border-left: none;
+  border-right: 4px solid @highlight_color;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

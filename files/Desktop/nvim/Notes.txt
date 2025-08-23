@@ -1,0 +1,23 @@
+when opening { someway to quickly have the second moved two lines down and tab to corrent indentation
+
+quick way to adjust size of windows by small amount or percentage maybe?
+
+handle indent lines for spaces
+
+in basher handle spaces in file names
+
+in basher have option to set directory where script is created
+
+make or possibly modify basher to be able to quickly add files via cmake or have global scripts that can be used for the same thing, could add input types and allow users to do much more with basher
+
+fix when hitting modify on empty entry in basher
+
+add jump to next/prev function
+
+goto def is deprecated
+
+update next/prev buffer to work in insert mode
+
+add to common.sh a way to run without locking current thread (maybe already added just need to check)
+
+find something for f7 in nvim config
