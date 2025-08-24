@@ -1,5 +1,7 @@
 niri
 pcmanfm-qt
 nwg-drawer
+pavu-control
 xwayland-satellite
 swaybg
+qt6ct

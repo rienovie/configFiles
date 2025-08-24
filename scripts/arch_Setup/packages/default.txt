@@ -34,3 +34,6 @@ waybar
 wlogout
 wl-clipboard
 swaync
+python-qt.py
+otf-font-awesome
+squeekboard

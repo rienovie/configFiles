@@ -5,12 +5,12 @@ keycode = 4194326
 
 [resource]
 network/connection/engine_version_update_mode = 1
+interface/editor/main_font_size = 18
+interface/editor/code_font_size = 16
 interface/theme/preset = "Custom"
-interface/theme/spacing_preset = "Custom"
-interface/theme/icon_and_font_color = 1
-interface/theme/base_color = Color(0.487096, 0.711151, 0.812725, 1)
-interface/theme/accent_color = Color(0, 0.21307, 0.521773, 1)
-interface/theme/contrast = -0.14
+interface/theme/base_color = Color(0.21, 0.24, 0.29, 1)
+interface/theme/accent_color = Color(0.44, 0.73, 0.98, 1)
+interface/theme/contrast = 0.2
 interface/theme/draw_extra_borders = true
 interface/theme/relationship_line_opacity = 0.3
 interface/theme/border_size = 1
@@ -49,9 +49,6 @@ _project_settings_advanced_mode = true
 _export_template_download_directory = ""
 _script_setup_templates_dictionary = {}
 _script_setup_use_script_templates = false
-asset_library/available_urls = {
-"godotengine.org (Official)": "https://godotengine.org/asset-library/api"
-}
 shortcuts = [{
 "name": "spatial_editor/viewport_zoom_modifier_1",
 "shortcuts": [SubResource("InputEventKey_ugdx7")]

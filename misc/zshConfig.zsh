@@ -5,6 +5,8 @@ alias u="cd .."
 alias x="chmod +x"
 alias cur="/home/vince/Apps/Cursor/*.AppImage"
 alias repo="cd /home/vince/Repos"
+alias mcf="cd /home/vince/Repos/configFiles/manage"
+alias mcfud="mcf && fish systemToRepo.fish"
 
 unalias ls 2>/dev/null
 ls() {
