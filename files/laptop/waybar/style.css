@@ -121,11 +121,17 @@ button:hover {
 
 #clock {
 	background-color: #282e32;
+	color: #b3b3b3;
+}
+
+#custom-menu,
+#custom-power {
+	color: #b3b3b3;
 }
 
 #battery {
 	background-color: #1c5263;
-	color: #000000;
+	color: #b3b3b3;
 	border-radius: 6px;
 	margin: 4px;
 	margin-left: 0px;
@@ -223,13 +229,18 @@ label:focus {
 
 #backlight {
 	background-color: #364242;
+	color: #b3b3b3;
 	margin: 4px;
 	margin-left: 0px;
 	border-radius: 6px;
 }
 
 #network {
-	background-color: #2980b9;
+	background-color: #365163;
+	color: #b3b3b3;
+	margin: 4px;
+	margin-left: 0px;
+	border-radius: 6px;
 }
 
 #network.disconnected {

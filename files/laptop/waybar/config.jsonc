@@ -40,6 +40,7 @@
         "modules-right": [
             // "custom/playerctl",
             "battery",
+            "network",
             "pulseaudio",
             "cpu",
             "memory",
@@ -217,7 +218,7 @@
         },
         "backlight": {
             "device": "acpi_video1",
-            "format": "{percent}% {icon}",
+            "format": "{icon}  {percent}%",
             "format-icons": [
                 "",
                 "",
@@ -241,13 +242,13 @@
             "states": {
                 // "good": 95,
                 "warning": 30,
-                "critical": 8
+                "critical": 10
             },
-            "format": "{capacity}% {icon}",
-            "format-full": "{capacity}% {icon}",
-            "format-charging": "{capacity}% ",
-            "format-plugged": "{capacity}% ",
-            "format-alt": "{time} {icon}",
+            "format": "{icon} {capacity}%",
+            "format-full": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            // "format-alt": "{time} {icon}",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
             "format-icons": [
@@ -274,12 +275,14 @@
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "{essid} ({signalStrength}%) ",
+            "format-wifi": " {signalStrength}%",
             "format-ethernet": "{ipaddr}/{cidr} ",
-            "tooltip-format": "{ifname} via {gwaddr} ",
+            // "tooltip-format": "{ifname} via {gwaddr} ",
+            // "tooltip-format": "{ifname} via {gwaddr} ",
             "format-linked": "{ifname} (No IP) ",
             "format-disconnected": "Disconnected ⚠",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
+            // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "nm-connection-editor"
         },
         "pulseaudio": {
             "scroll-step": 5, // %, can be a float
