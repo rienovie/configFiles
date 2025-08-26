@@ -285,8 +285,8 @@
             "on-click": "nm-connection-editor"
         },
         "pulseaudio": {
-            "scroll-step": 5, // %, can be a float
-            "format": "  {icon}  {volume:2}% ",
+            "scroll-step": 0.5, // %, can be a float
+            "format": " {icon}  {volume:2}% ",
             "format-bluetooth": "   {volume}%{format_source} ",
             "format-bluetooth-muted": "   {icon} {format_source} ",
             "format-muted": " {format_source}",
