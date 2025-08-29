@@ -55,7 +55,7 @@ cursor-style = underline
 link-url
 
 ## Shaders
-custom-shader = /home/vince/Apps/ghostty-shaders/mnoise.glsl
+custom-shader = mnoise.glsl
 
 keybind = unconsumed:ctrl+a=reload_config
 keybind = shift+ctrl+n=unbind
