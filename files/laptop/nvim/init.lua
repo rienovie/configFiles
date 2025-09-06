@@ -511,6 +511,7 @@ vim.keymap.set("v", "<S-A-k>", moveLinesUp)
 
 vim.keymap.set("n", "<F2>", "<cmd>:edit ~/.config/nvim/init.lua<CR>", { desc = "Edit init.lua file" })
 vim.keymap.set({ "n", "i" }, "<F5>", "<cmd>:w<CR>", { desc = "Save current file" })
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>:w<CR>", { desc = "Save current file" })
 vim.keymap.set("v", "<leader>p", '"_dP', { desc = "[P]aste without overwriting buffer" })
 vim.keymap.set({ "n", "i" }, "<F12>", smartQuit, { desc = "Smart Quit" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
@@ -618,7 +619,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- godot editing stuff
-
+-- TODO: doesn't seem to work
 if vim.uv.fs_stat(vim.fn.getcwd() .. "project.godot") and not vim.uv.fs_stat("/tmp/gdnv.pipe") then
 	vim.print("Starting Godot NeoVim Pipe Server")
 	vim.fn.serverstart("/tmp/gdnv.pipe")

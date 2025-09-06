@@ -14,10 +14,8 @@ fix when hitting modify on empty entry in basher
 
 add jump to next/prev function
 
-goto def is deprecated
-
 update next/prev buffer to work in insert mode
 
 add to common.sh a way to run without locking current thread (maybe already added just need to check)
 
-find something for f7 in nvim config
+open web links

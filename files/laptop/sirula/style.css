@@ -1,40 +1,32 @@
 /*
-Sirula uses GTK and can be themed with CSS (https://developer.gnome.org/gtk3/stable/chap-css-overview.html)
-This theme was tested on top of Adwaita-Dark.
-See consts.rs for a list of defined classes and names.
-
-Dark theme with animations and modern styling
+Gruvbox Soft Theme - Enhanced with breathing effects, warm glow, and gentle animations
 */
 
 * {
-    font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
-    font-size: 16px;
-    color: #e0e0e0;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #ebdbb2;
 }
 
 .background {
-    background: rgba(18, 18, 18, 0.95);
+    background: rgba(40, 40, 40, 0.95);
 }
 
-#root-box,
-.background,
-#app-list,
-.overlay-indicator {
+#root-box, .background, #app-list, .overlay-indicator {
     background: transparent;
 }
 
-/* Main container styling */
 #root-box {
     min-width: 320px;
-    background: rgba(28, 28, 28, 0.95);
+    background: rgba(40, 40, 40, 0.95);
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(251, 241, 199, 0.1);
     margin: 10px;
+    animation: breathing 4s ease-in-out infinite;
 }
 
-/* App row styling with animations */
 .app-row {
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px;
     padding: 8px 12px;
     margin: 2px 6px;
@@ -46,91 +38,90 @@ Dark theme with animations and modern styling
     outline: unset;
 }
 
-/* Hover effects */
 .app-row:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(60, 56, 54, 0.8);
+    border-color: rgba(251, 241, 199, 0.3);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: gentleGlow 2s ease-in-out infinite;
 }
 
-/* Selected state */
 .app-row:selected {
-    background: rgba(99, 102, 241, 0.15);
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2), 0 4px 12px rgba(99, 102, 241, 0.1);
+    background: rgba(184, 187, 38, 0.2);
+    border-color: rgba(184, 187, 38, 0.5);
+    box-shadow: 0 0 0 1px rgba(184, 187, 38, 0.3);
+    animation: selectedPulse 3s ease-in-out infinite;
 }
 
-/* Hover + selected combination */
 .app-row:hover:selected,
 .app-row:hover.selected {
-    background: rgba(99, 102, 241, 0.25);
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2), 0 0 0 1px rgba(99, 102, 241, 0.3);
+    background: rgba(184, 187, 38, 0.25);
+    border-color: rgba(184, 187, 38, 0.6);
+    box-shadow: 0 4px 16px rgba(184, 187, 38, 0.3);
+    animation: selectedGlow 2s ease-in-out infinite;
 }
 
-/* App label styling */
 .app-label {
     margin-left: 12px;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color 0.4s ease;
 }
 
 .app-row:hover .app-label {
-    color: #ffffff;
+    color: #fbf1c7;
+    animation: textFade 0.6s ease;
 }
 
 .app-row:selected .app-label {
-    color: #a5b4fc;
+    color: #b8bb26;
     font-weight: 600;
+    animation: textGlow 2s ease-in-out infinite;
 }
 
-/* App list container */
 #app-list {
     padding: 8px 6px;
     background: transparent;
 }
 
-/* Search box styling */
 #search {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(60, 56, 54, 0.8);
+    border: 1px solid rgba(251, 241, 199, 0.3);
     border-radius: 8px;
     outline: unset;
     margin: 12px 8px;
     font-size: 16px;
     padding: 10px 14px;
-    color: #e0e0e0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #ebdbb2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #search:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(99, 102, 241, 0.5);
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(60, 56, 54, 1);
+    border-color: rgba(251, 241, 199, 0.5);
+    box-shadow: 0 0 0 2px rgba(251, 241, 199, 0.2);
+    animation: searchGlow 2s ease-in-out infinite;
 }
 
-/* Selection styling */
 selection {
-    background-color: rgba(99, 102, 241, 0.3);
-    color: #ffffff;
+    background-color: rgba(184, 187, 38, 0.4);
+    color: #282828;
 }
 
-/* Scrollbar styling */
 scrollbar.vertical {
     background: transparent;
     border: none;
 }
 
 scrollbar.vertical slider {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(251, 241, 199, 0.3);
     border-radius: 6px;
     min-width: 8px;
-    transition: background 0.2s ease;
+    transition: background 0.4s ease;
 }
 
 scrollbar.vertical slider:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(251, 241, 199, 0.5);
+    animation: gentleGlow 2s ease-in-out infinite;
 }
 
 scrollbar.vertical trough {
@@ -138,12 +129,95 @@ scrollbar.vertical trough {
     border: none;
 }
 
-/* Animations */
+/* Enhanced Soft Animations */
+@keyframes breathing {
+    0% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(251, 241, 199, 0.1);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(251, 241, 199, 0.15);
+    }
+    100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(251, 241, 199, 0.1);
+    }
+}
+
+@keyframes gentleGlow {
+    0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes selectedPulse {
+    0% {
+        background: rgba(184, 187, 38, 0.2);
+        box-shadow: 0 0 0 1px rgba(184, 187, 38, 0.3);
+    }
+    50% {
+        background: rgba(184, 187, 38, 0.25);
+        box-shadow: 0 0 0 1px rgba(184, 187, 38, 0.4);
+    }
+    100% {
+        background: rgba(184, 187, 38, 0.2);
+        box-shadow: 0 0 0 1px rgba(184, 187, 38, 0.3);
+    }
+}
+
+@keyframes selectedGlow {
+    0% {
+        box-shadow: 0 4px 16px rgba(184, 187, 38, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(184, 187, 38, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 16px rgba(184, 187, 38, 0.3);
+    }
+}
+
+@keyframes textFade {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 2px rgba(184, 187, 38, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 6px rgba(184, 187, 38, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 2px rgba(184, 187, 38, 0.3);
+    }
+}
+
+@keyframes searchGlow {
+    0% {
+        box-shadow: 0 0 0 2px rgba(251, 241, 199, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 3px rgba(251, 241, 199, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(251, 241, 199, 0.2);
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -152,42 +226,41 @@ scrollbar.vertical trough {
 @keyframes pulse {
     0% {
         opacity: 1;
+        background: rgba(215, 153, 33, 0.2);
     }
-
     50% {
         opacity: 0.7;
+        background: rgba(215, 153, 33, 0.3);
     }
-
     100% {
         opacity: 1;
+        background: rgba(215, 153, 33, 0.2);
     }
 }
 
-/* Overlay indicator styling */
 .overlay-indicator {
-    background: rgba(99, 102, 241, 0.2);
-    border-radius: 4px;
-    animation: pulse 2s ease-in-out infinite;
+    background: rgba(215, 153, 33, 0.2);
+    border-radius: 6px;
+    animation: pulse 3s ease-in-out infinite;
 }
 
-/* Additional hover effects for icons */
 .app-row image {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.4s ease;
 }
 
 .app-row:hover image {
     opacity: 0.9;
 }
 
-/* Focus ring for accessibility */
 .app-row:focus-visible {
-    outline: 2px solid rgba(99, 102, 241, 0.6);
+    outline: 2px solid rgba(251, 241, 199, 0.6);
     outline-offset: 2px;
 }
 
-/* Smooth transitions for all interactive elements */
+
+
 * {
     transition-property: background, border, box-shadow, color, opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-}
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} 

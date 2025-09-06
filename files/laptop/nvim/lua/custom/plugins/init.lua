@@ -1,14 +1,11 @@
 -- I'll put plugins that have little configuration in here
 
 return {
-	{ "amber-lang/amber-vim" },
 	{ "tpope/vim-sleuth" },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "psliwka/vim-smoothie" },
 	{ "tinted-theming/base16-vim" },
-	-- { "xiyaowong/transparent.nvim", opts = {} },
 	{ "nvim-treesitter/nvim-treesitter-context", opts = {} },
-	-- { "ThePrimeagen/harpoon", opts = {} },
 	{ "mfussenegger/nvim-dap" },
 	{ "numToStr/FTerm.nvim" },
 	{ "mfussenegger/nvim-jdtls" },
@@ -35,7 +32,7 @@ return {
 	-- Local version to use when editing
 	-- { "Basher", dir = "~/projects/Basher", opts = { funOnStart = false, pathMaxDirs = 1 } },
 	-- Version to test from git
-	{ "rienovie/Basher", event = "VeryLazy", opts = { silencePrints = false } },
+	{ "rienovie/Basher", opts = { silencePrints = true } },
 
 	{ "personalPlugin", dir = (vim.fn.stdpath("config") .. "/personalPlugin") },
 }
