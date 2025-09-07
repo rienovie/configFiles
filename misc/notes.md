@@ -4,3 +4,6 @@ for the arch_setup script, make a single command to run on a fresh install witho
 cloning the repo using wget
 
 for the systemToRepo and repoToSystem scripts give options for each section like scripts/sounds/etc
+
+have certain paths be the same for each system (maybe have the default config files and just modify for the specific system)
+with this can have push up to default files or spilt from main
