@@ -102,6 +102,8 @@ return {
 					--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 				}),
 				sources = {
+					-- { name = "supermaven" },
+					-- don't want supermave to be listed in completion list
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
