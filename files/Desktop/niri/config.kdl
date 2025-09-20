@@ -325,6 +325,7 @@ window-rule {
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="top-left"
+    open-focused false
 }
 
 window-rule {
@@ -382,9 +383,9 @@ binds {
     // Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
     // Mod+Space { spawn "walker"; }
-    Mod+Space { spawn "sirula"; }
+    // Mod+Space { spawn "sirula"; }
     // Mod+Space { spawn "sherlock"; }
-    // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
+    Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
     Mod+F { spawn "pcmanfm-qt"; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
@@ -639,7 +640,7 @@ environment {
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
 // spawn-at-startup "bash" "-c" "crystal-dock"
-spawn-at-startup "swaybg" "-i" "/usr/share/wallpapers/cachyos-wallpapers/cachygalaxy99.jpg" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/vince/Pictures/VioletLady.png" "-m" "fill"
 spawn-at-startup "swaync"
 
 spawn-at-startup "pcmanfm-qt" "-d"

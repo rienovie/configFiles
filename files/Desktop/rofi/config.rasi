@@ -83,9 +83,9 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	font: "Mono 14";
 	sort: false;
-	threads: 0;
+	threads: 2;
 	click-to-exit: true;
 /*	ignored-prefixes: "";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
@@ -104,6 +104,8 @@ configuration {
     }
 
 	/*---------- Keybindings ----------*/
+	kb-mode-next: "Alt+n";
+	kb-mode-previous: "Alt+p";
 /*
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";
@@ -125,8 +127,6 @@ configuration {
 	kb-accept-custom-alt: "Control+Shift+Return";
 	kb-accept-alt: "Shift+Return";
 	kb-delete-entry: "Shift+Delete";
-	kb-mode-next: "Shift+Right,Control+Tab";
-	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
 	kb-mode-complete: "Control+l";
 	kb-row-left: "Control+Page_Up";
 	kb-row-right: "Control+Page_Down";

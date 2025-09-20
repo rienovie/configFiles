@@ -28,6 +28,7 @@
             "custom/separator",
             "custom/swaync",
             "tray",
+            "custom/updates",
             "custom/separator1",
             "wlr/taskbar"
             // "custom/right-arrow-dark",
@@ -46,7 +47,6 @@
             // "custom/left-arrow-dark",
             "backlight",
             "clock",
-            // "custom/updates",
             "hyprland/workspaces",
             "custom/power"
             // "custom/right-arrow-dark",
@@ -315,11 +315,11 @@
             // "format": "  𓃑 ",
             // "format": "  ☰ ",
             // "format" : "  〄 ",
-            // "format": "  ☵ Applications",
-            "format": "  ☵   Apps",
+            "format": "  ☵ Applications",
+            // "format": "  ☵   Apps",
             "tooltip-format": "Application Menu",
             // "on-click": "nwg-menu -va top -fm pcmanfm-qt -padding 4 -cmd-logout 'niri msg action quit'"
-            "on-click": "sirula"
+            "on-click": "fish ~/Scripts/fish/sirula_launch.fish"
             // "on-click": "nwg-drawer"
             // "on-click": "jgmenu_run"
             // "on-click": "kando -m example-menu"
@@ -355,7 +355,7 @@
             "on-click": "swaync-client -t"
         },
         "custom/updates": {
-            "format": "{}",
+            "format": " {}  ",
             "exec": "cat ~/Scripts/waybar_updates/updateValue",
             "tooltip-format": "System Updates",
             "on-click": "~/Scripts/waybar_updates/clicked.sh",

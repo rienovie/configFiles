@@ -703,7 +703,12 @@ require("lazy").setup({
 	},
 })
 
-randFavTheme()
+-- Supermaven highlight color isn't set correctly unless this is here
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		randFavTheme()
+	end,
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

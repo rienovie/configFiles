@@ -8,21 +8,18 @@ fi
 echo $runOnce
 
 iconUpToDate=$"󰕥"
-iconChecking=$"Checking for updates... 󱆢 "
-iconUpdate=$"Updates are available! 󰻌 "
+iconChecking=$"󱆢  Checking for updates... "
+iconUpdate=$"󰻌  Updates available! "
 
 while :; do
     echo "$iconChecking" > ~/Scripts/waybar_updates/updateValue
-    # sleep 2 so it shows in the panel that it's checking
-    sleep 2
+    dunstify -a waybar_updates "Checking for updates..."
     if checkupdates; then
         echo "$iconUpdate" > ~/Scripts/waybar_updates/updateValue
-        play /home/vince/Music/sounds/updatesAvailable.wav
+        dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-warning.svg -u critical -t 1500 "Updates available!"
     else
         echo "$iconUpToDate" > ~/Scripts/waybar_updates/updateValue
-        if $runOnce; then
-            play /home/vince/Music/sounds/upToDate.wav
-        fi
+        dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-positive.svg "System is up to date."
     fi
 
     if $runOnce; then
