@@ -37,3 +37,4 @@ swaync
 python-qt.py
 otf-font-awesome
 squeekboard
+qps

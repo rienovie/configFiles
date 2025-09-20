@@ -107,8 +107,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   noise = pow(noise, 2.);
 
   vec3 col1 = vec3(0.), col2 = vec3(0.), col3 = vec3(0.07898),
-       col4 = vec3(0.089184),
-       fcol = mix(mix(mix(col1, col3, smoothstep(0.0, 0.3, noise)), col2,
+       // col4 = vec3(0.089184),
+       col4 = vec3(0.0089184),
+       fcol = mix(mix(mix(col1, col3, smoothstep(0.0, 0.4, noise)), col2,
                       smoothstep(0.0, 0.5, noise)),
                   col4, smoothstep(0.0, 1.0, noise));
 

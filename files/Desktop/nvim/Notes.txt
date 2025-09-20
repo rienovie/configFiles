@@ -18,4 +18,4 @@ update next/prev buffer to work in insert mode
 
 add to common.sh a way to run without locking current thread (maybe already added just need to check)
 
-open web links
+currently theme must be reloaded after supermaven initialization to change suggestion color

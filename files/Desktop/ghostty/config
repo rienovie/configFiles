@@ -44,19 +44,24 @@
 #
 
 font-size = 14
-theme = "Harper"
-background = 3e5771
-foreground = 000000
+# theme = "Horizon Bright"
+# theme = "Midnight In Mojave"
+theme = "Moonfly"
+background = #3e5771
+foreground = #000000
 selection-invert-fg-bg
-# selection-background = 000000
-# selection-foreground = ffffff
+# selection-background = #000000
+# selection-foreground = #ffffff
 shell-integration-features = no-cursor
 cursor-style = underline
 link-url
 
 ## Shaders
 custom-shader = mnoise.glsl
+# custom-shader = mnoise copy.glsl
 
 keybind = unconsumed:ctrl+a=reload_config
 keybind = shift+ctrl+n=unbind
+keybind = shift+ctrl+p=unbind
+keybind = shift+ctrl+alt+p=toggle_command_palette
 # confirm-close-surface = false
