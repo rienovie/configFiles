@@ -7,3 +7,5 @@ for the systemToRepo and repoToSystem scripts give options for each section like
 
 have certain paths be the same for each system (maybe have the default config files and just modify for the specific system)
 with this can have push up to default files or spilt from main
+
+have "repo" command allow second arg that can be incomplete and goes to the closest match
