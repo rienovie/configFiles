@@ -9,3 +9,5 @@ have certain paths be the same for each system (maybe have the default config fi
 with this can have push up to default files or spilt from main
 
 have "s" alias use fuzy for next arg dir
+
+make the ls prompt better (color font and ls-ed directory not pwd)

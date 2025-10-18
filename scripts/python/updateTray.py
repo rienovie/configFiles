@@ -26,15 +26,16 @@ def clicked(whichClick):
             openUpdates()
         else:
             checkForUpdates()
-    # elif whichClick == QSystemTrayIcon.ActivationReason.MiddleClick:
-    #     app.exit()
+    elif whichClick == QSystemTrayIcon.ActivationReason.MiddleClick:
+        app.exit()
 
 
 def checkForUpdates():
     tray.setToolTip("Checking for updates...")
     global status
     status = (
-        subprocess.run("checkupdates", capture_output=True, shell=True).stdout.__len__()
+        subprocess.run("checkupdates", capture_output=True,
+                       shell=True).stdout.__len__()
         > 0
     )
     if status:
@@ -49,7 +50,7 @@ def checkForUpdates():
 
 def openUpdates():
     cmd = "ghostty --class=updater"
-    cmd += " --background=444444"
+    cmd += " --background=#444444"
     cmd += " --custom-shader=$HOME/Apps/ghostty-shaders/bloom.glsl"
     cmd += ' -e "paru && flatpak update'
     cmd += " && echo -ne '\\e[36mUpdates have finished...'"

@@ -54,6 +54,7 @@ selection-invert-fg-bg
 # selection-foreground = #ffffff
 shell-integration-features = no-cursor
 cursor-style = underline
+gtk-single-instance = false
 link-url
 
 ## Shaders
