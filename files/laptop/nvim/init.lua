@@ -453,7 +453,7 @@ vim.keymap.set({ "n", "i", "v" }, "<F7>", "<cmd>CccPick<CR>", { noremap = true }
 vim.keymap.set("n", "<C-b>", "<cmd>DapToggleBreakpoint<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-t>", openFavThemeMenu, { noremap = true })
-vim.keymap.set("n", "<C-y>", randFavTheme, { noremap = true })
+vim.keymap.set("n", "<C-0>", randFavTheme, { noremap = true })
 
 vim.keymap.set({ "n", "v" }, "<leader>il", indentCurrentSelection, { noremap = true, desc = "[I]ndent [L]ine(s)." })
 vim.keymap.set(
@@ -468,8 +468,7 @@ vim.keymap.set("n", "<C-9>", toggleThemeFavorite, { noremap = true })
 vim.keymap.set("n", "<C-]>", nextTheme, { noremap = true })
 vim.keymap.set("n", "<C-[>", prevTheme, { noremap = true })
 vim.keymap.set("n", "<C-\\>", randTheme, { noremap = true })
-vim.keymap.set("n", "<C-0>", resetTheme, { noremap = true })
-
+-- vim.keymap.set("n", "<C-0>", resetTheme, { noremap = true })
 vim.keymap.set("n", "<F9>", "<cmd>:UndotreeToggle<CR>", { noremap = true })
 vim.keymap.set({ "n", "i", "v" }, "<F11>", "<cmd>:lua require('mini.map').toggle()<CR>", { noremap = true })
 
