@@ -411,8 +411,8 @@ binds {
     Mod+S  { focus-window-down; }
     Mod+A  { focus-column-left; }
     Mod+D { focus-column-right; }
-    Mod+Shift+W     { move-window-down; }
-    Mod+Shift+S     { move-window-up; }
+    Mod+Shift+S     { move-window-down; }
+    Mod+Shift+W     { move-window-up; }
     Mod+Shift+A     { move-column-left; }
     Mod+Shift+D     { move-column-right; }
     Mod+Shift+1 { move-window-to-workspace 1; }

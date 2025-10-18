@@ -1,6 +1,6 @@
 alias sps="sudo pacman -S"
 alias lg="lazygit"
-alias gc="git clone --recursive"
+alias gc=".fish /home/vince/Scripts/fish/git_clone.fish"
 alias u="cd .."
 alias x="chmod +x"
 alias cur="/home/vince/Apps/Cursor/*.AppImage"
