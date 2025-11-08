@@ -376,6 +376,7 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Shift+T { spawn "fish" "/home/vince/Scripts/fish/toggle_niri_column.fish"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "ghostty"; }

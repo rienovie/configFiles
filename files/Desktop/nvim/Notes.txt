@@ -19,3 +19,9 @@ update next/prev buffer to work in insert mode
 add to common.sh a way to run without locking current thread (maybe already added just need to check)
 
 currently theme must be reloaded after supermaven initialization to change suggestion color
+
+make the double quotes work only with alt held instead of the other way around
+
+start to remove plugins and make anything needed hardcoded with hopefully no more breaking with updates
+
+change update script to only notify if the text changes not when it's already there
