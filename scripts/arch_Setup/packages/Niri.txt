@@ -4,4 +4,5 @@ nwg-drawer
 pavu-control
 xwayland-satellite
 swaybg
+rofi
 qt6ct
