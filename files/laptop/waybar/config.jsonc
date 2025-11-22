@@ -322,10 +322,10 @@
         "custom/menu": {
             // "format" : " ░ ",
             // "format": " Ξ ",
-            // "format": "  𓃑 ",
+            "format": "  𓃑 ",
             // "format": "  ☰ ",
             // "format" : "  〄 ",
-            "format": "  ☵ Applications",
+            // "format": "  ☵ Applications",
             // "format": "  ☵   Apps",
             "tooltip-format": "Application Menu",
             // "on-click": "nwg-menu -va top -fm pcmanfm-qt -padding 4 -cmd-logout 'niri msg action quit'"

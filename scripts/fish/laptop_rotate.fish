@@ -6,7 +6,7 @@ set config_file "/home/vince/.config/niri/config.kdl"
 set current_transform (grep "transform" $config_file | sed 's/.*transform "\(.*\)".*/\1/')
 
 if test "$current_transform" = "normal"
-    set new_transform "90"
+    set new_transform "270"
     waybar -c ~/.config/waybar/laptop_vertical_config.jsonc &
     gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
 else

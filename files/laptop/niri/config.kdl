@@ -381,10 +381,10 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "ghostty"; }
     // Mod+T { spawn "sh" "/home/vince/Scripts/kitty_launch.sh"; }
-    // Mod+Space { spawn "nwg-drawer" "-nofs"; }
+    Mod+Space { spawn "nwg-drawer" "-nofs"; }
     // Mod+Space { spawn "wofi" "-f" "-S" "run"; }
     // Mod+Space { spawn "walker"; }
-    Mod+Space { spawn "fish" "/home/vince/Scripts/fish/sirula_launch.fish"; }
+    // Mod+Space { spawn "fish" "/home/vince/Scripts/fish/sirula_launch.fish"; }
     // Mod+Space { spawn "sherlock"; }
     // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
@@ -646,7 +646,7 @@ spawn-at-startup "swaync"
 
 spawn-at-startup "pcmanfm-qt" "-d"
 
-// spawn-at-startup "nwg-drawer" "-r" "-nofs"
+spawn-at-startup "nwg-drawer" "-r" "-nofs"
 spawn-at-startup "systemctl" "--user" "start" "plasma-polkit-agent"
 
 // spawn-at-startup "sleep" "2" "&&" "lua" "/home/vince/Scripts/nwg_executor/nwg_executor_update.lua" "--const"

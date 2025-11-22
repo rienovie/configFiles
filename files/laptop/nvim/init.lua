@@ -469,6 +469,7 @@ vim.keymap.set("n", "<C-]>", nextTheme, { noremap = true })
 vim.keymap.set("n", "<C-[>", prevTheme, { noremap = true })
 vim.keymap.set("n", "<C-\\>", randTheme, { noremap = true })
 -- vim.keymap.set("n", "<C-0>", resetTheme, { noremap = true })
+
 vim.keymap.set("n", "<F9>", "<cmd>:UndotreeToggle<CR>", { noremap = true })
 vim.keymap.set({ "n", "i", "v" }, "<F11>", "<cmd>:lua require('mini.map').toggle()<CR>", { noremap = true })
 
@@ -702,7 +703,12 @@ require("lazy").setup({
 	},
 })
 
-randFavTheme()
+-- Supermaven highlight color isn't set correctly unless this is here
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		randFavTheme()
+	end,
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
