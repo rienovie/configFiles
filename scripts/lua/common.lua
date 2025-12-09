@@ -22,7 +22,11 @@ function export.scanDir(dir, hidden)
 	local files = {}
 	local cmd = "ls -1 " .. (hidden and "-a " or "") .. dir
 	for file in io.popen(cmd):lines() do
+		if file:sub(1, 1) == "." or file:sub(1, 1) == ".." then
+			goto continue
+		end
 		table.insert(files, file)
+		::continue::
 	end
 	return files
 end

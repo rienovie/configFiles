@@ -47,7 +47,7 @@ font-size = 14
 # theme = "Horizon Bright"
 # theme = "Midnight In Mojave"
 theme = "Moonfly"
-background = #3e5771
+background = #364c64
 foreground = #000000
 selection-invert-fg-bg
 # selection-background = #000000

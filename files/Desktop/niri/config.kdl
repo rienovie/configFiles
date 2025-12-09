@@ -113,6 +113,8 @@ output "HDMI-A-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    background-color "#8888d9"
+
     // Set gaps around windows in logical pixels.
     gaps 12
 
@@ -170,7 +172,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#8e8fff"
 
         // Color of the ring on inactive monitors.
         inactive-color "#00000034"
@@ -340,6 +342,14 @@ window-rule {
     opacity 1.0
 }
 
+window-rule {
+    match title="Kando Menu"
+    open-floating true
+    border { off; }
+    shadow { off; }
+}
+
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -388,7 +398,8 @@ binds {
     // Mod+Space { spawn "sherlock"; }
     // Mod+Space repeat=false { spawn "zsh" "/home/vince/Scripts/zsh/rofiMenu.zsh"; }
     // Mod+Space { spawn "tofi-run"; }
-    Mod+F { spawn "pcmanfm-qt"; }
+    // Mod+F { spawn "pcmanfm-qt"; }
+    Mod+F { maximize-window-to-edges; }
     Mod+I { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+B { spawn "sh" "/home/vince/Scripts/bash/waybarReset.sh"; }
     // Super+Alt+L { spawn "swaylock"; }
@@ -627,6 +638,7 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 
     Mod+O { toggle-window-rule-opacity; }
+
 }
 
 
@@ -641,7 +653,7 @@ environment {
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "waybar"
 // spawn-at-startup "bash" "-c" "crystal-dock"
-spawn-at-startup "swaybg" "-i" "/usr/share/wallpapers/cachyos-wallpapers/Metal.png" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/vince/Downloads/Wallpapers/wallhaven-8gg6eo.jpg" "-m" "fill"
 spawn-at-startup "swaync"
 
 spawn-at-startup "pcmanfm-qt" "-d"
