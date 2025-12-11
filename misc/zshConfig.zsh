@@ -5,6 +5,7 @@ alias x="chmod +x"
 alias repo="cd /home/vince/Repos"
 alias mcf="cd /home/vince/Repos/configFiles/manage"
 alias mcfud="mcf && fish systemToRepo.fish"
+alias termHost="bash /home/vince/Scripts/bash/termHost.sh"
 
 unalias ls 2>/dev/null
 ls() {
