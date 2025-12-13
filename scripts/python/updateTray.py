@@ -49,9 +49,10 @@ def checkForUpdates():
 
 
 def openUpdates():
-    cmd = "ghostty --class=updater"
-    cmd += " --background=#444444"
-    cmd += " --custom-shader=$HOME/Apps/ghostty-shaders/bloom.glsl"
+    cmd = "alacritty"
+    # cmd = "ghostty --class=updater"
+    # cmd += " --background=#444444"
+    # cmd += " --custom-shader=$HOME/Apps/ghostty-shaders/bloom.glsl"
     cmd += ' -e "paru && flatpak update'
     cmd += " && echo -ne '\\e[36mUpdates have finished...'"
     cmd += ' && read"'

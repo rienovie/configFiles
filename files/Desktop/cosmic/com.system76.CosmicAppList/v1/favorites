@@ -1,11 +1,11 @@
 [
     "app.zen_browser.zen",
-    "kitty",
+    "com.mitchellh.ghostty",
     "steam",
-    "chromium",
-    "com.system76.CosmicSettings",
     "discord",
     "gimp",
     "org.kde.krita",
     "com.spotify.Client",
+    "LM-Studio",
+    "com.system76.CosmicSettings",
 ]
