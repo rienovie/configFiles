@@ -42,3 +42,11 @@ s() {
 		nvim
 	fi
 }
+
+unalias r 2>/dev/null
+r() {
+	cd $HOME/Repos/$@ || return
+	if [ -n "$1" ]; then
+		nvim
+	fi
+}

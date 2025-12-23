@@ -3,91 +3,40 @@
         modifiers: [
             Super,
         ],
+        key: "i",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "minus",
+    ): Resizing(Inwards),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "equal",
+    ): Resizing(Outwards),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "s",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
         key: "d",
-    ): Focus(Right),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "l",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "y",
-    ): Disable,
-    (
-        modifiers: [
-            Ctrl,
-            Alt,
-        ],
-        key: "Left",
-    ): PreviousWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "v",
-    ): ToggleWindowFloating,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "k",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-    ): System(Launcher),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "k",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "o",
-    ): Disable,
+    ): Move(Right),
     (
         modifiers: [
             Super,
@@ -97,16 +46,57 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "a",
+    ): Move(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "u",
+    ): ToggleStacking,
+    (
+        modifiers: [
+            Super,
         ],
         key: "h",
+    ): SwitchOutput(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "j",
+    ): ToggleOrientation,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): SwitchOutput(Right),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "y",
     ): Disable,
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "d",
-    ): Move(Right),
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Escape",
+    ): Disable,
     (
         modifiers: [
             Ctrl,
@@ -125,14 +115,8 @@
             Super,
             Shift,
         ],
-        key: "a",
-    ): Move(Left),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "j",
-    ): ToggleOrientation,
+        key: "k",
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -145,26 +129,14 @@
             Super,
             Shift,
         ],
-        key: "w",
-    ): Move(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "b",
+        key: "j",
     ): Disable,
     (
         modifiers: [
-            Super,
-        ],
-        key: "u",
-    ): ToggleStacking,
-    (
-        modifiers: [
-            Super,
+            Alt,
             Shift,
         ],
-        key: "j",
+        key: "h",
     ): Disable,
     (
         modifiers: [
@@ -176,19 +148,7 @@
         modifiers: [
             Super,
         ],
-        key: "w",
-    ): Focus(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "l",
-    ): System(AppLibrary),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Down",
+        key: "Left",
     ): Disable,
     (
         modifiers: [
@@ -199,28 +159,55 @@
     (
         modifiers: [
             Super,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
             Shift,
         ],
-        key: "Right",
-    ): Disable,
+        key: "w",
+    ): Move(Up),
     (
         modifiers: [
-            Super,
+            Ctrl,
+            Alt,
         ],
         key: "Left",
+    ): PreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "w",
+    ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "o",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "i",
-    ): System(WebBrowser),
+        key: "k",
+    ): Disable,
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "s",
-    ): Focus(Down),
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "l",
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -232,6 +219,58 @@
             Super,
             Shift,
         ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "d",
+    ): Focus(Right),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
         key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "v",
+    ): ToggleWindowFloating,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Down",
     ): Disable,
 }
