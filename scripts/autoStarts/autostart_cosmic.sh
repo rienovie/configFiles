@@ -5,10 +5,14 @@
 # if [ "$XDG_SESSION_DESKTOP" != "cosmic" ]; then
 #     exit
 # fi
+# HACK:
+if [ "$XDG_CURRENT_DESKTOP" == "niri" ]; then
+    exit
+fi
 
-sleep 1
+sleep 2
 
-QT_QPA_PLATFORMTHEME=qt6ct
+$QT_QPA_PLATFORMTHEME=qt6ct
 
 steam -silent >/dev/null 3>&1 &
 discord --start-minimized >/dev/null 3>&1 &

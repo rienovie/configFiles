@@ -8,6 +8,7 @@ alias mcfud="mcf && fish systemToRepo.fish"
 alias termHost="bash /home/vince/Scripts/bash/termHost.sh"
 alias termSend="bash /home/vince/Scripts/bash/termSend.sh"
 alias desktopGen="bash /home/vince/Scripts/bash/newDesktopGen.sh"
+alias py="python"
 
 unalias ls 2>/dev/null
 ls() {

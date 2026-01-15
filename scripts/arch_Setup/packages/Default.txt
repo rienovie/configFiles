@@ -39,3 +39,4 @@ otf-font-awesome
 squeekboard
 qps
 ghostty
+ntfs-3g
