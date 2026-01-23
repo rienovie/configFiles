@@ -18,7 +18,7 @@
         "layer": "top", // Waybar at top layer
         "position": "top", // Waybar position (top|bottom|left|right)
         "height": 32, // Waybar height (to be removed for auto height)
-        "output": "DP-2", // desktop
+        "output": "DP-3", // desktop
         // "output": "eDP-1", // laptop
         // "width": 1280, // Waybar width
         //"spacing": 8, // Gaps between modules (4px)

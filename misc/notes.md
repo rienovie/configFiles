@@ -11,3 +11,5 @@ with this can have push up to default files or spilt from main
 have "s" alias use fuzy for next arg dir
 
 for update script, make sure the window stays open if there's an error
+
+when mkdir, default to cd into the dir

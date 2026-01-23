@@ -1,5 +1,6 @@
 [
     "app.zen_browser.zen",
+    "chromium",
     "com.mitchellh.ghostty",
     "steam",
     "discord",

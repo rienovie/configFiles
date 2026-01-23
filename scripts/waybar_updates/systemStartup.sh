@@ -17,11 +17,11 @@ while :; do
     if checkupdates; then
         if [ "$(cat $HOME/Scripts/waybar_updates/updateValue)" != "$iconUpdate" ]; then
             echo "$iconUpdate" > ~/Scripts/waybar_updates/updateValue
-            dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-warning.svg -u critical -t 1500 "Updates available!"
+            # dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-warning.svg -u critical -t 1500 "Updates available!"
         fi
     else
         echo "$iconUpToDate" > ~/Scripts/waybar_updates/updateValue
-        dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-positive.svg "System is up to date."
+        # dunstify -a waybar_updates -i /usr/share/icons/breeze-dark/status/64/dialog-positive.svg "System is up to date."
     fi
 
     if $runOnce; then

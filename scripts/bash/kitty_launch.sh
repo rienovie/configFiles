@@ -4,6 +4,7 @@ randomBackground=$(find "/home/vince/.config/kitty/backgrounds" -type f | shuf -
 
 # bgColor=$(shuf -n 1 "/home/vince/.config/kitty/colors.txt")
 # bgColor="#052a06" # green
-bgColor="#00394b" # blue-ish
+# bgColor="#00394b" # blue-ish
+bgColor="#412700" # brown-ish
 
 kitty -o background="$bgColor" -o background_image="$randomBackground" "$@"

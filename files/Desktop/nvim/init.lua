@@ -279,6 +279,11 @@ end
 local function setTheme(newTheme)
 	vim.cmd("colorscheme " .. newTheme)
 	curTheme = newTheme
+	vim.cmd("hi Normal guibg=NONE")
+	vim.cmd("hi EndOfBuffer guibg=NONE")
+	vim.cmd("hi LineNr guibg=NONE")
+	vim.cmd("hi SignColumn guibg=NONE")
+
 	vim.print("Theme set to: " .. newTheme)
 	local fileOut = ""
 	local bThemeFound = false
