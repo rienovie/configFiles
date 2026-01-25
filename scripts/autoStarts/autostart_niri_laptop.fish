@@ -9,5 +9,5 @@ xwayland-satellite >/dev/null 3>&1 &
 # HACK: without sleep tray icon doens't show
 sleep 1
 
-python ~/Scripts/python/updateTray.py >/dev/null 3>&1 &
+python ~/Scripts/python/newUpdate.py >/dev/null 3>&1 &
 
