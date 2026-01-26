@@ -1,5 +1,43 @@
 #!/usr/bin/bash
 
+# common include guard
+if [[  -n "${COMMON_INCLUDED}" ]]; then
+    return
+fi
+
+COMMON_INCLUDED=1
+
+declare -A __INCLUDED_SOURCES
+
+# Source a file safely without duplicates
+include() {
+    if [ ! -f "$1" ]; then
+        echo "File $1 not found"
+        return 1
+    fi
+
+    newFile=$(realpath "$1")
+
+    if [[ -z "${__INCLUDED_SOURCES[$newFile]}" ]]; then
+        __INCLUDED_SOURCES["$newFile"]=1
+        builtin source "$newFile"
+    fi
+}
+
+# Dialog menu, $1 is title, $2 is prompt, $3 is menu items
+auto_menu() {
+    HEIGHT=$((LINES / 2))
+    WIDTH=$((COLUMNS / 2))
+    MENU_HEIGHT=$((HEIGHT - 10))
+    [ $MENU_HEIGHT -lt 4 ] && MENU_HEIGHT=4
+
+    dialog --colors --stdout \
+        --title "$1" \
+        --menu "$2" \
+        $HEIGHT $WIDTH $MENU_HEIGHT \
+        "${@:3}"
+}
+
 # input is prompt
 # auto appends [y/N]
 # Defaults No, use affirm for default Yes

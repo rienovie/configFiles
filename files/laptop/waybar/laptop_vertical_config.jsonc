@@ -407,7 +407,7 @@
         },
         "custom/toggleFS": {
             "format": "Full",
-            "on-click": "niri msg action toggle-windowed-fullscreen && niri msg action maximize-column"
+            "on-click": "niri msg action maximize-window-to-edges"
         },
         "wlr/taskbar": {
             "format": " {icon} {state}  ",
