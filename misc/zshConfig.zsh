@@ -9,6 +9,7 @@ alias termHost="bash /home/vince/Scripts/bash/termHost.sh"
 alias termSend="bash /home/vince/Scripts/bash/termSend.sh"
 alias desktopGen="bash /home/vince/Scripts/bash/newDesktopGen.sh"
 alias py="python"
+alias z="~/.local/bin/zed"
 
 unalias ls 2>/dev/null
 ls() {
@@ -50,4 +51,11 @@ r() {
 	if [ -n "$1" ]; then
 		nvim
 	fi
+}
+
+unalias hp 2>/dev/null
+hp() {
+	cd $HOME/Repos/homePotato || return
+	source bash/activate_env.sh
+	nvim
 }
