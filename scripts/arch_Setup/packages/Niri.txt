@@ -6,3 +6,5 @@ xwayland-satellite
 swaybg
 rofi
 qt6ct
+nautilus
+polkit-kde-agent

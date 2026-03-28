@@ -40,3 +40,5 @@ squeekboard
 qps
 ghostty
 ntfs-3g
+dialog
+python311

@@ -10,6 +10,7 @@ alias termSend="bash /home/vince/Scripts/bash/termSend.sh"
 alias desktopGen="bash /home/vince/Scripts/bash/newDesktopGen.sh"
 alias py="python"
 alias z="~/.local/bin/zed"
+alias t="cd /home/vince/Documents/test"
 
 unalias ls 2>/dev/null
 ls() {
