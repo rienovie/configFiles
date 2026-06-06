@@ -9,8 +9,11 @@ alias termHost="bash /home/vince/Scripts/bash/termHost.sh"
 alias termSend="bash /home/vince/Scripts/bash/termSend.sh"
 alias desktopGen="bash /home/vince/Scripts/bash/newDesktopGen.sh"
 alias py="python"
-alias z="~/.local/bin/zed"
+alias z="~/.local/bin/zed ."
 alias t="cd /home/vince/Documents/test"
+alias pvenv="source /home/vince/Scripts/bash/pythonVenv.sh"
+alias del="bash /home/vince/Scripts/bash/delete.sh"
+alias cleanTrash="bash /home/vince/Scripts/bash/trash_cleanup.sh"
 
 unalias ls 2>/dev/null
 ls() {
@@ -28,7 +31,7 @@ cd() {
 cf() {
 	cd $HOME/.config/$@ || return
 	if [ -n "$1" ]; then
-		nvim
+		z
 	fi
 }
 
@@ -50,7 +53,7 @@ unalias r 2>/dev/null
 r() {
 	cd $HOME/Repos/$@ || return
 	if [ -n "$1" ]; then
-		nvim
+		z
 	fi
 }
 
@@ -58,5 +61,5 @@ unalias hp 2>/dev/null
 hp() {
 	cd $HOME/Repos/homePotato || return
 	source bash/activate_env.sh
-	nvim
+	z
 }

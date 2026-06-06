@@ -42,3 +42,5 @@ ghostty
 ntfs-3g
 dialog
 python311
+netcat
+antimicrox

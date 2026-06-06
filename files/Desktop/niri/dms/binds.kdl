@@ -1,0 +1,3 @@
+binds {
+    Super+N hotkey-overlay-title="Notepad: Toggle" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+}

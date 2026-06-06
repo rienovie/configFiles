@@ -88,15 +88,15 @@ dest_path="$dest_dir/$file_name"
 mkdir -p -- "$dest_dir"
 
 # Build the content line by line (using a here‑document)
-cat >"$dest_path" <<EOF
+cat > "$dest_path" <<EOF
 [Desktop Entry]
 Type=Application
 Name=$name
 Terminal=$terminal
-$( [[ $exec_cmd ]] && printf 'Exec=%s\n' "$exec_cmd") || printf '#Exec=\n'
-$( [[ $icon ]]   && printf 'Icon=%s\n' "$icon") || printf '#Icon=\n'
-$( [[ $desc ]]   && printf 'Comment=%s\n' "$desc") || printf '#Comment=\n'
-$( [[ $category ]] && printf 'Categories=%s\n' "$category") || printf '#Categories=\n'
+$( [[ $exec_cmd ]] && printf 'Exec=%s\n'       "$exec_cmd"  || printf '#Exec=\n' )
+$( [[ $icon ]]     && printf 'Icon=%s\n'       "$icon"      || printf '#Icon=\n' )
+$( [[ $desc ]]     && printf 'Comment=%s\n'    "$desc"      || printf '#Comment=\n' )
+$( [[ $category ]] && printf 'Categories=%s\n' "$category"  || printf '#Categories=\n' )
 EOF
 
 # Make the file executable (required for many desktop environments)
